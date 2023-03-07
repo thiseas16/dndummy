@@ -7,9 +7,16 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :campaigns, only: %i[create show destroy] do
     get '/dice', to: 'campaign#dice'
-    get '/handbook', to: 'handbook#home'
-    resources :encounters, only: %i[new index]
+    resources :encounters, only: %i[new create index]
     resources :characters, only: %i[index new create show edit update destroy]
-    resources :random, only: %i[new]
+    resources :background, only: %i[new create]
+    resources :art, only: %i[new create index]
+    resources :random_character, only: %i[new create]
   end
+  get '/handbook', to: 'handbook#home'  #all the following could also be in only 1 action, depending how we impliment this
+  get '/handbook/spells', to: 'handbook#spells'
+  get '/handbook/classes', to: 'handbook#classes'
+  get '/handbook/races', to: 'handbook#races'
+  get '/handbook/skills', to: 'handbook#skills'
+  get '/handbook/traits', to: 'handbook#traits'
 end
