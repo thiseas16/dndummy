@@ -1,0 +1,171 @@
+// ADD THE NEW BUTTONS UNDER THIS TEXT
+// NAVBAR BUTTONS
+.navbar-button {
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: #a35f35;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  margin: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #ca8344;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url('https://media.tenor.com/n6FM5Ny5e_wAAAAi/jp-james-perrett.gif');
+    // background-image: url('https://media.tenor.com/gketAqKm3PIAAAAC/fireball-wizard.gif');
+    // background-image: url(' https://media.tenor.com/gOCEHYul7PAAAAAi/dnd-dungeons-and-dragons.gif');
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  &:hover {
+    color: #a35f35;
+    background-color: #fff;
+    cursor: pointer;
+
+    &::before {
+      width: 100%;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+// FOOTER BUTTONS
+.footer-button {
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: #a35f35;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  margin: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #ca8344;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url(' https://media.tenor.com/gOCEHYul7PAAAAAi/dnd-dungeons-and-dragons.gif');
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  &:hover {
+    color: #a35f35;
+    background-color: #fff;
+    cursor: pointer;
+
+    &::before {
+      width: 100%;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+// HOME BUTTONs
+.home-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: $tan-100;
+  border: 2px solid $tan-500;
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+ }
+
+ .home-button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $tan-300;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+ }
+
+ .home-button:hover {
+  background: $tan-100;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+ }
+
+ .home-button:active::before {
+  // -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  // box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+ }
