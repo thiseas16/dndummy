@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :dices, only: %i[new create show]
-  resources :characters, only: %i[index new create show edit update destroy]
-  resources :handbooks, only: %i[index]
+  resources :campaigns, only: %i[create show destroy] do
+    get '/dice', to: 'campaign#dice'
+    get '/handbook', to: 'handbook#home'
+    resources :encounters, only: %i[new index]
+    resources :characters, only: %i[index new create show edit update destroy]
+    resources :random, only: %i[new]
   end
-  resources :encounters, only: %i[index new]
-  resources :campaigns, only: %i[create show]
-  resources :random, only: %i[new]
 end
