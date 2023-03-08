@@ -1,15 +1,47 @@
 <div class="home">
-   <h1>Welcome to DnDummy</h1>
-   <div class="home-block">
-   <div class="home-block-left">
-     <h1>Left Block Title</h1>
-     <h2>Left Block Subtitle</h2>
-     <button class="home-button">Left Block Button</button>
-   </div>
-   <div class="home-block-right">
-     <h1>Right Block Title</h1>
-     <h2>Right Block Subtitle</h2>
-     <button class="home-button">Right Block Button</button>
-   </div>
-   </div>
- </div>
+  <div class="catching-phrase">
+    <h1>Welcome to DnDummy</h1>
+  </div>
+  <div class="home-block">
+  <div class="home-block-left">
+    <h1>Left Block Title</h1>
+    <h2>Left Block Subtitle</h2>
+    <button class="home-button">Left Block Button</button>
+  </div>
+  <div class="home-block-right">
+    <h1>Right Block Title</h1>
+    <h2>Right Block Subtitle</h2>
+    <button class="home-button">Right Block Button</button>
+  </div>
+  </div>
+</div>
+
+<div class="dice-roller" data-controller="dice-roller">
+  <div id="main">
+    <label for="to-hit-bonus">To Hit Bonus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input id="to-hit-bonus" type="number" value="0" data-dice-roller-target="toHitBonus">
+    <br>
+
+    <label for="damage-dice">Damage Dice Type</label>
+    (d<input id="damage-dice" type="number" value="20" data-dice-roller-target="damageDice">)
+    <br>
+
+    <label for="damage-dice-count">Damage Dice Count</label>
+    <input id="damage-dice-count" type="number" value="1" data-dice-roller-target="damageCount">
+    <br>
+
+    <label for="damage-bonus">Damage Bonus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input id="damage-bonus" type="number" value="0" data-dice-roller-target="damageBonus">
+    <br>
+
+    <label for="attack-count">Number of Attacks</label>
+    <input id="attack-count" type="number" value="1" data-dice-roller-target="numAttack">
+    <br>
+
+    <button data-action="click->dice-roller#rollAll">Roll!</button>
+    <button data-action="click->dice-roller#spacer">Spacer</button>
+    <button data-action="click->dice-roller#clearLog">Clear Log</button>
+    <button data-action="click->dice-roller#load" id="undoClear" style="display: none;">Undo Clear</button>
+  </div>
+  <div id="log" data-dice-roller-target="log"></div>
+</div>

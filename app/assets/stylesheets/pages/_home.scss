@@ -1,20 +1,24 @@
 // Specific CSS for your home-page
 
 .home {
+  height: 100vh;
   background-color: $brown-500;
   color: $green-400;
   padding: 50px;
   justify-content: space-between;
   // background-image: url('https://cdn.dribbble.com/users/332860/screenshots/16373398/media/17592eea31b77200acd9f4a17584ecb7.jpg?compress=1&resize=1600x1200&vertical=top');
-  background-image: url('https://cdn.dribbble.com/userupload/2995005/file/original-8b4ed488c5a0695399f3fc60f7c6a0ae.jpg?compress=1&resize=1504x1128');
+  // background-image: url('https://cdn.dribbble.com/userupload/2995005/file/original-8b4ed488c5a0695399f3fc60f7c6a0ae.jpg?compress=1&resize=1504x1128');
+  background-image: url('https://64.media.tumblr.com/aa2de240c7d3ad098645f29e1f8fe17c/tumblr_obylzfWQ4F1qbw2q1o1_1280.gifv');
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  // background-size: cover;
   align-items: center;
 }
 
 .home h1 {
   font-size: 48px;
   margin-bottom: 20px;
+  background-color: black;
 }
 
 .home-block {
@@ -44,4 +48,49 @@
 .home-block-right h2 {
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+
+// DICE ROLLER
+* { box-sizing: border-box; }
+
+div {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+}
+
+#main {
+
+  input {
+    width: 40px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  button {
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    border-color: black;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 2s;
+
+    &:active {
+      background-color: white;
+      color: #ff6c27;
+      transition: none;
+    }
+  }
+
+}
+
+#log {
+  overflow: scroll;
+  height: 350px;
 }
