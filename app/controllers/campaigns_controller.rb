@@ -4,12 +4,13 @@ class CampaignsController < ApplicationController
   end
 
   def show
-    @campaigns = Campaign.all
-    @campaign = Campaign.new(campaign: @campaign)
+   @campaign = Campaign.find(params[:id])
+   render :show
   end
 
   def destroy
     @campaign = Campaign.find(params[:id])
     @campaign.destroy
+    redirect_to campaigns_path
   end
 end
