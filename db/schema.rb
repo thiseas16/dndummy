@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_211555) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_192830) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ability_bonuses", force: :cascade do |t|
+    t.integer "bonus"
+    t.string "ability_name"
+    t.bigint "race_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["race_id"], name: "index_ability_bonuses_on_race_id"
+  end
 
   create_table "attacks", force: :cascade do |t|
     t.bigint "character_id", null: false
@@ -135,10 +144,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_211555) do
     t.index ["encounter_id"], name: "index_characters_on_encounter_id"
   end
 
+  create_table "class_list_item_joins", force: :cascade do |t|
+    t.bigint "class_list_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["class_list_id"], name: "index_class_list_item_joins_on_class_list_id"
+    t.index ["item_id"], name: "index_class_list_item_joins_on_item_id"
+  end
+
+  create_table "class_list_proficiency_joins", force: :cascade do |t|
+    t.bigint "class_list_id", null: false
+    t.bigint "proficiency_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["class_list_id"], name: "index_class_list_proficiency_joins_on_class_list_id"
+    t.index ["proficiency_id"], name: "index_class_list_proficiency_joins_on_proficiency_id"
+  end
+
   create_table "class_lists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hit_die"
+    t.integer "proficiency_ammount"
   end
 
   create_table "dice_rolls", force: :cascade do |t|
@@ -176,6 +205,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_211555) do
     t.integer "lvl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "parent_feat_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -210,15 +240,66 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_211555) do
 
   create_table "proficiencies", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "prof_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "race_language_joins", force: :cascade do |t|
+    t.bigint "race_id", null: false
+    t.bigint "language_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_race_language_joins_on_language_id"
+    t.index ["race_id"], name: "index_race_language_joins_on_race_id"
+  end
+
+  create_table "race_proficiency_choice_joins", force: :cascade do |t|
+    t.bigint "race_id", null: false
+    t.bigint "proficiency_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proficiency_id"], name: "index_race_proficiency_choice_joins_on_proficiency_id"
+    t.index ["race_id"], name: "index_race_proficiency_choice_joins_on_race_id"
+  end
+
+  create_table "race_proficiency_granted_joins", force: :cascade do |t|
+    t.bigint "race_id", null: false
+    t.bigint "proficiency_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proficiency_id"], name: "index_race_proficiency_granted_joins_on_proficiency_id"
+    t.index ["race_id"], name: "index_race_proficiency_granted_joins_on_race_id"
+  end
+
+  create_table "race_trait_joins", force: :cascade do |t|
+    t.bigint "race_id", null: false
+    t.bigint "trait_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["race_id"], name: "index_race_trait_joins_on_race_id"
+    t.index ["trait_id"], name: "index_race_trait_joins_on_trait_id"
   end
 
   create_table "races", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "speed"
+    t.integer "age"
+    t.string "alignment"
+    t.string "size"
+    t.string "size_description"
+    t.text "language_description"
+    t.integer "proficiency_choice_number"
+  end
+
+  create_table "saving_throws", force: :cascade do |t|
+    t.string "name"
+    t.bigint "class_list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["class_list_id"], name: "index_saving_throws_on_class_list_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -265,6 +346,40 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_211555) do
     t.boolean "material_component"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "duration"
+    t.string "casting_time"
+    t.boolean "concentration"
+    t.boolean "ritual"
+    t.string "dmg_at_character_lvl_1"
+    t.string "dmg_at_character_lvl_5"
+    t.string "dmg_at_character_lvl_11"
+    t.string "dmg_at_character_lvl_17"
+  end
+
+  create_table "trait_proficiency_choice_joins", force: :cascade do |t|
+    t.bigint "trait_id", null: false
+    t.bigint "proficiency_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proficiency_id"], name: "index_trait_proficiency_choice_joins_on_proficiency_id"
+    t.index ["trait_id"], name: "index_trait_proficiency_choice_joins_on_trait_id"
+  end
+
+  create_table "trait_proficiency_granted_joins", force: :cascade do |t|
+    t.bigint "trait_id", null: false
+    t.bigint "proficiency_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proficiency_id"], name: "index_trait_proficiency_granted_joins_on_proficiency_id"
+    t.index ["trait_id"], name: "index_trait_proficiency_granted_joins_on_trait_id"
+  end
+
+  create_table "traits", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "proficiency_choice_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -282,6 +397,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_211555) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ability_bonuses", "races"
   add_foreign_key "attacks", "characters"
   add_foreign_key "campaigns", "users"
   add_foreign_key "character_class_list_joins", "characters"
@@ -300,13 +416,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_211555) do
   add_foreign_key "character_spell_joins", "spells"
   add_foreign_key "characters", "campaigns"
   add_foreign_key "characters", "encounters"
+  add_foreign_key "class_list_item_joins", "class_lists"
+  add_foreign_key "class_list_item_joins", "items"
+  add_foreign_key "class_list_proficiency_joins", "class_lists"
+  add_foreign_key "class_list_proficiency_joins", "proficiencies"
   add_foreign_key "dice_rolls", "campaigns"
   add_foreign_key "encounters", "campaigns"
   add_foreign_key "feat_class_list_joins", "class_lists"
   add_foreign_key "feat_class_list_joins", "feats"
+  add_foreign_key "feats", "feats", column: "parent_feat_id"
   add_foreign_key "images", "campaigns"
   add_foreign_key "prerequisites", "feats"
+  add_foreign_key "race_language_joins", "languages"
+  add_foreign_key "race_language_joins", "races"
+  add_foreign_key "race_proficiency_choice_joins", "proficiencies"
+  add_foreign_key "race_proficiency_choice_joins", "races"
+  add_foreign_key "race_proficiency_granted_joins", "proficiencies"
+  add_foreign_key "race_proficiency_granted_joins", "races"
+  add_foreign_key "race_trait_joins", "races"
+  add_foreign_key "race_trait_joins", "traits"
+  add_foreign_key "saving_throws", "class_lists"
   add_foreign_key "skills", "characters"
   add_foreign_key "spell_class_list_joins", "class_lists"
   add_foreign_key "spell_class_list_joins", "spells"
+  add_foreign_key "trait_proficiency_choice_joins", "proficiencies"
+  add_foreign_key "trait_proficiency_choice_joins", "traits"
+  add_foreign_key "trait_proficiency_granted_joins", "proficiencies"
+  add_foreign_key "trait_proficiency_granted_joins", "traits"
 end
