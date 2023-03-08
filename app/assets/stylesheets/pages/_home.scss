@@ -1,1 +1,47 @@
 // Specific CSS for your home-page
+
+.home {
+  background-color: $brown-500;
+  color: $green-400;
+  padding: 50px;
+  justify-content: space-between;
+  // background-image: url('https://cdn.dribbble.com/users/332860/screenshots/16373398/media/17592eea31b77200acd9f4a17584ecb7.jpg?compress=1&resize=1600x1200&vertical=top');
+  background-image: url('https://cdn.dribbble.com/userupload/2995005/file/original-8b4ed488c5a0695399f3fc60f7c6a0ae.jpg?compress=1&resize=1504x1128');
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+}
+
+.home h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.home-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.home-block-left,
+.home-block-right {
+  background-color: $brown-300;
+  color: $green-300;
+  padding: 20px;
+  width: 30%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  margin: 50px;
+}
+
+.home-block-left h1,
+.home-block-right h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.home-block-left h2,
+.home-block-right h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
