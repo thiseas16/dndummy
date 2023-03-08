@@ -1,0 +1,9 @@
+<% @spell.attributes.except('id', 'created_at', 'updated_at').each do |hash| %>
+  <% if hash[1] %>
+    <p><%= hash[0]%>: <%= hash[1] %></p>
+    <% end %>
+<% end %>
+
+<% @spell.class_lists.each do |c| %>
+  <%= link_to c.name, classes_show_path(c) %>
+<% end %>

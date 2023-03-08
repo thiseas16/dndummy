@@ -1,0 +1,41 @@
+<% @race.attributes.except('id', 'created_at', 'updated_at').each do |hash| %>
+  <% if hash[1] %>
+    <p><%= hash[0]%>: <%= hash[1] %></p>
+    <% end %>
+<% end %>
+
+ABILITY BONUSES
+<p>
+  <% @race.ability_bonuses.each do |ab| %>
+    <%= ab.ability_name %> : <%= ab.bonus %>
+  <% end %>
+</p>
+
+TRAITS
+<p>
+  <% @race.traits.each do |t| %>
+    <p><%= t.name %> : <%= t.description %></p>
+  <% end %>
+</p>
+
+LANGUAGES
+<p>
+  <% @race.languages.each do |l| %>
+    <%= l.name %>
+  <% end %>
+</p>
+
+PROFICIENCIES GRANTED
+<p>
+  <% @race.proficiencies.each do |p| %>
+    <%= p.name %>
+  <% end %>
+</p>
+
+PROFICIENCIES TO CHOOSE
+<p>
+  <% RaceProficiencyChoiceJoin.where(race: @race).each do |r| #THIS NEEDS TO BE FIXED %>
+    <% p = Proficiency.find(r.proficiency_id) %>
+    <%= p.name %>
+  <% end %>
+</p>

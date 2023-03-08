@@ -1,0 +1,5 @@
+<p>
+  <% @spells.each do |spell| %>
+    <%= link_to spell.name, spells_show_path(spell)  %>
+  <% end %>
+</p>

@@ -1,0 +1,5 @@
+<p>
+  <% @races.each do |r| %>
+    <%= link_to r.name, races_show_path(r)  %>
+  <% end %>
+</p>

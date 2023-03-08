@@ -1,0 +1,5 @@
+<p>
+  <% @languages.each do |l| %>
+    <%= link_to l.name, languages_show_path(l)  %>
+  <% end %>
+</p>

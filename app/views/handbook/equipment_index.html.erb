@@ -1,0 +1,5 @@
+<p>
+  <% @equipment.each do |e| %>
+    <%= link_to e.name, equipment_show_path(e)  %>
+  <% end %>
+</p>
