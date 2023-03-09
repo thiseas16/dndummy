@@ -1,0 +1,197 @@
+// DICE ROLLER
+.dice-roller {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.dice-block {
+  width: 45%;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+
+  input {
+    width: 60px;
+    height: 40px;
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  button {
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    border-color: black;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 2s;
+
+    &:active {
+      background-color: white;
+      color: #ff6c27;
+      transition: none;
+    }
+
+    &.undo-clear {
+      display: none;
+    }
+  }
+}
+
+.log-block {
+  width: 40%;
+  height: 80%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+  overflow: auto;
+
+  #log {
+    height: 100vh;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .dice-roller {
+    flex-direction: column;
+  }
+
+  .dice-block {
+    width: 100%;
+  }
+}
+
+
+
+// .dice-roller {
+//   box-sizing: border-box;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .dice-block {
+//   width: 50%;
+//   border: 1px solid black;
+//   border-radius: 4px;
+//   padding: 10px;
+//   margin: 5px;
+
+//   input {
+//     width: 40px;
+//     height: 30px;
+//     margin-bottom: 5px;
+//     float: inline-end;
+//   }
+
+//   button {
+//     padding: 10px;
+//     margin-top: 20px;
+//     margin-right: 20px;
+//     border-radius: 4px;
+//     border-color: black;
+//     background-color: gray;
+//     color: white;
+//     font-weight: bold;
+//     font-size: 14px;
+//     transition: all 2s;
+
+//     &:active {
+//       background-color: white;
+//       color: #ff6c27;
+//       transition: none;
+//     }
+
+//     &.undo-clear {
+//       display: none;
+//     }
+//   }
+// }
+
+// #log {
+//   overflow: scroll;
+//   height: 350px;
+// }
+
+// @media only screen and (max-width: 768px) {
+//   .dice-roller {
+//     flex-direction: column;
+//   }
+
+//   .dice-block {
+//     width: 100%;
+//   }
+// }
+
+
+// OPTION 2
+// .dice-roller {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .dice-block {
+//   border-radius: 10px;
+//   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+//   background-color: #f9f9f9;
+//   padding: 20px;
+//   margin: 10px;
+//   width: 40%;
+
+//   label {
+//     font-weight: bold;
+//   }
+
+//   input {
+//     width: 40px;
+//     height: 30px;
+//     margin-bottom: 10px;
+//     border-radius: 4px;
+//     border: none;
+//     background-color: #eee;
+//     padding: 5px;
+//     font-size: 14px;
+//   }
+
+//   .roll-it {
+//     padding: 10px;
+//     margin-top: 20px;
+//     margin-right: 20px;
+//     border-radius: 4px;
+//     border-color: black;
+//     background-color: #d35400;
+//     color: white;
+//     font-weight: bold;
+//     font-size: 14px;
+//     transition: all 0.2s;
+
+//     &:hover {
+//       background-color: #e67e22;
+//       cursor: pointer;
+//     }
+//   }
+
+//   &:hover {
+//     transform: translateY(-5px);
+//   }
+// }
+
+// #log {
+//   border-radius: 10px;
+//   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+//   background-color: #f9f9f9;
+//   padding: 20px;
+//   margin: 10px;
+//   width: 55%;
+//   height: 400px;
+//   overflow: scroll;
+// }
+
+// DICE ROLLER
