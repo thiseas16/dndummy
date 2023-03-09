@@ -1,12 +1,14 @@
 // ADD THE NEW BUTTONS UNDER THIS TEXT
+// DICE BUTTONs
+
 // NAVBAR BUTTONS
 .navbar-button {
   position: relative;
   display: inline-block;
   font-size: 18px;
   padding: 15px 30px;
-  color: #fff;
-  background-color: #a35f35;
+  color: $light-blue;
+  background-color: $charcoal;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -22,7 +24,7 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #ca8344;
+    background-color: $raisin-black;
     transition: all 0.3s ease-in-out;
   }
 
@@ -45,8 +47,8 @@
 
 
   &:hover {
-    color: #a35f35;
-    background-color: #fff;
+    color: $plum;
+    background-color: $light-blue;
     cursor: pointer;
 
     &::before {
@@ -65,8 +67,8 @@
   display: inline-block;
   font-size: 18px;
   padding: 15px 30px;
-  color: #fff;
-  background-color: #a35f35;
+  color: $light-blue;
+  background-color: $charcoal;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -103,8 +105,8 @@
 
 
   &:hover {
-    color: #a35f35;
-    background-color: #fff;
+    color: $plum;
+    background-color: $light-blue;
     cursor: pointer;
 
     &::before {
