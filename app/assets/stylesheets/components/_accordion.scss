@@ -1,0 +1,69 @@
+// FOR THE SPELLS INDEX
+.columns-container-spells-index{
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  padding: 15px;
+  .columns{
+    flex-grow: 1;
+    .column{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .empty-block{
+    color: rgba(0,0,0,0);
+    width: 1.5%;
+    height: 100%;
+  }
+}
+
+.accordion{
+  // padding: 50px;
+  .accordion-item{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .accordion-header{
+      .accordion-button{
+        .row{
+          .spell-field{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .accordion-collapse{
+      .accordion-body{
+        .btn{
+          border-radius: 10px;
+          a{
+            color: black;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    padding: 5px;
+    text-decoration: none;
+  }
+}
