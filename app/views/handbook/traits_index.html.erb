@@ -1,0 +1,5 @@
+<p>
+  <% @traits.each do |t| %>
+    <%= link_to t.name, traits_show_path(t)  %>
+  <% end %>
+</p>

@@ -1,0 +1,5 @@
+<% @language.attributes.except('id', 'created_at', 'updated_at').each do |hash| %>
+  <% if hash[1] %>
+    <p><%= hash[0]%>: <%= hash[1] %></p>
+    <% end %>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_08_192830) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -327,19 +327,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_192830) do
     t.string "name"
     t.text "description"
     t.text "higher_lvl"
-    t.integer "range"
+    t.string "range"
     t.integer "lvl"
     t.string "attack_type"
     t.string "dmg_type"
-    t.integer "dmg_at_lvl_1"
-    t.integer "dmg_at_lvl_2"
-    t.integer "dmg_at_lvl_3"
-    t.integer "dmg_at_lvl_4"
-    t.integer "dmg_at_lvl_5"
-    t.integer "dmg_at_lvl_6"
-    t.integer "dmg_at_lvl_7"
-    t.integer "dmg_at_lvl_8"
-    t.integer "dmg_at_lvl_9"
+    t.string "dmg_at_lvl_1"
+    t.string "dmg_at_lvl_2"
+    t.string "dmg_at_lvl_3"
+    t.string "dmg_at_lvl_4"
+    t.string "dmg_at_lvl_5"
+    t.string "dmg_at_lvl_6"
+    t.string "dmg_at_lvl_7"
+    t.string "dmg_at_lvl_8"
+    t.string "dmg_at_lvl_9"
     t.string "school"
     t.boolean "somatic_component"
     t.boolean "verbal_component"
@@ -354,6 +354,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_192830) do
     t.string "dmg_at_character_lvl_5"
     t.string "dmg_at_character_lvl_11"
     t.string "dmg_at_character_lvl_17"
+    t.string "material"
+    t.string "area_of_effect"
   end
 
   create_table "trait_proficiency_choice_joins", force: :cascade do |t|

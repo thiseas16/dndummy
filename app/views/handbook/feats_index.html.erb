@@ -1,0 +1,5 @@
+<p>
+  <% @feats.each do |f| %>
+    <%= link_to f.name, feats_show_path(f)  %>
+  <% end %>
+</p>
