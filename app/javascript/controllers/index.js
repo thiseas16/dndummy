@@ -4,11 +4,11 @@
 
 import { application } from "./application"
 
+import DescriptionChangeController from "./description_change_controller"
+application.register("description-change", DescriptionChangeController)
+
 import DiceRollerController from "./dice_roller_controller"
 application.register("dice-roller", DiceRollerController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-import LoadingController from "./loading_controller"
-application.register("loading", LoadingController)
