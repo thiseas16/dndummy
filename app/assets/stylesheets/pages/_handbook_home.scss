@@ -1,0 +1,57 @@
+.home-handbook {
+  position: relative;
+  height: 100vh;
+  background-color: $brown-500;
+  padding: 50px;
+  background-image: url('https://64.media.tumblr.com/aa2de240c7d3ad098645f29e1f8fe17c/tumblr_obylzfWQ4F1qbw2q1o1_1280.gifv');
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+}
+
+.handbook-container {
+  display: flex;
+  width: 100%;
+  // padding-right: 25%;
+}
+
+.description-container {
+  flex: 3;
+  width: 75%;
+  border-radius: 20px;
+  padding: 10px;
+
+  h2 {
+    background: $gradient-right;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  p {
+    background: $gradient-right;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+}
+
+.home-button-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 25%;
+}
+
+.main-title-handbook {
+  font-size: 48px;
+  margin-bottom: 20px;
+  background-color: $raisin-black;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid $eggplant;
+  text-align: center;
+  margin-top: -47px;
+  color: $slate-gray;
+}
