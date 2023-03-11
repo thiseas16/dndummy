@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :random_character, only: %i[new create]
   end
   scope '/handbook' do
-    get '', to: 'handbook#home'
+    get '', to: 'handbook#home', as: 'handbook'
     # Spells
     get 'spells', to: 'handbook#spells_index'
     get 'spells/:id', to: 'handbook#spells_show', as: 'spells_show'

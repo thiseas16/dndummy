@@ -1,0 +1,57 @@
+// FOOTER BUTTONS
+.footer-button {
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  padding: 15px 30px;
+  color: $light-blue;
+  background-color: $charcoal;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  margin: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #ca8344;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url(' https://media.tenor.com/gOCEHYul7PAAAAAi/dnd-dungeons-and-dragons.gif');
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  &:hover {
+    color: $plum;
+    background-color: $light-blue;
+    cursor: pointer;
+
+    &::before {
+      width: 100%;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
