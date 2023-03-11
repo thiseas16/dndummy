@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_11_172040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,34 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["race_id"], name: "index_ability_bonuses_on_race_id"
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum"
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
   create_table "attacks", force: :cascade do |t|
@@ -144,22 +172,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
     t.index ["encounter_id"], name: "index_characters_on_encounter_id"
   end
 
-  create_table "class_list_item_joins", force: :cascade do |t|
+  create_table "class_list_item_granted_joins", force: :cascade do |t|
     t.bigint "class_list_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["class_list_id"], name: "index_class_list_item_joins_on_class_list_id"
-    t.index ["item_id"], name: "index_class_list_item_joins_on_item_id"
+    t.index ["class_list_id"], name: "index_class_list_item_granted_joins_on_class_list_id"
+    t.index ["item_id"], name: "index_class_list_item_granted_joins_on_item_id"
   end
 
-  create_table "class_list_proficiency_joins", force: :cascade do |t|
+  create_table "class_list_proficiency_granted_joins", force: :cascade do |t|
     t.bigint "class_list_id", null: false
-    t.bigint "proficiency_id"
+    t.bigint "proficiency_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["class_list_id"], name: "index_class_list_proficiency_joins_on_class_list_id"
-    t.index ["proficiency_id"], name: "index_class_list_proficiency_joins_on_proficiency_id"
+    t.index ["class_list_id"], name: "index_class_list_proficiency_granted_joins_on_class_list_id"
+    t.index ["proficiency_id"], name: "index_class_list_proficiency_granted_joins_on_proficiency_id"
   end
 
   create_table "class_lists", force: :cascade do |t|
@@ -168,6 +196,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
     t.datetime "updated_at", null: false
     t.integer "hit_die"
     t.integer "proficiency_ammount"
+    t.text "h1"
+    t.text "h2"
+    t.text "h3"
+    t.text "h4"
+    t.string "h1_title"
+    t.string "h2_title"
+    t.string "h3_title"
+    t.string "h4_title"
+    t.text "description"
   end
 
   create_table "dice_rolls", force: :cascade do |t|
@@ -216,6 +253,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
     t.index ["campaign_id"], name: "index_images_on_campaign_id"
   end
 
+  create_table "item_choice_joins", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "item_choice_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_choice_id"], name: "index_item_choice_joins_on_item_choice_id"
+    t.index ["item_id"], name: "index_item_choice_joins_on_item_id"
+  end
+
+  create_table "item_choices", force: :cascade do |t|
+    t.integer "no_of_choices"
+    t.bigint "class_list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["class_list_id"], name: "index_item_choices_on_class_list_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -228,6 +282,38 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "level_feat_joins", force: :cascade do |t|
+    t.bigint "level_id", null: false
+    t.bigint "feat_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["feat_id"], name: "index_level_feat_joins_on_feat_id"
+    t.index ["level_id"], name: "index_level_feat_joins_on_level_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.integer "lvl"
+    t.integer "ability_score_bonuses"
+    t.integer "prof_bonus"
+    t.integer "cantrips_known"
+    t.integer "spells_known"
+    t.integer "spell_slots_lvl_1"
+    t.integer "spell_slots_lvl_2"
+    t.integer "spell_slots_lvl_3"
+    t.integer "spell_slots_lvl_4"
+    t.integer "spell_slots_lvl_5"
+    t.integer "spell_slots_lvl_6"
+    t.integer "spell_slots_lvl_7"
+    t.integer "spell_slots_lvl_8"
+    t.integer "spell_slots_lvl_9"
+    t.boolean "spellcasting"
+    t.text "class_specific"
+    t.bigint "class_list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["class_list_id"], name: "index_levels_on_class_list_id"
   end
 
   create_table "prerequisites", force: :cascade do |t|
@@ -243,6 +329,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
     t.string "prof_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "proficiency_choice_joins", force: :cascade do |t|
+    t.bigint "proficiency_choice_id", null: false
+    t.bigint "proficiency_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proficiency_choice_id"], name: "index_proficiency_choice_joins_on_proficiency_choice_id"
+    t.index ["proficiency_id"], name: "index_proficiency_choice_joins_on_proficiency_id"
+  end
+
+  create_table "proficiency_choices", force: :cascade do |t|
+    t.integer "no_of_choices"
+    t.bigint "class_list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["class_list_id"], name: "index_proficiency_choices_on_class_list_id"
   end
 
   create_table "race_language_joins", force: :cascade do |t|
@@ -400,6 +503,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
   end
 
   add_foreign_key "ability_bonuses", "races"
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "attacks", "characters"
   add_foreign_key "campaigns", "users"
   add_foreign_key "character_class_list_joins", "characters"
@@ -418,17 +523,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190835) do
   add_foreign_key "character_spell_joins", "spells"
   add_foreign_key "characters", "campaigns"
   add_foreign_key "characters", "encounters"
-  add_foreign_key "class_list_item_joins", "class_lists"
-  add_foreign_key "class_list_item_joins", "items"
-  add_foreign_key "class_list_proficiency_joins", "class_lists"
-  add_foreign_key "class_list_proficiency_joins", "proficiencies"
+  add_foreign_key "class_list_item_granted_joins", "class_lists"
+  add_foreign_key "class_list_item_granted_joins", "items"
+  add_foreign_key "class_list_proficiency_granted_joins", "class_lists"
+  add_foreign_key "class_list_proficiency_granted_joins", "proficiencies"
   add_foreign_key "dice_rolls", "campaigns"
   add_foreign_key "encounters", "campaigns"
   add_foreign_key "feat_class_list_joins", "class_lists"
   add_foreign_key "feat_class_list_joins", "feats"
   add_foreign_key "feats", "feats", column: "parent_feat_id"
   add_foreign_key "images", "campaigns"
+  add_foreign_key "item_choice_joins", "item_choices"
+  add_foreign_key "item_choice_joins", "items"
+  add_foreign_key "item_choices", "class_lists"
+  add_foreign_key "level_feat_joins", "feats"
+  add_foreign_key "level_feat_joins", "levels"
+  add_foreign_key "levels", "class_lists"
   add_foreign_key "prerequisites", "feats"
+  add_foreign_key "proficiency_choice_joins", "proficiencies"
+  add_foreign_key "proficiency_choice_joins", "proficiency_choices"
+  add_foreign_key "proficiency_choices", "class_lists"
   add_foreign_key "race_language_joins", "languages"
   add_foreign_key "race_language_joins", "races"
   add_foreign_key "race_proficiency_choice_joins", "proficiencies"
