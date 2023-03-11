@@ -3,3 +3,32 @@
     <%= link_to cl.name, classes_show_path(cl)  %>
   <% end %>
 </p>
+
+<div class = "class-index-container">
+  <div class="classes-container">
+    <div class= "row">
+      <% @class_lists.each do |cl| %>
+        <div class = "col-3 class" style="background-image: url('<%= cl_image_path cl.photo.key %>')">
+          <div class = "information">
+            <div class = "name">
+              <h1><%= cl.name %></h1>
+            </div>
+            <div class = "description"><p><%= cl.description %></p></div>
+            <div class = "hit-die"><p><strong>Hit Die:</strong><%= cl.hit_die %></p></div>
+            <div class = "saving-throws"><p><strong>Saves: </strong> <% cl.saving_throws.each do |st| %>
+              <%= st.name %>
+                <% if st == cl.saving_throws.first %>
+                  &
+                <% end %>
+              <% end %>
+            </p></div>
+          </div>
+          <div class = "button">
+            <%= link_to "READ ABOUT #{cl.name.upcase}", classes_show_path(cl), class: 'btn btn-dark' %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
