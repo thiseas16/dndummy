@@ -1,9 +1,12 @@
 .class-index-container{
+  background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1678651895/development/old_map_hkf58s.png');
   display: flex;
-  justify-content: center;;
+  justify-content: center;
   .classes-container{
-    width: 90%;
+    width: 1792px;
     .row{
+      display: flex;
+      justify-content: center;
       width: 100%;
       margin: 0px;
     }

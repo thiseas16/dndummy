@@ -111,5 +111,14 @@
         <% end %>
       </tbody>
     </table>
+    <div class = "class-features">
+      <h3>Class Features</h3>
+      <% @class_list.levels.each do |lvl| %>
+        <% lvl.feats.each do |f| %>
+          <h4><%= f.name %></h4>
+          <p><%= f.description %></p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
