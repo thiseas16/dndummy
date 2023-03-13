@@ -1,8 +1,22 @@
 .class-show-container{
+
+  h1 {
+    border-bottom: solid 2px black;
+  }
+
+  h2, h3{
+    border-left: solid 5px black;
+    padding-left: 10px;
+  }
+
   display: flex;
   justify-content: center;
   .information{
-    width: 75%;
+    width: 1024px;
+
+    .class-features{
+
+    }
   }
 }
 
