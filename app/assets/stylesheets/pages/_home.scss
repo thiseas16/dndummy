@@ -16,11 +16,6 @@ iframe {
   border: none;
 }
 
-
-.body{ //temporary
-  font-family: 'Pirata One', cursive;
-}
-
 .home {
   position: relative;
   height: 100vh;
@@ -85,12 +80,29 @@ iframe {
 .home-block-left h2,
 .home-block-midle h2,
 .home-block-right h2 {
-  font-size: 18px;
+  font-size: 36px; //changed to see how it looks on pirata
   margin-bottom: 10px;
   text-align: left; /* align the text to the left */
   font-weight: bold;
 }
 
+.home-block-left p, //temporary
+.home-block-midle p,
+.home-block-right p {
+  font-size: 18px;
+}
+
+.content h2{  //temporary
+  font-size: 62px;
+}
+
+.content p{  //temporary
+  font-size: 36px;
+}
+
+.home-button p{
+  font-size: 36px;
+}
 
 .home-banner {
   display: flex;

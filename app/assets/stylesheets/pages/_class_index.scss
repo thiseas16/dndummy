@@ -1,0 +1,11 @@
+.class-index-container{
+  display: flex;
+  justify-content: center;;
+  .classes-container{
+    width: 90%;
+    .row{
+      width: 100%;
+      margin: 0px;
+    }
+  }
+}

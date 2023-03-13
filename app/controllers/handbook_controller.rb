@@ -4,7 +4,7 @@ class HandbookController < ApplicationController
 
   def spells_index
     # @spells = Spell.all
-    @spells = Spell.paginate(page: params[:page], per_page: 20)
+    @spells = Spell.paginate(page: params[:page], per_page: 13)
   end
 
   def spells_show
