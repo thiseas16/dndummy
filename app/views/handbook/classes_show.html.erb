@@ -1,5 +1,124 @@
-<% @class_list.attributes.except('id', 'created_at', 'updated_at').each do |hash| %>
-  <% if hash[1] %>
-    <p><%= hash[0]%>: <%= hash[1] %></p>
-    <% end %>
-<% end %>
+<div class = "class-show-container">
+  <div class = "information">
+    <div class = "introduction">
+      <h1><%= @class_list.h1_title %></h1>
+      <p><%= @class_list.h1 %></p>
+      <h3><%= @class_list.h2_title %></h3>
+      <p><%= @class_list.h2 %></p>
+      <h3><%= @class_list.h3_title %></h3>
+      <p><%= @class_list.h3 %></p>
+      <h3><%= @class_list.h4_title %></h3>
+      <p><%= @class_list.h4 %></p>
+    </div>
+    <table class="cinereousTable">
+      <thead>
+        <tr>
+        <th>Level</th>
+        <th>Proficiency Bonus</th>
+        <th>Features</th>
+        <% if @class_list.levels.first.spellcasting == true%>
+          <% if @class_list.name != 'Ranger' && @class_list.name != 'Paladin' %>
+            <th>Cantrips Known</th>
+          <% end %>
+          <% if @class_list.name == 'Ranger' || @class_list.name == 'Sorcerer' %>
+            <th>Spells Known</th>
+          <% end %>
+          <th>1st</th>
+          <th>2nd</th>
+          <th>3rd</th>
+          <th>4th</th>
+          <th>5th</th>
+          <% if @class_list.name != 'Ranger' && @class_list.name != 'Paladin' %>
+            <th>6th</th>
+            <th>7th</th>
+            <th>8th</th>
+            <th>9th</th>
+          <% end %>
+        <% end %>
+        <% if @class_list.name == 'Barbarian' %>
+            <th>Rages</th>
+            <th>Rage Damage</th>
+        <% end %>
+        <% if @class_list.name == 'Rogue' %>
+            <th>Sneak Attack</th>
+        <% end %>
+        <% if @class_list.name == 'Monk' %>
+            <th>Martial Arts</th>
+            <th>Ki Points</th>
+            <th>Unarmored Movement</th>
+        <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% id = @class_list.id  %>
+
+        <% @class_list.levels.order(lvl: :asc).each do |lvl| %>
+          <tr>
+            <td><%= lvl.lvl %></td>
+            <td><%= lvl.prof_bonus %></td>
+            <td>
+              <% feats = Feat.joins(:class_lists).where(lvl: lvl.lvl, class_lists: id) %>
+
+              <% Feat.joins(:class_lists).where(lvl: lvl.lvl, class_lists: id).order(lvl: :asc).each_with_index do |f, index| %>
+                <% if index == feats.size - 1 %>
+                  <%= f.name %>
+                <% else %>
+                  <%= f.name %>,
+                <% end %>
+              <% end %>
+            </td>
+            <% if @class_list.levels.first.spellcasting == true%>
+              <% if @class_list.name != 'Ranger' && @class_list.name != 'Paladin' %>
+              <td><%= lvl.cantrips_known %></td>
+              <% end %>
+              <% if @class_list.name == 'Ranger' || @class_list.name == 'Sorcerer' %>
+                <td><%= lvl.spells_known %></td>
+              <% end %>
+              <td><%= lvl.spell_slots_lvl_1 %></td>
+              <td><%= lvl.spell_slots_lvl_2 %></td>
+              <td><%= lvl.spell_slots_lvl_3 %></td>
+              <td><%= lvl.spell_slots_lvl_4 %></td>
+              <td><%= lvl.spell_slots_lvl_5 %></td>
+              <% if @class_list.name != 'Ranger' && @class_list.name != 'Paladin' %>
+                <td><%= lvl.spell_slots_lvl_6 %></td>
+                <td><%= lvl.spell_slots_lvl_7 %></td>
+                <td><%= lvl.spell_slots_lvl_8 %></td>
+                <td><%= lvl.spell_slots_lvl_9 %></td>
+              <% end %>
+            <% end %>
+            <% if @class_list.name == 'Barbarian' %>
+              <td><%= lvl.parsed_class_specific["rage_count"] %></td>
+              <td><%= lvl.parsed_class_specific["rage_damage_bonus"] %></td>
+            <% end %>
+            <% if @class_list.name == 'Rogue' %>
+              <td>
+                <%= lvl.parsed_class_specific["sneak_attack"]["dice_count"] %>
+                d
+                <%= lvl.parsed_class_specific["sneak_attack"]["dice_value"] %>
+              </td>
+            <% end %>
+            <% if @class_list.name == 'Monk' %>
+            <%= lvl.parsed_class_specific %>
+              <td>
+                <%= lvl.parsed_class_specific["martial_arts"]["dice_count"] %>
+                d
+                <%= lvl.parsed_class_specific["martial_arts"]["dice_value"] %>
+              </td>
+              <td><%= lvl.parsed_class_specific["ki_points"] %></td>
+              <td><%= lvl.parsed_class_specific["unarmored_movement"] %> ft</td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class = "class-features">
+      <h3>Class Features</h3>
+      <% @class_list.levels.each do |lvl| %>
+        <% lvl.feats.each do |f| %>
+          <h4><%= f.name %></h4>
+          <p><%= f.description %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
