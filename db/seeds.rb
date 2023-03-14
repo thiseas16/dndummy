@@ -172,7 +172,7 @@ class_lists.each do |class_list|
 end
 puts "\nFinished with classes. Total: #{ClassList.count}\n"
 
-POPULATING THE CLASSES HEADERS
+# POPULATING THE CLASSES HEADERS
 
 # BARBARIAN
 barb = ClassList.find_by(name: 'Barbarian')

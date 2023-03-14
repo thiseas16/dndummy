@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :campaigns, only: %i[index new create show destroy] do
     get '/dice', to: 'campaigns#dice'
     resources :encounters, only: %i[new create index]
-    resources :characters, only: %i[index new create show edit update destroy]
+    # resources :characters, only: %i[index new create show edit update destroy]
+    get '/characters', to: 'campaigns#characters'
+    post '/characters', to: 'characters#create'
     resources :background, only: %i[new create]
     resources :art, only: %i[new create index]
     resources :random_character, only: %i[new create]

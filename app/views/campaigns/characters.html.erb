@@ -1,0 +1,44 @@
+<%# <h1>Here is your Character</h1>
+<div>
+  <form id="characterForm" data-controller="characters" data-characters-target="characterForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age">
+    <label for="class">Class:</label>
+    <select id="class" name="class">
+      <option value="barbarian">Barbarian</option>
+      <option value="wizard">Wizard</option>
+      <option value="rogue">Rogue</option>
+    </select>
+    <button type="submit">Create character</button>
+  </form>
+
+  <div id="characterOutput"></div>
+</div> %>
+
+<div>
+    <h1>OpenAI GPT-3 Demo</h1>
+    <form>
+      <label for="prompt">Enter a prompt:</label>
+      <input type="text" id="prompt" name="prompt"><br><br>
+      <input type="submit" value="Generate">
+    </form>
+    <div id="response"></div>
+    <script>
+      const form = document.querySelector('form');
+      const responseDiv = document.querySelector('#response');
+
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        const prompt = document.querySelector('#prompt').value;
+        const response = await fetch('/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt })
+        });
+        const text = await response.text();
+        responseDiv.innerText = text;
+      });
+    </script>
+</div>

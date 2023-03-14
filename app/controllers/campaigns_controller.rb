@@ -4,4 +4,7 @@ class CampaignsController < ApplicationController
 
   def dice
   end
+
+  def characters
+  end
 end

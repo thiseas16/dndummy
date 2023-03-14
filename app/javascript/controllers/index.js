@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CharactersController from "./characters_controller"
+application.register("characters", CharactersController)
+
 import DescriptionChangeController from "./description_change_controller"
 application.register("description-change", DescriptionChangeController)
 
