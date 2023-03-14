@@ -185,7 +185,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_10_220803) do
 
   create_table "class_list_proficiency_granted_joins", force: :cascade do |t|
     t.bigint "class_list_id", null: false
-    t.bigint "proficiency_id", null: false
+    t.bigint "proficiency_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["class_list_id"], name: "index_class_list_proficiency_granted_joins_on_class_list_id"
