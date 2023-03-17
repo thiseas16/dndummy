@@ -1,44 +1,14 @@
 .class-index-container{
+  background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1678651895/development/old_map_hkf58s.png');
   display: flex;
-  justify-content: center;;
+  justify-content: center;
   .classes-container{
-    width: 90%;
+    width: 1792px;
     .row{
+      display: flex;
+      justify-content: center;
       width: 100%;
       margin: 0px;
-      .class{
-        position: relative;
-        background: rgb(238, 193, 30);
-        // background-image: url('https://www.seekpng.com/png/full/141-1413984_barbarian-d-d-barbarian.png');
-        background-position: right;
-        background-size: contain;
-        background-repeat: no-repeat;
-        padding: 15px;
-        margin: 30px;
-        .information{
-          width: 70%;
-          padding: 10px;
-          background-color: rgba(255, 255, 255, 0.25); /* 50% transparent white */
-          backdrop-filter: blur(5px); /* add a blur effect */
-          .name{
-            display: flex;
-            img{
-              height: 50px;
-              width: 50px;
-              size: cover;
-            }
-          }
-        }
-
-        .button{
-          width: 70%;
-          display: flex;
-          justify-content: center;
-          align-items: bottom;
-          margin-top: 10px;
-        }
-      }
     }
-
   }
 }

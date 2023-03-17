@@ -1,0 +1,54 @@
+<div class="new_random_character_home">
+
+  <h1 class="main-title">Who I am</h1>
+
+  <div class="random-form">
+    <%= form_tag campaign_random_character_index_path, method: :post do %>
+      <div class="form-group">
+        <%= label_tag :prompt, "Give some Styling to your Character", class: "label_form" %>
+        <%= text_field_tag :prompt, nil, class: "form-control", class: "text_form"%>
+      </div>
+      <%= submit_tag "Create", class: 'home-button' %>
+    <% end %>
+  </div>
+
+  <div class="example_title">
+    <h2>Do you need some ideas? Check under the prompt examples for your future character</h2>
+    <h4>Remember, you don't need to write everything, or nothing, use them as examples</h4>
+  </div>
+
+  <div class="example_container">
+    <div class="example">
+      <p>  Elf Rogue from the City:</p>
+      <ul>
+        <li>Background: Grew up on the streets of a city</li>
+        <li>Class: Rogue</li>
+        <li>Race: Elf</li>
+        <li>Key skills: Pickpocketing and running</li>
+        <li>Key traits: Street-smart, cunning, and quick-witted</li>
+      </ul>
+    </div>
+    <div class="example">
+      <p>Dragonborn Paladin on a Quest:</p>
+      <ul>
+        <li>Background: On a holy quest</li>
+        <li>Class: Paladin/li>
+        <li>Race: Dragonborn</li>
+        <li>Key skills: Fighting and protecting</li>
+        <li>Key traits: Devout, honorable, and courageous</li>
+      </ul>
+    </div>
+    <div class="example">
+      <p>Human Wizard with Mysterious Powers:</p>
+      <ul>
+        <li>Background: Mysterious powers</li>
+        <li>Class: Wizard</li>
+        <li>Race: Human</li>
+        <li>Key skills: Magic spells</li>
+        <li>Key traits: Intelligent, enigmatic, and curious</li>
+      </ul>
+    </div>
+  </div>
+  <p>Response 1: <%#= @response1 %></p>
+  <p>Response Hash <%#= @responsehash["Basic Information"]["Character Name"] %></p>
+</div>

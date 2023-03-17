@@ -1,0 +1,106 @@
+@import url('https://fonts.cdnfonts.com/css/pirata-one');
+
+
+.container-card {
+  padding: 10px;
+  margin-bottom: 20px;
+  margin: 0 10px 0 10px; /* add margin to the sides */
+  display: inline-flex; /* add display flex to align the content */
+  opacity: 0.7;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  align-self: auto;
+  flex-flow: row nowrap;
+}
+
+.container-card:hover {
+ opacity: 1.0;
+}
+
+.frame5 {
+position: relative;
+background-color:#000000;
+height:177px;
+width:425px;
+filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+padding:0px;
+flex-wrap: wrap;
+margin-left: 110px;
+}
+
+.rectangle3 {
+font-size: 25px;
+background-color:#fff400;
+height:35px;
+width:357px;
+filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+border:1px solid #000000;
+position: absolute;
+}
+
+.rectangle4 {
+font-size: 25px;
+background-color: white;
+height: 35px;
+width: 68px;
+position:absolute; left: 357px;
+filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+border:1px solid #000000;
+  }
+
+.hero_dmgscreen_01{
+height:110px;
+width: 45px;
+border:1px solid #000000;
+left:0px;
+top:808px;
+position:absolute;
+}
+
+.rectangle5 {
+font-size: 25px;
+background-color:#ce5959;
+height:32px;
+width:425px;
+border:1px solid #000000;
+position:absolute;
+top:145px;
+left:0px;
+}
+
+.title-campaigns {
+  text-align: center;
+  font-family: 'Pirata One', sans-serif;
+  font-size: 48px;
+  background-color: #272a3b;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid #62475d;
+  text-align: center;
+  color: #718b95;
+}
+
+.page-container-index {
+  position: relative;
+  height: 100vh;
+  padding: 60px;
+}
+
+.rectangle3,
+.rectangle4,
+.rectangle5 {
+  color: $slate-gray;
+}
+
+.campaign-home {
+  position: relative;
+  height: 100vh;
+  background-color: $brown-500;
+  padding: 50px;
+  background-image: url('https://64.media.tumblr.com/aa2de240c7d3ad098645f29e1f8fe17c/tumblr_obylzfWQ4F1qbw2q1o1_1280.gifv');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -37,10 +37,10 @@
     <div class="form-separator"></div>
 
     <div class="form-row">
-      <button class="form-button" data-action="click->dice-roller#rollAll">Roll!</button>
-      <button class="form-button" data-action="click->dice-roller#spacer">Spacer</button>
-      <button class="form-button" data-action="click->dice-roller#clearLog">Clear Log</button>
-      <button class="form-button" data-action="click->dice-roller#load" id="undoClear" style="display: none;">Undo Clear</button>
+      <button class="dice-button" data-action="click->dice-roller#rollAll">Roll!</button>
+      <button class="dice-button" data-action="click->dice-roller#spacer">Spacer</button>
+      <button class="dice-button" data-action="click->dice-roller#clearLog">Clear Log</button>
+      <button class="dice-button" data-action="click->dice-roller#load" id="undoClear" style="display: none;">Undo Clear</button>
     </div>
   </div>
 
@@ -48,71 +48,3 @@
     <div id="log" data-dice-roller-target="log"></div>
   </div>
 </div>
-
-
-<%# OPTION 1 %>
-<%# <div class="dice-roller" data-controller="dice-roller">
-  <div class="dice-block">
-    <label for="to-hit-bonus">To Hit Bonus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <input id="to-hit-bonus" type="number" value="0" data-dice-roller-target="toHitBonus">
-    <br>
-
-    <label for="damage-dice">Damage Dice Type</label>
-    (d<input id="damage-dice" type="number" value="20" data-dice-roller-target="damageDice">)
-    <br>
-
-    <label for="damage-dice-count">Damage Dice Count</label>
-    <input id="damage-dice-count" type="number" value="1" data-dice-roller-target="damageCount">
-    <br>
-
-    <label for="damage-bonus">Damage Bonus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <input id="damage-bonus" type="number" value="0" data-dice-roller-target="damageBonus">
-    <br>
-
-    <label for="attack-count">Number of Attacks</label>
-    <input id="attack-count" type="number" value="1" data-dice-roller-target="numAttack">
-    <br>
-
-    <button class="roll-it" data-action="click->dice-roller#rollAll">Roll!</button>
-    <button class="roll-it" data-action="click->dice-roller#spacer">Spacer</button>
-    <button class="roll-it" data-action="click->dice-roller#clearLog">Clear Log</button>
-    <button class="roll-it undo-clear" data-action="click->dice-roller#load" id="undoClear">Undo Clear</button>
-  </div>
-  <div class="dice-block">
-    <div id="log" data-dice-roller-target="log"></div>
-  </div>
-</div> %>
-
-<%# OPTION 2 %>
-<%#
-<div class="dice-roller" data-controller="dice-roller">
-  <div class="dice-block">
-    <label for="to-hit-bonus">To Hit Bonus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <input id="to-hit-bonus" type="number" value="0" data-dice-roller-target="toHitBonus">
-    <br>
-
-    <label for="damage-dice">Damage Dice Type</label>
-    (d<input id="damage-dice" type="number" value="20" data-dice-roller-target="damageDice">)
-    <br>
-
-    <label for="damage-dice-count">Damage Dice Count</label>
-    <input id="damage-dice-count" type="number" value="1" data-dice-roller-target="damageCount">
-    <br>
-
-    <label for="damage-bonus">Damage Bonus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <input id="damage-bonus" type="number" value="0" data-dice-roller-target="damageBonus">
-    <br>
-
-    <label for="attack-count">Number of Attacks</label>
-    <input id="attack-count" type="number" value="1" data-dice-roller-target="numAttack">
-    <br>
-
-    <button class="roll-it" data-action="click->dice-roller#rollAll">Roll!</button>
-    <button class="roll-it" data-action="click->dice-roller#spacer">Spacer</button>
-    <button class="roll-it" data-action="click->dice-roller#clearLog">Clear Log</button>
-    <button class="roll-it" data-action="click->dice-roller#load" id="undoClear" style="display: none;">Undo Clear</button>
-  </div>
-  <div class="dice-block">
-    <div id="log" data-dice-roller-target="log"></div>
-  </div>
-</div> %>
