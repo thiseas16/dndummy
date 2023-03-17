@@ -5,12 +5,23 @@
 
   .header{
     width: 40%;
+    background-color: $slate-gray-difuse;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 2px solid $eggplant;
   }
   .spell-container{
     border: solid 1px black;
     border-top: solid 10px black;
     padding: 25px;
     width: 40%;
+    background-color: $slate-gray-difuse;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 2px solid $eggplant;
+
     .spell-info{
       // padding: 15px;
       .info{
@@ -23,6 +34,7 @@
         }
       }
     }
+
     .description{
       padding-top: 10px;
       border-top: solid 5px black;

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get 'openai', to: 'openai#index'
+  post 'openai/generate'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
     get '/dice', to: 'campaigns#dice'
     resources :encounters, only: %i[new create index]
     resources :characters, only: %i[index new create show edit update destroy]
+    #post '/create_character', to: 'campaigns#create_character'
+    #post '/generate_response', to: 'characters#generate_response'
     resources :backgrounds, only: %i[new create]
     get '/images/all', to: 'images#all', as: 'all_images'
     resources :images, only: %i[new create index]
