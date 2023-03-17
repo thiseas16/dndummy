@@ -1,0 +1,160 @@
+/* D&D 5e character sheet form styling */
+form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.character-details {
+  background-color: #f9f9f9;
+  // background-image: url('https://example.com/background-image.jpg');
+  background-size: cover;
+  background-position: center center;
+  padding: 30px;
+  border: 1px solid black;
+  margin-bottom: 30px;
+}
+
+.character-details h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.character-details .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.character-details .row .col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.character-details .row .col:last-child {
+  margin-right: 0;
+}
+
+.character-details label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.character-details input[type="text"],
+.character-details input[type="number"],
+.character-details textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.character-details textarea {
+  height: 100px;
+}
+
+.character-details input[type="submit"] {
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.character-details input[type="submit"]:hover {
+  background-color: #e74c3c;
+}
+
+.character-details .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.character-details .col {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.character-details .col:first-child {
+  margin-left: 0;
+}
+
+.character-details .col:last-child {
+  margin-right: 0;
+}
+
+.character-details .form-group {
+  margin-bottom: 20px;
+}
+
+.character-details label {
+  font-weight: bold;
+}
+
+.character-details .form-control {
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.character-details .form-control:focus {
+  box-shadow: none;
+  border-color: black;
+}
+
+.character-details .form-check {
+  padding-left: 20px;
+}
+
+.character-details .form-check-label {
+  font-weight: normal;
+}
+
+.character-details .form-check-input {
+  margin-right: 10px;
+}
+
+.character-details .form-check-inline {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.character-details .btn {
+  background-color: #d90000;
+  border-color: #d90000;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.character-details .btn:hover {
+  background-color: #c20000;
+  border-color: #c20000;
+  cursor: pointer;
+}
+
+.character-details .btn:active {
+  background-color: #a60000;
+  border-color: #a60000;
+}
+
+.character-details .btn:focus {
+  box-shadow: none;
+}

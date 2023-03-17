@@ -9,9 +9,12 @@ Rails.application.routes.draw do
     get '/dice', to: 'campaigns#dice'
     resources :encounters, only: %i[new create index]
     resources :characters, only: %i[index new create show edit update destroy]
-    resources :background, only: %i[new create]
-    resources :art, only: %i[new create index]
-    resources :random_character, only: %i[new create]
+    resources :backgrounds, only: %i[new create]
+    get '/images/all', to: 'images#all', as: 'all_images'
+    resources :images, only: %i[new create index]
+    get '/images/portrait/new', to: 'images#new_portrait', as: 'new_portrait_image'
+    post '/images/portrait', to: 'images#create_portrait', as: 'create_portrait_image'
+    resources :random_characters, only: %i[new create]
   end
   scope '/handbook' do
     get '', to: 'handbook#home', as: 'handbook'
