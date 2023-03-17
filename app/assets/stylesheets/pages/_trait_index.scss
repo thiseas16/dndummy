@@ -1,0 +1,50 @@
+.trait-home {
+  position: relative;
+  background-color: $brown-500;
+  padding: 50px;
+  background-image: url('https://64.media.tumblr.com/aa2de240c7d3ad098645f29e1f8fe17c/tumblr_obylzfWQ4F1qbw2q1o1_1280.gifv');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  min-height: calc(100vh - 100px);
+}
+
+.catching-phrase {
+  display: flex;
+  justify-content: center;
+}
+
+.main-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  background-color: $raisin-black;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid $eggplant;
+  text-align: center;
+  margin-top: -47px;
+  color: $slate-gray;
+}
+
+.traits-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.trait {
+  background-color: $light-blue;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid $eggplant;
+
+  .home-button {
+    color: $space-cadet-var;
+    font-weight: bold;
+  }
+}

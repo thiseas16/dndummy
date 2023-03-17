@@ -11,7 +11,7 @@ messages = [{
   role: "system", content: "You are a helpful asistant" # here we can change the asistant to another thing, so ChatGpt will answer like he was in this case asistant
 }]
 
-client = OpenAI::Client.new(access_token: "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")
+client = OpenAI::Client.new(access_token: "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")
 message1 = %Q[Take this example of a hash, representing a character in dnd 5e. Generate a new one in the same format, with only these predefined: (If nothing is mentioned, generate a random character)
   {
     "Basic Information": {

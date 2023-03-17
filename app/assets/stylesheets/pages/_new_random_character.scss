@@ -31,26 +31,35 @@
     border: 1px solid #ccc;
   }
 }
-.example_title {
-  background-color: $slate-gray-difuse;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px;
-  border: 2px solid $eggplant;
-}
-.example_container {
-  display: flex;
 
-  .example {
-    background: $slate-gray-difuse;
-    margin: 20px;
-    border-radius: 20px;
-    width: 25%;
-    overflow: hidden;
+.example_main_container {
+  align-items: center;
+
+  .example_title {
+    background-color: $slate-gray-difuse;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
     border: 2px solid $eggplant;
+  }
 
-    p {
-      margin: 10px; /* Add some margin around the <p> element */
+  .example_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .example {
+      background: $slate-gray-difuse;
+      margin: 20px;
+      border-radius: 20px;
+      width: calc(33.33% - 40px);
+      max-width: 400px;
+      overflow: hidden;
+      border: 2px solid $eggplant;
+
+      p {
+        margin: 10px;
+      }
     }
   }
 }

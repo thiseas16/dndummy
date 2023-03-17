@@ -1,5 +1,12 @@
-<p>
-  <% @traits.each do |t| %>
-    <%= link_to t.name, traits_show_path(t)  %>
-  <% end %>
-</p>
+<div class="trait-home">
+  <div class="catching-phrase">
+    <h1 class="main-title">Welcome to DnDummy</h1>
+  </div>
+  <div class="traits-container">
+    <% @traits.each do |t| %>
+      <div class="trait">
+        <%= link_to t.name, traits_show_path(t) %>
+      </div>
+    <% end %>
+  </div>
+</div>
