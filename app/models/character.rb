@@ -17,4 +17,5 @@ class Character < ApplicationRecord
   has_many :languages, through: :character_language_joins
   has_many :attacks
   has_many :skills
+  has_one_attached :photo
 end

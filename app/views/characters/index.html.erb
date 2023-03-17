@@ -1,4 +1,10 @@
-<h1>My Characters</h1>
-
-
 <%= link_to 'Random Character',  new_campaign_random_character_path %>
+
+Characters:
+
+<% @characters.each do |c| %>
+  <p><%= link_to "#{c.name}", campaign_character_path(@campaign, c) %></p>
+<% end %>
+
+<%= link_to 'Create a new character', new_campaign_character_path(@campaign) %>
+

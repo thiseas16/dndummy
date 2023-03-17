@@ -1,92 +1,29 @@
 <div class="campaign-home">
-    <div class="catching-phrase">
+  <div class="catching-phrase">
     <h1 class="main-title">Welcome to our Campaigns!</h1>
-    </div>
+  </div>
 
+  <%= link_to 'Add a new campaign', new_campaign_path%>
 
-<div class="page-container-index">
-  <div class="container-card">
-    <div class="frame5">
-      <div class="rectangle3">
-      Title
-      </div>
-        <div class="rectangle4">
-        5 ⭐
+  <div class="page-container-index">
+    <% @campaigns.each do |c| %>
+      <a href="<%= campaign_path(c) %>">
+        <div class="container-card">
+          <% path = 'https://res.cloudinary.com/dnorlz2hl/image/upload/v1678899102/development/campaign_ultrawide_ofhq14.jpg' %>
+          <% path = cl_image_path c.photo.key  if c.photo.attached? %>
+          <div class="frame5" style="background-image: url('<%= path %>')">
+            <div class="rectangle3">
+              <%= c.title %>
+            </div>
+            <div class="rectangle4">
+              5 ⭐
+            </div>
+            <div class="rectangle5">
+              <%= c.description %>
+            </div>
+          </div>
         </div>
-        <div class="rectangle5">
-        Description
-        </div>
-      </div>
-    </div>
-
-  <div class="container-card">
-    <div class="frame5">
-      <div class="rectangle3">
-      Title
-      </div>
-        <div class="rectangle4">
-        5 ⭐
-        </div>
-        <div class="rectangle5">
-        Description
-        </div>
-      </div>
-    </div>
-
-  <div class="container-card">
-    <div class="frame5">
-      <div class="rectangle3">
-      Title
-      </div>
-        <div class="rectangle4">
-        5 ⭐
-        </div>
-        <div class="rectangle5">
-        Description
-        </div>
-      </div>
-    </div>
-
-    <div class="container-card">
-    <div class="frame5">
-      <div class="rectangle3">
-      Title
-      </div>
-        <div class="rectangle4">
-        5 ⭐
-        </div>
-        <div class="rectangle5">
-        Description
-        </div>
-      </div>
-    </div>
-
-    <div class="container-card">
-    <div class="frame5">
-      <div class="rectangle3">
-      Title
-      </div>
-        <div class="rectangle4">
-        5 ⭐
-        </div>
-        <div class="rectangle5">
-        Description
-        </div>
-      </div>
-    </div>
-
-    <div class="container-card">
-    <div class="frame5">
-      <div class="rectangle3">
-      Title
-      </div>
-        <div class="rectangle4">
-        5 ⭐
-        </div>
-        <div class="rectangle5">
-        Description
-        </div>
-      </div>
-    </div>
-</div>
+      </a>
+    <% end %>
+  </div>
 </div>

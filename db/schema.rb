@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_11_212047) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_16_212053) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -117,15 +117,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_212047) do
     t.index ["proficiency_id"], name: "index_character_proficiency_joins_on_proficiency_id"
   end
 
-  create_table "character_race_joins", force: :cascade do |t|
-    t.bigint "race_id", null: false
-    t.bigint "character_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_character_race_joins_on_character_id"
-    t.index ["race_id"], name: "index_character_race_joins_on_race_id"
-  end
-
   create_table "character_spell_joins", force: :cascade do |t|
     t.bigint "spell_id", null: false
     t.bigint "character_id", null: false
@@ -165,9 +156,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_212047) do
     t.integer "int"
     t.integer "wis"
     t.bigint "campaign_id", null: false
-    t.bigint "encounter_id", null: false
+    t.bigint "encounter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "race"
+    t.string "class_list"
     t.index ["campaign_id"], name: "index_characters_on_campaign_id"
     t.index ["encounter_id"], name: "index_characters_on_encounter_id"
   end
@@ -517,8 +510,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_212047) do
   add_foreign_key "character_language_joins", "languages"
   add_foreign_key "character_proficiency_joins", "characters"
   add_foreign_key "character_proficiency_joins", "proficiencies"
-  add_foreign_key "character_race_joins", "characters"
-  add_foreign_key "character_race_joins", "races"
   add_foreign_key "character_spell_joins", "characters"
   add_foreign_key "character_spell_joins", "spells"
   add_foreign_key "characters", "campaigns"

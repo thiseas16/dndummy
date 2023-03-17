@@ -18,6 +18,8 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+gem 'wicked' #multi page form
+
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 
@@ -53,10 +55,6 @@ gem "sassc-rails"
 # Httparty for api requests
 gem 'httparty'
 
-# OPEN AI GEM -> TO UNINSTALL A GEM RUN GEM UNINSTALL NAME_OF_THE_GEM
-# gem 'openai'
-
-# OPEN AI RUBY GEM
 gem 'ruby-openai'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
