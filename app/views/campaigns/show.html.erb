@@ -1,1 +1,47 @@
-<h1>This Is a Campaign Chow</h1>
+<div class = "campaign-show-container" data-controller="campaign-description-change">
+  <div class = "row">
+    <div class = "campaign-card col-3">
+      <a href="<%= campaign_dice_path(@campaign) %>">
+        <div data-action= "mouseover->campaign-description-change#change1" class = "card-image dice" style = "background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679083294/dnd_dice_oyhh2l.jpg')">
+          <div class = "card-header">
+            <h1>Dice Roller</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class = "campaign-card col-3">
+      <a href="<%= campaign_images_path(@campaign) %>">
+        <div data-action= "mouseover->campaign-description-change#change2" class = "card-image art" style = "background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679012948/development/mnba16yzbq76apdpxju0fq0jq3cl.png')">
+          <div class = "card-header">
+            <h1>Generate Art</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class = "campaign-card col-3">
+      <a href="<%= campaign_characters_path(@campaign) %>">
+        <div data-action= "mouseover->campaign-description-change#change3" class = "card-image characters" style = "background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679083299/dnd_characters_nyu1hz.jpg')">
+          <div class = "card-header">
+            <h1>Characters</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class = "campaign-card col-3">
+        <a href="<%=campaign_encounters_path(@campaign) %>">
+        <div data-action= "mouseover->campaign-description-change#change4" class = "card-image encounters" style = "background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679084705/dnd-encounter_ybt6c5.webp')">
+          <div class = "card-header">
+            <h1>Encounters</h1>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="description-container">
+    <h2>Information Description</h2>
+    <p data-campaign-description-change-target="description">...</p>
+  </div>
+</div>

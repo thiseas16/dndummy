@@ -1,0 +1,8 @@
+<h1><strong><%= link_to 'GENERATE NEW IMAGE', new_campaign_image_path %></strong></h1>
+
+<% @images.each_with_index do |i, index| %>
+  <h1><%= index + 1%>: <%= i.prompt %></h1>
+  <p><%= cl_image_tag i.photo.key, fetch_format: :auto, crop: :fill %></p>
+<% end %>
+
+<%= link_to 'Back to Campaign', campaign_path(@campaign) %>

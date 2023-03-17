@@ -1,0 +1,52 @@
+.campaign-show-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .description-container{
+    width: 70%;
+    padding: 50px;
+  }
+}
+
+.row{
+  width: 70%;
+}
+
+.campaign-card{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .card-image{
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    border-radius: 15px;
+    width: 400px;
+    height: 300px;
+    background-position: 50% 45%;
+    background-size: cover;
+    box-shadow: 0px 0px 10px;
+
+    .card-header{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(5px);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+  }
+
+  .card-image:hover {
+    opacity: 0.7;
+  }
+  a {
+    text-decoration: none; /* removes underline */
+    color: inherit; /* inherits color from parent */
+    border: none; /* removes any default border */
+    outline: none; /* removes focus outline */
+  }
+}

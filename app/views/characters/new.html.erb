@@ -1,0 +1,60 @@
+<%= simple_form_for [@campaign, @character], html: {class: 'character-details'} do |f| %>
+  <div class = "character-form-wrapper">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Character Information</h4>
+        <div class="form-group">
+          <%= f.input :name, label: "Name" %>
+
+          <%= f.input :class_list, label: "Class", include_blank: false do %>
+          <%= f.select :class_list, ClassList.all.map { |cl| [cl.name, cl.name] } %>
+          <% end %>
+
+          <%= f.input :race, label: "Race", include_blank: false do %>
+          <%= f.select :race, Race.all.map { |r| [r.name, r.name] } %>
+          <% end %>
+
+          <%= f.input :age, label: "Age" %>
+          <%= f.input :height, label: "Height" %>
+          <%= f.input :weight, label: "Weight" %>
+          <%= f.input :eyes, label: "Eyes" %>
+          <%= f.input :skin, label: "Skin" %>
+          <%= f.input :hair, label: "Hair" %>
+        </div>
+        <h4>Attributes</h4>
+        <div class="form-group">
+          <%= f.input :str, label: "Strength" %>
+          <%= f.input :dex, label: "Dexterity" %>
+          <%= f.input :const, label: "Constitution" %>
+          <%= f.input :int, label: "Intelligence" %>
+          <%= f.input :wis, label: "Wisdom" %>
+          <%= f.input :cha, label: "Charisma" %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Combat Information</h4>
+        <div class="form-group">
+          <%= f.input :level, label: "Level" %>
+          <%= f.input :exp, label: "Experience Points" %>
+          <%= f.input :total_hp, label: "Total Hit Points" %>
+          <%= f.input :armor_class, label: "Armor Class" %>
+          <%= f.input :speed, label: "Speed" %>
+          <%= f.input :inititiave, label: "Initiative" %>
+        </div>
+        <h4>Personality and Background</h4>
+        <div class="form-group">
+          <%= f.input :personality_traits, label: "Personality Traits" %>
+          <%= f.input :ideals, label: "Ideals" %>
+          <%= f.input :bonds, label: "Bonds" %>
+          <%= f.input :flaws, label: "Flaws" %>
+          <%= f.input :backstory, label: "Backstory" %>
+          <%= f.input :appearance, label: "Appearance" %>
+          <%= f.input :alignment, label: "Alignment" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

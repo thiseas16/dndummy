@@ -13,16 +13,22 @@
     <table class="cinereousTable">
       <thead>
         <tr>
-        <th>Level</th>
-        <th>Proficiency Bonus</th>
-        <th>Features</th>
+        <th rowspan="2">Level</th>
+        <th rowspan="2">Proficiency Bonus</th>
+        <th rowspan="2">Features</th>
         <% if @class_list.levels.first.spellcasting == true%>
           <% if @class_list.name != 'Ranger' && @class_list.name != 'Paladin' %>
-            <th>Cantrips Known</th>
+            <th rowspan="2">Cantrips Known</th>
           <% end %>
           <% if @class_list.name == 'Ranger' || @class_list.name == 'Sorcerer' %>
-            <th>Spells Known</th>
+            <th rowspan="2">Spells Known</th>
           <% end %>
+          <% if @class_list.name != 'Ranger' && @class_list.name != 'Paladin' %>
+            <th colspan="9">—Spell Slots per Spell Level—</th>
+          <% else %>
+            <th colspan="5">—Spell Slots per Spell Level—</th>
+          <% end %>
+          <tr>
           <th>1st</th>
           <th>2nd</th>
           <th>3rd</th>
@@ -34,6 +40,7 @@
             <th>8th</th>
             <th>9th</th>
           <% end %>
+          </tr>
         <% end %>
         <% if @class_list.name == 'Barbarian' %>
             <th>Rages</th>

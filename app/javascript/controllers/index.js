@@ -7,6 +7,9 @@ import { application } from "./application"
 import DescriptionChangeController from "./description_change_controller"
 application.register("description-change", DescriptionChangeController)
 
+import CampaignDescriptionChangeController from "./campaign_description_change_controller"
+application.register("campaign-description-change", CampaignDescriptionChangeController)
+
 import DiceRollerController from "./dice_roller_controller"
 application.register("dice-roller", DiceRollerController)
 

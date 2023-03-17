@@ -1,0 +1,7 @@
+Characters:
+
+<% @characters.each do |c| %>
+  <p><%= link_to "#{c.name}", campaign_character_path(@campaign, c) %></p>
+<% end %>
+
+<%= link_to 'Create a new character', new_campaign_character_path(@campaign) %>
