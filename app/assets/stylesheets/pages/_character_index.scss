@@ -1,0 +1,94 @@
+.index-characters {
+  position: relative;
+  height: 100vh;
+  background-color: $brown-500;
+  padding: 50px;
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/d9ew4cw-2ee28adc-54fa-4aaa-ba27-004d17c791b3.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZDlldzRjdy0yZWUyOGFkYy01NGZhLTRhYWEtYmEyNy0wMDRkMTdjNzkxYjMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.PY4OWt___JnovOqLnmLmmQc9UZZtxwVzEolgUTLIk28');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.character-banner {
+  display: flex;
+  // justify-content: center;
+  // position: relative;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 960px;
+  color: $byzantium;
+  font-weight: bold;
+
+  .character-content {
+    backdrop-filter: blur(2px);
+    position: relative;
+    width: 50%;
+    // margin-left: 20px;
+    // margin-right: 20px;
+    background:  rgba(0, 0, 0, 0.356);
+    border-radius: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.character-container {
+  display: flex;
+  width: 100%;
+  // padding-right: 25%;
+}
+
+.character-description-container {
+  flex: 3;
+  width: 75%;
+  border-radius: 20px;
+  padding: 10px;
+
+  h2 {
+    background: $gradient-right;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid $eggplant;
+  }
+
+  p {
+    // background: $gradient-right;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+}
+
+.character-card {
+  display: flex;
+  align-items: center;
+  background: $gradient-right;
+  border-radius: 20px;
+  border: 2px solid $eggplant;
+  padding: 10px;
+
+  .character-image-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .character-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .character-info-container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.charaters-buttons {
+  margin: 10px;
+}

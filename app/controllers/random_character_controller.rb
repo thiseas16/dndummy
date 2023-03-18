@@ -3,6 +3,7 @@ require 'json'
 
 class RandomCharacterController < ApplicationController
   def new
+    @campaign = Campaign.find(params[:campaign_id])
   end
 
   def create
@@ -196,7 +197,7 @@ class RandomCharacterController < ApplicationController
           "Weight": "90kg",
           "Eyes": "Piercing Green",
           "Skin": "Smooth and pale ivory",
-          "Hair": "Long, flowing silver"
+          "Hair": "Long, flowing silver",
           "Description": "Erevan Moonshadow is a lean elf with silver hair, green eyes, and a roguish demeanor. He wears dark, form-fitting leather armor, carries sleek weapons, and moves with a graceful fluidity. He exudes confidence and control."
         }
       }]

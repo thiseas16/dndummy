@@ -1,9 +1,48 @@
-<%= link_to 'Random Character',  new_campaign_random_character_path %>
+<div class="index-characters" data-controller="description-change">
+  <h1 class="main-title">Select your character</h1>
 
-Characters:
+  <div class="character-container">
+    <div class="home-button-container">
+    <% @characters.each do |c| %>
+    <%= link_to "#{c.name}", campaign_character_path(@campaign, c), style: "text-decoration: none", class: 'home-handbook-button',
+     'data-action': "mouseover->description-change#change mouseout->description-change#unchange",
+     'data-information': "<p>Hi I am #{c.name}</p><p>I am an #{c.race} #{c.class_list}</p><p> My level is #{c.level}</p><p>Backstory: #{c.backstory}</p>",
+     'data-image': "#{c.photo.attached? ? cl_image_path(c.photo.key, fetch_format: :auto, crop: :fill) : 'https://cdnb.artstation.com/p/assets/images/images/029/045/695/original/tori-schade-ella-concern.gif?1596290588'}" %>
+  <% end %>
+  </div>
+  <div class="character-description-container">
+        <h2>Information Description</h2>
+        <div class="character-card">
+          <div class="character-image-container">
+            <img id="myImage" src="https://res.cloudinary.com/jthouk/image/upload/v1627979106/Rules%20as%20Written/lazy-bard_esoxs7.gif" alt="Class image">
+          </div>
+          <div class="character-info-container">
+            <p data-description-change-target="descriptionlist">Hark, adventurer! Welcome to our humble tavern, where tales of valor and bravery are spun over pints of ale and plates of hearty fare. I see the gleam in your eye and the weight of destiny on your shoulders. Fear not, for you have come to the right place!
+              Here, we offer a host of characters, each with their own unique stories and abilities.
+              From the nimble rogue who can slip in and out of shadows unseen, to the grizzled warrior who can shrug off blows that would fell a lesser man. And let us not forget the cunning wizard, who wields the very forces of the universe with but a wave of their hand!
+              Take a look at our selection, my friend. Feast your eyes on the portraits and read the descriptions, for they may hold the key to your ultimate victory. And when you have chosen your champion, rest easy knowing that our own illustrious DM will guide you through a world of wonder and danger.
+              So come, sit with us at the hearth, and raise a glass to adventure! The road may be long and fraught with peril, but with a character by your side, nothing can stand in your way.</p>
+          </div>
 
-<% @characters.each do |c| %>
-  <p><%= link_to "#{c.name}", campaign_character_path(@campaign, c) %></p>
+        </div>
+        <div class="charaters-buttons">
+          <%= link_to 'Create a new character', new_campaign_character_path(@campaign), class: "home-button" %>
+          <%= link_to 'Random Character',  new_campaign_random_character_path, class: "home-button" %>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<%= javascript_tag do %>
+  const links = document.querySelectorAll('.home-handbook-button');
+
+  links.forEach(link => {
+    link.addEventListener('mouseover', () => {
+      const imageUrl = link.dataset.image;
+      document.getElementById('myImage').src = imageUrl;
+    });
+  });
 <% end %>
 
 <%= link_to 'Create a new character', new_campaign_character_path(@campaign) %>
