@@ -63,7 +63,7 @@ class ImagesController < ApplicationController
       ]
     }
 
-    response = HTTParty.post('https://cb1bc73b-2af9-4d92.gradio.live/sdapi/v1/txt2img', body: body.to_json, headers: { 'Content-Type' => 'application/json' })
+    response = HTTParty.post('https://18d44927-ac4b-472b.gradio.live/sdapi/v1/txt2img', body: body.to_json, headers: { 'Content-Type' => 'application/json' })
     response_hash = JSON.parse(response.body)
     @base64_string = response_hash["images"].first
   end

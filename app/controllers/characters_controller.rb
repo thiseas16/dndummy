@@ -2,6 +2,7 @@ class CharactersController < ApplicationController
   def index
     @characters = Character.all
     @campaign = Campaign.find(params[:campaign_id])
+    @characters = Character.paginate(page: params[:page], per_page: 7)
   end
 
   def new
@@ -17,6 +18,7 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @campaign = Campaign.find(params[:campaign_id])
     @character = Character.find(params[:id])
   end
 

@@ -1,9 +1,12 @@
-<div class="container mt-3 character-show">
-  <div class="row">
-    <%= cl_image_tag @character.photo.key, fetch_format: :auto, crop: :fill if @character.photo.attached? %>
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header">
+<div class="character-show">
+  <h1 class="character-main-title"><%= @character.name %></h1>
+  <div class="character-main-container">
+    <div class="first-info">
+      <div class="character-image">
+        <%= cl_image_tag @character.photo.key, fetch_format: :auto, crop: :fill if @character.photo.attached? %>
+      </div>
+      <div class="basic-info">
+        <div class="info-header">
           <h2 class="text-center">Basic Information</h2>
         </div>
         <div class="card-body">
@@ -21,36 +24,44 @@
           <p><strong>Temp HP:</strong> <%= @character.temp_hp %></p>
         </div>
       </div>
-      <div class="card mt-3">
-        <div class="card-header">
-          <h2 class="text-center">Appearance</h2>
+    </div>
+
+    <div class="second-info">
+      <div class="first-part">
+        <div class="information-card">
+          <div class="info-header">
+            <h2 class="text-center">Appearance</h2>
+          </div>
+          <div class="card-body">
+            <p><strong>Age:</strong> <%= @character.age %></p>
+            <p><strong>Height:</strong> <%= @character.height %></p>
+            <p><strong>Weight:</strong> <%= @character.weight %></p>
+            <p><strong>Eyes:</strong> <%= @character.eyes %></p>
+            <p><strong>Skin:</strong> <%= @character.skin %></p>
+            <p><strong>Hair:</strong> <%= @character.hair %></p>
+          </div>
         </div>
-        <div class="card-body">
-          <p><strong>Age:</strong> <%= @character.age %></p>
-          <p><strong>Height:</strong> <%= @character.height %></p>
-          <p><strong>Weight:</strong> <%= @character.weight %></p>
-          <p><strong>Eyes:</strong> <%= @character.eyes %></p>
-          <p><strong>Skin:</strong> <%= @character.skin %></p>
-          <p><strong>Hair:</strong> <%= @character.hair %></p>
+      </div>
+      <div class="first-part">
+        <div class="information-card">
+          <div class="info-header">
+            <h2 class="text-center">Stats</h2>
+          </div>
+          <div class="card-body">
+            <p><strong>Strength:</strong> <%= @character.str %></p>
+            <p><strong>Dexterity:</strong> <%= @character.dex %></p>
+            <p><strong>Constitution:</strong> <%= @character.const %></p>
+            <p><strong>Intelligence:</strong> <%= @character.int %></p>
+            <p><strong>Wisdom:</strong> <%= @character.wis %></p>
+            <p><strong>Charisma:</strong> <%= @character.cha %></p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header">
-          <h2 class="text-center">Stats</h2>
-        </div>
-        <div class="card-body">
-          <p><strong>Strength:</strong> <%= @character.str %></p>
-          <p><strong>Dexterity:</strong> <%= @character.dex %></p>
-          <p><strong>Constitution:</strong> <%= @character.const %></p>
-          <p><strong>Intelligence:</strong> <%= @character.int %></p>
-          <p><strong>Wisdom:</strong> <%= @character.wis %></p>
-          <p><strong>Charisma:</strong> <%= @character.cha %></p>
-        </div>
-      </div>
-      <div class="card mt-3">
-        <div class="card-header">
+
+    <div class="third-info">
+      <div class="information-card">
+        <div class="info-header">
           <h2 class="text-center">Other Details</h2>
         </div>
         <div class="card-body">
@@ -63,4 +74,7 @@
       </div>
     </div>
   </div>
+  <%= link_to 'All Characters',  campaign_characters_path(@campaign), class: "home-button" %>
+  <%= link_to 'Create a new character', new_campaign_character_path(@campaign), class: "home-button" %>
+  <%= link_to 'Random Character',  new_campaign_random_character_path, class: "home-button" %>
 </div>
