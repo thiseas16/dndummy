@@ -47,4 +47,5 @@ Rails.application.routes.draw do
     get 'proficiencies', to: 'handbook#proficiencies_index'
     get 'proficiencies/:id', to: 'handbook#proficiencies_show', as: 'proficiencies_show'
   end
+  get '/about', to: 'pages#about'
 end
