@@ -1,2 +1,30 @@
-<h2><strong><%= link_to 'CAMPAIGN ART', campaign_all_images_path(@campaign) %></strong></h2>
-<h2><strong><%= link_to 'GENERATE CHARACTER PORTRAIT', campaign_new_portrait_image_path %></strong></h2>
+<div class = "images-index-container" data-controller="images-home">
+  <div class = "row">
+    <div class="art-card col-md-6">
+      <a href="<%= campaign_all_images_path(@campaign) %>">
+        <div data-action= "mouseover->images-home#change1" class = "image-card" style= "background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679137147/00000-1719343822_fdefbb.png')">
+          <div class = "card-header">
+            <h1>CAMPAIGN ART</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="art-card col-md-6">
+      <a href="<%= campaign_new_portrait_image_path %>">
+        <div data-action= "mouseover->images-home#change2" class = "image-card" style= "background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679137191/00001-2960850795_kkh8fo.png')">
+          <div class = "card-header">
+            <h1>GENERATE CHARACTER PORTRAIT</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="description-container">
+    <div class = "description">
+      <h2 data-images-home-target="header" style = "text-align: center;" data-campaign-description-change-target="header">Campaign Image Generator</h2>
+      <p data-images-home-target="description">Our campaign image generator is the perfect tool for creating stunning and abstract images for your Dungeons and Dragons campaign. With this generator, you can specify what type of image you want to create, whether it's a landscape, a battle scene, or something else entirely. You can even customize the colors, textures, and other elements of your image to suit your campaign's theme or setting. Our campaign image generator is the perfect tool for those who want to create eye-catching visuals for their game without having to spend hours creating them from scratch.</p>
+    </div>
+  </div>
+  <%= link_to 'Back', campaign_path(@campaign), class: 'home-button' %>
+</div>

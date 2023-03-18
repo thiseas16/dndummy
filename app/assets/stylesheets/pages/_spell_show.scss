@@ -5,7 +5,8 @@
 
   .header{
     width: 40%;
-    background-color: $slate-gray-difuse;
+    // background-color: $slate-gray-difuse;
+    background-color: antiquewhite;
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
@@ -16,13 +17,15 @@
     border-top: solid 10px black;
     padding: 25px;
     width: 40%;
-    background-color: $slate-gray-difuse;
+    // background-color: $slate-gray-difuse;
+    background-color: antiquewhite;
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
     border: 2px solid $eggplant;
 
     .spell-info{
+      width: 100%;
       // padding: 15px;
       .info{
         padding-bottom: 10px;

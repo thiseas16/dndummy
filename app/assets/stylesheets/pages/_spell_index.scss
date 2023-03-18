@@ -1,4 +1,7 @@
 .spell-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   // height: 100vh;
   background-color: $brown-500;
@@ -8,14 +11,21 @@
   background-size: cover;
 }
 
+.spells-index{
+  width: 65%;
+}
 .columns-container-spells-index {
-  background-color: $light-blue;
+  // display: flex;
+  width: 65%;
+  // background-color: $light-blue;
+  background-color: antiquewhite;
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
   border: 2px solid $eggplant;
 
   .column-titel{
+    width: 100%;
     color: $space-cadet-var;
   }
 
