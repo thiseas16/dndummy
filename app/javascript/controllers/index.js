@@ -4,14 +4,17 @@
 
 import { application } from "./application"
 
-import CharactersController from "./characters_controller"
-application.register("characters", CharactersController)
+// import CharactersController from "./characters_controller"
+// application.register("characters", CharactersController)
 
 import DescriptionChangeController from "./description_change_controller"
 application.register("description-change", DescriptionChangeController)
 
 import CampaignDescriptionChangeController from "./campaign_description_change_controller"
 application.register("campaign-description-change", CampaignDescriptionChangeController)
+
+import ImagesHomeController from "./images_home_controller"
+application.register("images-home", ImagesHomeController)
 
 import DiceRollerController from "./dice_roller_controller"
 application.register("dice-roller", DiceRollerController)

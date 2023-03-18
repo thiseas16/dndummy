@@ -8,7 +8,7 @@
               <h1><%= cl.name %></h1>
             </div>
             <div class = "description"><p><%= cl.description %></p></div>
-            <div class = "hit-die"><p><strong>Hit Die:</strong><%= cl.hit_die %></p></div>
+            <div class = "hit-die"><p><strong>Hit Die: </strong><%= cl.hit_die %></p></div>
             <div class = "saving-throws"><p><strong>Saves: </strong> <% cl.saving_throws.each do |st| %>
               <%= st.name %>
                 <% if st == cl.saving_throws.first %>

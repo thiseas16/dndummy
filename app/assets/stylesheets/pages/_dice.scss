@@ -1,11 +1,20 @@
 // DICE ROLLER
-.dice-roller {
-  box-sizing: border-box;
+
+.dice-page-container{
   display: flex;
   justify-content: center;
   background-image: url('https://64.media.tumblr.com/aa2de240c7d3ad098645f29e1f8fe17c/tumblr_obylzfWQ4F1qbw2q1o1_1280.gifv');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.dice-roller {
+  width: 80%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .dice-block {

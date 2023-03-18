@@ -3,7 +3,6 @@ require 'json'
 
 class RandomCharacterController < ApplicationController
   def new
-
   end
 
   def create
@@ -12,7 +11,7 @@ class RandomCharacterController < ApplicationController
     character_random_generate
     character = Character.new(
       name: @responsehash["Basic Information"]["Character Name"],
-      level: @responsehash["Basic Information"]["level"],
+      level: @responsehash["Basic Information"]["Level"],
       alignment: @responsehash["Basic Information"]["Alignment"],
       exp: @responsehash["Basic Information"]["exp"],
       total_hp: @responsehash3["Total HP"],
@@ -38,19 +37,21 @@ class RandomCharacterController < ApplicationController
       const: @responsehash["Ability Scores"]["CONST"],
       cha: @responsehash["Ability Scores"]["CHA"],
       int: @responsehash["Ability Scores"]["INT"],
-      wis: @responsehash["Ability Scores"]["WIS"]
+      wis: @responsehash["Ability Scores"]["WIS"],
+      race: @responsehash["Basic Information"]["Race"],
+      class_list: @responsehash["Basic Information"]["Class"]
     )
     character.campaign = @campaign
     character.save
+    redirect_to campaign_character_path(@campaign, character)
   end
 
   def character_random_generate
-
     messages = [{
       role: "system", content: "You are a helpful asistant" # here we can change the asistant to another thing, so ChatGpt will answer like he was in this case asistant
     }]
 
-    client = OpenAI::Client.new(access_token: "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")
+    client = OpenAI::Client.new(access_token: "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")
 
     message1 = %Q[Take this example of a hash, representing a character in dnd 5e. Generate a new one in the same format, with only these predefined: #{@prompt}, if what was written before, do not match with a character dnd 5e do not use it to fill the information (If nothing is mentioned, generate a random character)
       {

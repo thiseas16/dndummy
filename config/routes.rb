@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :images, only: %i[new create index]
     get '/images/portrait/new', to: 'images#new_portrait', as: 'new_portrait_image'
     post '/images/portrait', to: 'images#create_portrait', as: 'create_portrait_image'
-    resources :random_characters, only: %i[new create]
+    resources :random_character, only: %i[new create]
   end
   scope '/handbook' do
     get '', to: 'handbook#home', as: 'handbook'

@@ -1,5 +1,6 @@
 .class-index-container{
-  background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1678651895/development/old_map_hkf58s.png');
+  // background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1678651895/development/old_map_hkf58s.png');
+  background: $gradient-top;
   display: flex;
   justify-content: center;
   .classes-container{

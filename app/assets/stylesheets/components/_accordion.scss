@@ -39,12 +39,14 @@
     margin-right: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: $light-blue;
+    // background-color: $light-blue;
+    background-color: antiquewhite;
 
     .accordion-header{
       .accordion-button{
         color: $space-cadet-var;
-        background-color: $light-blue;
+        // background-color: $light-blue;
+        background-color: antiquewhite;
         .row{
           .spell-field{
             display: flex;
@@ -77,7 +79,8 @@
   justify-content: center;
   align-items: center;
   color: $space-cadet-var;
-  background-color: $light-blue;
+  // background-color: $light-blue;
+  background-color: antiquewhite;
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
