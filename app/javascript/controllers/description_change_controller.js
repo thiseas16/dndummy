@@ -15,10 +15,10 @@ export default class extends Controller {
     console.log(picture)
     myImage.src = picture
 
-    const screenWidth = window.innerWidth
-    const screenHeight = window.innerHeight
-    myImage.style.width = `${screenWidth * 0.5}px`
-    myImage.style.height = `${screenHeight * 0.5}px`
+    // const screenWidth = window.innerWidth
+    // const screenHeight = window.innerHeight
+    // myImage.style.width = `${screenWidth * 0.5}px`
+    // myImage.style.height = `${screenHeight * 0.5}px`
     myImage.style.borderRadius = '20px'
     }
 
