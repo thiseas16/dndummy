@@ -55,6 +55,7 @@ class ImagesController < ApplicationController
   private
 
   def call_sd_api
+    @start = Time.current
     body = {
       "prompt": @prompt,
       "steps": 10,
@@ -63,17 +64,31 @@ class ImagesController < ApplicationController
       ]
     }
 
-    response = HTTParty.post('https://b215982c-6440-4331.gradio.live/sdapi/v1/txt2img', body: body.to_json, headers: { 'Content-Type' => 'application/json' })
+    response = HTTParty.post('https://519cc91d-894e-43ab.gradio.live/sdapi/v1/txt2img', body: body.to_json, headers: { 'Content-Type' => 'application/json' })
     response_hash = JSON.parse(response.body)
     @base64_string = response_hash["images"].first
+    @end = Time.current
+    puts "=====================================================================\n"
+    puts "=====================================================================\n"
+    puts "=====================================================================\n"
+    puts "=====================================================================\n"
+    puts @end - @start
   end
 
   def save_image
+    @start = Time.current
+
     decoded_data = Base64.decode64(@base64_string)
 
     # Save the decoded data as an image
     File.open("app/assets/images/image.jpg", "wb") do |f|
       f.write(decoded_data)
     end
+    @end = Time.current
+    puts "=====================================================================\n"
+    puts "=====================================================================\n"
+    puts "=====================================================================\n"
+    puts "=====================================================================\n"
+    puts @end - @start
   end
 end

@@ -12,9 +12,10 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
-    @character.campaign = Campaign.find(params[:campaign_id])
+    @campaign = Campaign.find(params[:campaign_id])
+    @character.campaign = @campaign
     @character.save
-    redirect_to campaign_characters_path
+    redirect_to campaign_character_path(@campaign, @character)
   end
 
   def show

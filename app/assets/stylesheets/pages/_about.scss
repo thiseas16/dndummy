@@ -1,0 +1,108 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column-about {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card-about {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  background-color: #364456;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  color: white;
+  position: relative;
+  height: 100vh;
+  background-color: $brown-500;
+  padding: 50px;
+  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('https://64.media.tumblr.com/aa2de240c7d3ad098645f29e1f8fe17c/tumblr_obylzfWQ4F1qbw2q1o1_1280.gifv');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-about {
+  padding: 0 16px;
+  color: $light-blue;
+}
+
+.container-about::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button-about {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.button-about:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.about-team {
+  margin-top: 100px;
+}
+
+.about-title {
+  margin-top: 50px;
+}
+
+.gabe,
+.thiseas,
+.esteban{
+  width: 35%;
+  border-width: 3px;
+  border-style: round;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  margin-top: 10px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.row-about {
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}

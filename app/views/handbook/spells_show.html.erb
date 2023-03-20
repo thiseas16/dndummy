@@ -1,91 +1,89 @@
-<div class="spell-home">
-  <div class="page-container">
-    <div class="header"><h1><%= @spell.name %></h1></div>
-    <div class="spell-container">
-      <div class="row spell-info">
-        <div class="col-3 info level">
-          <p><strong>LEVEL</strong></p>
-          <% if @spell.lvl ==0 %>
-            <p>Cantrip</p>
-          <% elsif @spell.lvl == 1 %>
-            <p>1st</p>
-          <% elsif @spell.lvl == 2 %>
-            <p>2nd</p>
-          <% elsif @spell.lvl == 3 %>
-            <p>3rd</p>
+<div class="page-container background">
+  <div class="header"><h1><%= @spell.name %></h1></div>
+  <div class="spell-container">
+    <div class="row spell-info">
+      <div class="col-3 info level">
+        <p><strong>LEVEL</strong></p>
+        <% if @spell.lvl ==0 %>
+          <p>Cantrip</p>
+        <% elsif @spell.lvl == 1 %>
+          <p>1st</p>
+        <% elsif @spell.lvl == 2 %>
+          <p>2nd</p>
+        <% elsif @spell.lvl == 3 %>
+          <p>3rd</p>
+        <% else %>
+          <p><%= @spell.lvl %>th</p>
+        <% end %>
+      </div>
+
+      <div class="col-3 info casting-time">
+        <p><strong>CASTING TIME</strong></p>
+        <p><%= @spell.casting_time %></p>
+      </div>
+
+      <div class="col-3 info range">
+        <p><strong>RANGE</strong></p>
+        <p><%= @spell.range %></p>
+      </div>
+
+      <div class ="col-3 info components">
+        <p><strong>COMPONENTS</strong></p>
+        <p>
+          <% if @spell.verbal_component%>
+            V
+          <% end %>
+          <% if @spell.somatic_component%>
+            S
+          <% end %>
+          <% if @spell.material_component%>
+            M
+          <% end %>
+        </p>
+      </div>
+
+      <div class="col-3 info duration">
+        <p><strong>DURATION</strong></p>
+        <p><%= @spell.duration %></p>
+      </div>
+
+      <div class="col-3 info school">
+        <p><strong>SCHOOL</strong></p>
+        <p><%= @spell.school %></p>
+      </div>
+
+      <div class="col-3 info damage">
+        <p><strong>DAMAGE</strong></p>
+        <p><%= @spell.dmg_type %></p>
+      </div>
+
+      <div class="col-3 info damage">
+        <p><strong>CLASSES</strong></p>
+        <% count = @spell.class_lists.count %>
+        <% @spell.class_lists.each.with_index do |c, index| %>
+          <% if index == (count - 1) %>
+            <%= c.name %>
           <% else %>
-            <p><%= @spell.lvl %>th</p>
+            <%= c.name %>,
           <% end %>
-        </div>
-
-        <div class="col-3 info casting-time">
-          <p><strong>CASTING TIME</strong></p>
-          <p><%= @spell.casting_time %></p>
-        </div>
-
-        <div class="col-3 info range">
-          <p><strong>RANGE</strong></p>
-          <p><%= @spell.range %></p>
-        </div>
-
-        <div class ="col-3 info components">
-          <p><strong>COMPONENTS</strong></p>
-          <p>
-            <% if @spell.verbal_component%>
-              V
-            <% end %>
-            <% if @spell.somatic_component%>
-              S
-            <% end %>
-            <% if @spell.material_component%>
-              M
-            <% end %>
-          </p>
-        </div>
-
-        <div class="col-3 info duration">
-          <p><strong>DURATION</strong></p>
-          <p><%= @spell.duration %></p>
-        </div>
-
-        <div class="col-3 info school">
-          <p><strong>SCHOOL</strong></p>
-          <p><%= @spell.school %></p>
-        </div>
-
-        <div class="col-3 info damage">
-          <p><strong>DAMAGE</strong></p>
-          <p><%= @spell.dmg_type %></p>
-        </div>
-
-        <div class="col-3 info damage">
-          <p><strong>CLASSES</strong></p>
-          <% count = @spell.class_lists.count %>
-          <% @spell.class_lists.each.with_index do |c, index| %>
-            <% if index == (count - 1) %>
-              <%= c.name %>
-            <% else %>
-              <%= c.name %>,
-            <% end %>
-          <% end %>
-        </div>
-
-        <% if @spell.material_component %>
-        <div class ="col-12 info material">
-          <p><strong>MATERIAL</strong></p>
-          <p><%= @spell.material%></p>
-        </div>
         <% end %>
       </div>
 
-      <div class="description">
-        <p><%= @spell.description %></p>
-        <% if @spell.higher_lvl %>
-          <p><strong>At Higher Levels.</strong><%= @spell.higher_lvl %></p>
-        <% end %>
+      <% if @spell.material_component %>
+      <div class ="col-12 info material">
+        <p><strong>MATERIAL</strong></p>
+        <p><%= @spell.material%></p>
       </div>
-
+      <% end %>
     </div>
-    <p><%= link_to "Back to spells", spells_path, class: 'home-button' %></p>
+
+    <div class="description">
+      <p><%= @spell.description %></p>
+      <% if @spell.higher_lvl %>
+        <p><strong>At Higher Levels.</strong><%= @spell.higher_lvl %></p>
+      <% end %>
+    </div>
+
   </div>
+  <p><%= link_to "Back to spells", spells_path, class: 'home-button' %></p>
 </div>
