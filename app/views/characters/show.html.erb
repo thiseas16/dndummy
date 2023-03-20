@@ -1,34 +1,40 @@
 <div class="character-show">
-  <h1 class="character-main-title"><%= @character.name %></h1>
+  <div>
+    <h1 class="character-main-title"><%= @character.name %></h1>
+  </div>
   <div class="character-main-container">
     <div class="first-info">
       <div class="character-image">
         <%= cl_image_tag @character.photo.key, fetch_format: :auto, crop: :fill if @character.photo.attached? %>
       </div>
+
       <div class="basic-info">
-        <div class="info-header">
-          <h2 class="text-center">Basic Information</h2>
-        </div>
-        <div class="card-body">
-          <p><strong>Name:</strong> <%= @character.name %></p>
-          <p><strong>Class:</strong> <%= @character.class_list %></p>
-          <p><strong>Race:</strong> <%= @character.race %></p>
-          <p><strong>Alignment:</strong> <%= @character.alignment %></p>
-          <p><strong>Level:</strong> <%= @character.level %></p>
-          <p><strong>Experience:</strong> <%= @character.exp %></p>
-          <p><strong>Initiative:</strong> <%= @character.inititiave %></p>
-          <p><strong>Armor Class:</strong> <%= @character.armor_class %></p>
-          <p><strong>Speed:</strong> <%= @character.speed %></p>
-          <p><strong>Total HP:</strong> <%= @character.total_hp %></p>
-          <p><strong>Current HP:</strong> <%= @character.current_hp %></p>
-          <p><strong>Temp HP:</strong> <%= @character.temp_hp %></p>
+        <div class="box-shadow">
+          <div class="info-header">
+            <h2 class="text-center">Basic Information</h2>
+          </div>
+          <div class="info-body">
+            <div class="card-body">
+              <p><strong>Name:</strong> <%= @character.name %></p>
+              <p><strong>Class:</strong> <%= @character.class_list %></p>
+              <p><strong>Race:</strong> <%= @character.race %></p>
+              <p><strong>Alignment:</strong> <%= @character.alignment %></p>
+              <p><strong>Level:</strong> <%= @character.level %></p>
+              <p><strong>Experience:</strong> <%= @character.exp %></p>
+            </div>
+            <div class="card-body">
+              <p><strong>Initiative:</strong> <%= @character.inititiave %></p>
+              <p><strong>Armor Class:</strong> <%= @character.armor_class %></p>
+              <p><strong>Speed:</strong> <%= @character.speed %></p>
+              <p><strong>Total HP:</strong> <%= @character.total_hp %></p>
+              <p><strong>Current HP:</strong> <%= @character.current_hp %></p>
+              <p><strong>Temp HP:</strong> <%= @character.temp_hp %></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="second-info">
-      <div class="first-part">
-        <div class="information-card">
+      <div class="appearance-info">
+        <div class="box-shadow">
           <div class="info-header">
             <h2 class="text-center">Appearance</h2>
           </div>
@@ -42,8 +48,9 @@
           </div>
         </div>
       </div>
-      <div class="first-part">
-        <div class="information-card">
+
+      <div class="stats-info">
+        <div class="box-shadow">
           <div class="info-header">
             <h2 class="text-center">Stats</h2>
           </div>
@@ -59,8 +66,8 @@
       </div>
     </div>
 
-    <div class="third-info">
-      <div class="information-card">
+    <div class="other-info">
+      <div class="box-shadow">
         <div class="info-header">
           <h2 class="text-center">Other Details</h2>
         </div>
@@ -73,8 +80,11 @@
         </div>
       </div>
     </div>
+
   </div>
+  <div class="btns-container">
   <%= link_to 'All Characters',  campaign_characters_path(@campaign), class: "home-button" %>
-  <%= link_to 'Create a new character', new_campaign_character_path(@campaign), class: "home-button" %>
+  <%= link_to '(Re) Generate Character Portrait', campaign_new_portrait_image_path, class: "home-button" %>
   <%= link_to 'Random Character',  new_campaign_random_character_path, class: "home-button" %>
+  </div>
 </div>

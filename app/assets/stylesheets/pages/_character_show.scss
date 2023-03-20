@@ -9,40 +9,64 @@
 
   .character-main-title {
     font-size: 48px;
-    margin-bottom: 20px;
-    background-color: $raisin-black;
-    align-items: center;
-    border-radius: 20px;
-    border: 2px solid $eggplant;
+    margin: 10px;
+    margin-bottom: 0;
+    // background-color: $raisin-black;
+    background-color: $eggplant;
+    // align-items: center;
+    // border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    // border: 2px solid $eggplant;
     text-align: center;
-    color: $slate-gray;
+    color: white;
   }
 
   .character-main-container {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    // background-color: $raisin-black;
+    backdrop-filter: blur(3px);
+    border: 2px solid $eggplant;
+    // border-bottom-left-radius: 20px;
+    // border-bottom-right-radius: 20px;
+    margin: 10px;
+    margin-top: 0px;
+    background-color: $tan-300-difuse;
   }
 
   .first-info {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 
     .character-image {
       padding: 20px;
 
+
       img {
         border-radius: 20px;
+        border: 10px solid $eggplant;
+        height: 350px;
+        width: 350px;
+        // box-shadow: 0 0px 40px 15px black;
       }
     }
   }
 
+  // .box-shadow {
+  //   border-top-left-radius: 20px;
+  //   border-top-right-radius: 20px;
+  //   box-shadow: 0 0px 40px 15px black;
+  // }
+
   .info-header {
-    background-color: #4d4d4d;
+    background-color: $eggplant;
     color: #fff;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 
   .card-body {
@@ -55,12 +79,34 @@
     padding: 20px;
   }
 
-
-  .second-info {
-    padding: 20px;
+  .info-body {
+    display: flex;
   }
 
-  .information-card {
+  .appearance-info {
+    padding: 20px;
+    width: 23%;
+  }
+
+  .stats-info {
+    padding: 20px;
+    width: 23%;
+  }
+
+
+  .other-info {
+    padding: 20px;
+    margin: 10px;
+  }
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+
+  .home-button {
+    width: 33%;
+    text-align: center;
     margin: 10px;
   }
 }
