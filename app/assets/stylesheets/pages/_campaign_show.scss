@@ -1,11 +1,20 @@
 .campaign-show-container{
-  height: 83vh;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/davv7gx-93b2ca3c-709b-40ee-9578-33eb6b2d2847.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZGF2djdneC05M2IyY2EzYy03MDliLTQwZWUtOTU3OC0zM2ViNmIyZDI4NDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CW30npr2fpQ8NaVjm544amIGAPEtrH7ocuV6VUbh2XY');
   background-size: cover;
   background-position: center;
+
+  .home-button{
+    margin-bottom: 10px;
+    width: 98%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
 
   .description-container{
     display: flex;
@@ -47,7 +56,6 @@
   flex-direction: column;
   align-items: center;
   margin: 15px;
-
   a{
     width: 100%;
   }
@@ -62,6 +70,7 @@
     background-position: 50% 45%;
     background-size: cover;
     box-shadow: 0px 0px 10px;
+    // border: 5px solid $eggplant;
     // border: 10px solid $eggplant;
 
     h1 {
