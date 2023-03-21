@@ -18,7 +18,8 @@ iframe {
 
 .home {
   position: relative;
-  height: 100vh;
+  // height: 90vh;
+  flex-grow: 1;
   background-color: $brown-500;
   padding: 50px;
   background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679095238/home-gif_g2eugg.gif');
@@ -42,11 +43,13 @@ iframe {
 .home-block {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  margin-bottom: 10px;
 }
 
 .home-block-text-container {
@@ -64,11 +67,10 @@ iframe {
 .home-block-left,
 .home-block-midle,
 .home-block-right {
-  background-color: $charcoal;
-  color: $light-blue;
+  background-color: $space-cadet-var;
+  color: $tan-400;
   padding: 20px;
   width: calc((100% - 100px) / 3); /* distribute the blocks equally */
-  margin-bottom: 20px;
   border-radius: 20px;
   margin: 0 10px 0 10px; /* add margin to the sides */
   display: flex; /* add display flex to align the content */
@@ -84,20 +86,13 @@ iframe {
   margin-bottom: 10px;
   text-align: left; /* align the text to the left */
   font-weight: bold;
+  -webkit-text-stroke: 0.1px #000;
 }
 
 .home-block-left p, //temporary
 .home-block-midle p,
 .home-block-right p {
   font-size: 18px;
-}
-
-.content h2{  //temporary
-  font-size: 62px;
-}
-
-.content p{  //temporary
-  font-size: 36px;
 }
 
 .home-button p{
@@ -114,7 +109,8 @@ iframe {
   align-items: center;
   margin: 0 auto;
   max-width: 960px;
-  color: $byzantium;
+  // color: $byzantium;
+  color: $tan-400;
   font-weight: bold;
 
   .content {
@@ -126,5 +122,16 @@ iframe {
     background:  rgba(0, 0, 0, 0.356);
     border-radius: 20px;
     padding-bottom: 20px;
+
+    h2 {
+      font-size: 62px;
+      -webkit-text-stroke: 1px #000;
+    }
+
+    p {
+      font-size: 20px;
+      -webkit-text-stroke: 1px #000;
+    }
   }
+
 }
