@@ -6,41 +6,57 @@
   margin-bottom: 20px;
   margin: 0 10px 0 10px; /* add margin to the sides */
   display: inline-flex; /* add display flex to align the content */
-  opacity: 0.7;
+  opacity: 1.0;
+  left: 10%;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   align-content: center;
   position: relative;
   align-self: auto;
-  flex-flow: row nowrap;
+  height: 30vh;
+
 }
 
 .container-card:hover {
- opacity: 1.0;
+ opacity: 0.7;
 }
 
 .frame5 {
-position: relative;
-background-color:#000000;
-height:177px;
-width:425px;
-filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
-padding:0px;
-flex-wrap: wrap;
-margin-left: 110px;
-background-size: cover;
-
+  position: relative;
+  background-color:#000000;
+  height:187px;
+  width:425px;
+  filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+  padding:0px;
+  flex-wrap: wrap;
+  margin-left: 110px;
+  background-size: cover;
+  padding-right: 10px;
+  padding-top: 0px;
+  color: #ffffff;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
 }
 
 .rectangle3 {
 font-size: 25px;
-background-color:#fff400;
+background-color: $charcoal;
 height:35px;
 width:357px;
 filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
 border:1px solid #000000;
 position: absolute;
+resize: both;
+  float: left;
+  max-width: 380px;
+  word-wrap: break-word;
+  height: auto;
+  display: inline;
 }
 
 .rectangle4 {
@@ -64,13 +80,19 @@ position:absolute;
 
 .rectangle5 {
 font-size: 25px;
-background-color:#ce5959;
+background-color: $charcoal;
 height:32px;
 width:425px;
 border:1px solid #000000;
-position:absolute;
-top:145px;
+position:relative;
+top:150px;
 left:0px;
+resize: both;
+  float: left;
+  max-width: 450px;
+  word-wrap: break-word;
+  height: auto;
+  display: inline;
 }
 
 .title-campaigns {
@@ -87,8 +109,9 @@ left:0px;
 
 .page-container-index {
   position: relative;
-  height: 100vh;
-  padding: 60px;
+  padding: 50px;
+  bottom: 8%;
+  overflow-y: hidden;
 }
 
 .rectangle3,
@@ -99,10 +122,85 @@ left:0px;
 
 .campaign-home {
   position: relative;
-  height: 100vh;
+  height: 95vh;
   background-color: $brown-500;
   padding: 50px;
   background-image: url('https://64.media.tumblr.com/aa2de240c7d3ad098645f29e1f8fe17c/tumblr_obylzfWQ4F1qbw2q1o1_1280.gifv');
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: $headers-font;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+// CAMPAIGN BUTTONs
+.campaign-new-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  left: 85%;
+  bottom: 30px;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: $tan-100;
+  border: 2px solid $tan-500;
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+ }
+
+ .campaign-new-button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $tan-300;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+ }
+
+ .campaign-new-button:hover {
+  background: $tan-100;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+ }
+
+ .campaign-new-button:active::before {
+  // -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  // box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+ }
+
+ .main-title-campaign {
+  font-size: 48px;
+  margin-bottom: 20px;
+  background-color: $raisin-black;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid $eggplant;
+  text-align: center;
+  margin-top: -50px;
+  color: $slate-gray;
+  position: fixed;
+  width: 100%;
 }

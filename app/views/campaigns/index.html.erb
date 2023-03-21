@@ -1,9 +1,9 @@
 <div class="campaign-home">
   <div class="catching-phrase">
-    <h1 class="main-title">Welcome to our Campaigns!</h1>
+    <h1 class="main-title-campaign">Welcome to our Campaigns!</h1>
   </div>
 
-  <%= link_to 'Add a new campaign', new_campaign_path%>
+  <%= link_to 'Add a new campaign', new_campaign_path, class: "campaign-new-button"%>
 
   <div class="page-container-index">
     <% @campaigns.each do |c| %>
@@ -16,7 +16,7 @@
               <%= c.title %>
             </div>
             <div class="rectangle4">
-              5 ⭐
+             <!--#5⭐  this should be a separate rating-->
             </div>
             <div class="rectangle5">
               <%= c.description %>
