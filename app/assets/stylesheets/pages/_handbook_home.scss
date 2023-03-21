@@ -15,27 +15,6 @@
   // padding-right: 25%;
 }
 
-.description-container {
-  flex: 3;
-  width: 75%;
-  border-radius: 20px;
-  padding: 10px;
-
-  h2 {
-    background: $gradient-right;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
-
-  p {
-    background: $gradient-right;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
-
-}
 
 .home-button-container {
   display: flex;
