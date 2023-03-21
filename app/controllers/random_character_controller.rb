@@ -52,7 +52,7 @@ class RandomCharacterController < ApplicationController
       role: "system", content: "You are a helpful asistant" # here we can change the asistant to another thing, so ChatGpt will answer like he was in this case asistant
     }]
 
-    client = OpenAI::Client.new(access_token: "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")
+    client = OpenAI::Client.new(access_token: "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")
 
     message1 = %Q[Take this example of a hash, representing a character in dnd 5e. Generate a new one in the same format, with only these predefined: #{@prompt}, if what was written before, do not match with a character dnd 5e do not use it to fill the information (If nothing is mentioned, generate a random character)
       {
