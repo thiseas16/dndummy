@@ -6,6 +6,12 @@ GIT
       actionpack (>= 5.2)
       activemodel (>= 5.2)
 
+PATH
+  remote: OPENAI_CUSTOM_GEM
+  specs:
+    ruby-openai (3.5.0)
+      httparty (>= 0.18.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -218,8 +224,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
-    ruby-openai (3.5.0)
-      httparty (>= 0.18.1)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -295,7 +299,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
-  ruby-openai
+  ruby-openai!
   sassc-rails
   selenium-webdriver
   simple_form!

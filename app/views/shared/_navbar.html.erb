@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div style= 'display: flex; justify-content: space-between;'>
+      <div style= 'display: flex; justify-content: space-between; align-items: center;'>
         <ul class="navbar-nav me-auto">
           <%= link_to root_path do %>
             <div class = 'logo'>
@@ -14,5 +14,16 @@
           <%# <button class="navbar-button">Button to edit</button> %>
         </ul>
       </div>
+    </div>
+    <div style = 'display:flex; align-items: center; margin-right: 10px;'>
+      <% if user_signed_in? %>
+        <%= image_tag "https://media.istockphoto.com/id/1332100919/vector/man-icon-black-icon-person-symbol.jpg?s=612x612&w=0&k=20&c=AVVJkvxQQCuBhawHrUhDRTCeNQ3Jgt0K1tXjJsFy1eg=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
+        </div>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
     </div>
 </div>
