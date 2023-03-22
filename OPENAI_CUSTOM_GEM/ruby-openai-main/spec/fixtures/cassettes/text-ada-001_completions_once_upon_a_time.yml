@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"text-ada-001","prompt":"Once upon a time","max_tokens":5}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Jan 2023 22:29:53 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '278'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - text-ada-001
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      Openai-Processing-Ms:
+      - '111'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Request-Id:
+      - e1665e87f325767a34aa90e9f551e095
+    body:
+      encoding: UTF-8
+      string: '{"id":"cmpl-6WBzFJGrKxDmLy0qrExB0TREcXVqN","object":"text_completion","created":1673130593,"model":"text-ada-001","choices":[{"text":",
+        a really really big","index":0,"logprobs":null,"finish_reason":"length"}],"usage":{"prompt_tokens":4,"completion_tokens":5,"total_tokens":9}}
+
+'
+  recorded_at: Sat, 07 Jan 2023 22:29:53 GMT
+recorded_with: VCR 6.1.0

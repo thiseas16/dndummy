@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.openai.com/v1/models/abc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Date:
+      - Wed, 15 Feb 2023 21:33:01 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '141'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - bf430420b5eec6065aed77150b804b28
+      Openai-Processing-Ms:
+      - '53'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "message": "That model does not exist",
+            "type": "invalid_request_error",
+            "param": "model",
+            "code": null
+          }
+        }
+  recorded_at: Wed, 15 Feb 2023 21:33:01 GMT
+recorded_with: VCR 6.1.0
