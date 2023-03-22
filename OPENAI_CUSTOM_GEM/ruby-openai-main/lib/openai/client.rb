@@ -62,7 +62,8 @@ module OpenAI
       HTTParty.post(
         uri(path: path),
         headers: headers,
-        body: parameters&.to_json
+        body: parameters&.to_json,
+        timeout: 120
       )
     end
 
