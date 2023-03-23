@@ -272,6 +272,8 @@ GEM
     wicked (2.0.0)
       railties (>= 3.0.7)
     will_paginate (3.3.1)
+    will_paginate-bootstrap (1.0.2)
+      will_paginate (>= 3.0.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.7)
@@ -307,6 +309,7 @@ DEPENDENCIES
   webdrivers
   wicked
   will_paginate
+  will_paginate-bootstrap
 
 RUBY VERSION
    ruby 3.1.2p20

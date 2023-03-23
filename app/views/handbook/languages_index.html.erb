@@ -1,5 +1,11 @@
-<p>
-  <% @languages.each do |l| %>
-    <%= link_to l.name, languages_show_path(l)  %>
-  <% end %>
-</p>
+<div class="trait-home">
+  <div class="catching-phrase">
+    <h1 class="main-title">Welcome to DnDummy</h1>
+  </div>
+  <div class="traits-container">
+    <% @languages.each do |l| %>
+      <%= link_to l.name, languages_show_path(l)  %>
+    <% end %>
+  </div>
+      <%= link_to "Back", handbook_path, class: 'back-button'%>
+</div>

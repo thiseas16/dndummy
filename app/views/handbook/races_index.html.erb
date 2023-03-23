@@ -1,5 +1,11 @@
-<p>
-  <% @races.each do |r| %>
-    <%= link_to r.name, races_show_path(r)  %>
-  <% end %>
-</p>
+<div class="trait-home">
+  <div class="catching-phrase">
+    <h1 class="main-title">Welcome to DnDummy</h1>
+  </div>
+  <div class="traits-container">
+    <% @races.each do |r| %>
+      <%= link_to r.name, races_show_path(r)  %>
+    <% end %>
+  </div>
+      <%= link_to "Back", handbook_path, class: 'back-button'%>
+</div>

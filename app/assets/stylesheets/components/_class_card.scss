@@ -1,36 +1,94 @@
 // CLASSES INDEX
+// .class-index-container {
 
-.class{
-  border-radius: 5px;
-  position: relative;
-  background: rgb(233, 201, 86);
-  // background-image: url('https://www.seekpng.com/png/full/141-1413984_barbarian-d-d-barbarian.png');
-  background-position: right;
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 15px;
-  margin: 10px;
-  .information{
+  .class {
     border-radius: 5px;
-    width: 70%;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.25); /* 50% transparent white */
-    backdrop-filter: blur(5px); /* add a blur effect */
-    .name{
-      display: flex;
-      img{
-        height: 50px;
-        width: 50px;
-        size: cover;
+    position: relative;
+    background: $tan-300;
+    // background: $tan-200-difuse;
+    // background: rgb(233, 201, 86);
+    // background-image: url('https://www.seekpng.com/png/full/141-1413984_barbarian-d-d-barbarian.png');
+    background-position: 110%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 2px solid $tan-500;
+    padding: 15px;
+    margin: 10px;
+
+    .information {
+      border-radius: 5px;
+      border: 2px solid $tan-500;
+      width: 60%;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.25); /* 50% transparent white */
+      backdrop-filter: blur(2px); /* add a blur effect */
+
+      .name {
+        display: flex;
+
+        img {
+          height: 50px;
+          width: 50px;
+          size: cover;
+        }
       }
     }
+
+    .button {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: bottom;
+      margin-top: 10px;
+    }
+  }
+// }
+
+// BUTTON FOR GOING TO CHARACTERS
+// HOME BUTTONs
+.classes-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 5px;
+  background: $tan-100;
+  border: 2px solid $tan-500;
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+ }
+
+ .classes-button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   }
 
-  .button{
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: bottom;
-    margin-top: 10px;
-  }
-}
+ .classes-button:hover {
+  background: $tan-100;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+ }
+
+ .classes-button:active::before {
+  // -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  // box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+ }
