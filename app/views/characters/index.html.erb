@@ -33,11 +33,11 @@
       </div>
     </div>
   </div>
-  <%= will_paginate @characters, id: "pagination" %>
+  <%#= will_paginate @characters, id: "pagination", page_links: false %>
 </div>
  <div class="arrow-container">
-    <a href="#" class="arrow arrow-left"><i class="fas fa-chevron-left"></i></a>
-    <a href="#" class="arrow arrow-right"><i class="fas fa-chevron-right"></i></a>
+    <div class="arrow arrow-left"><%= will_paginate @characters, id: "arrow", page_links: false, next_label: "", previous_label: "<<" %></div>
+    <div class="arrow arrow-right"><%= will_paginate @characters, id: "arrow", page_links: false, previous_label: "", next_label: ">>"  %></div>
   </div>
 
 
@@ -50,38 +50,5 @@ links.forEach(link => {
     document.getElementById('myImage').src = imageUrl;
   });
 });
-
-const pagination = document.getElementById("pagination");
-const leftArrow = document.querySelector(".arrow-left");
-const rightArrow = document.querySelector(".arrow-right");
-
-// update arrows when pagination links are clicked
-pagination.addEventListener("click", (event) => {
-  if (event.target.tagName === "A") {
-    const prevLink = pagination.querySelector('a[rel="prev"]');
-    const nextLink = pagination.querySelector('a[rel="next"]');
-    leftArrow.href = prevLink ? prevLink.href : "#";
-    rightArrow.href = nextLink ? nextLink.href : "#";
-  }
-});
-
-// initial setup of arrows
-const prevLink = pagination.querySelector('a[rel="prev"]');
-const nextLink = pagination.querySelector('a[rel="next"]');
-leftArrow.href = prevLink ? prevLink.href : "#";
-rightArrow.href = nextLink ? nextLink.href : "#";
-
-leftArrow.addEventListener("click", (event) => {
-  event.preventDefault();
-  const prevLink = pagination.querySelector('a[rel="prev"]');
-  if (prevLink) prevLink.click();
-});
-
-rightArrow.addEventListener("click", (event) => {
-  event.preventDefault();
-  const nextLink = pagination.querySelector('a[rel="next"]');
-  if (nextLink) nextLink.click();
-});
-
 
 <% end %>
