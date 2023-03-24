@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  before_action :authenticate_user!
   require 'httparty'
   require 'json'
   require 'base64'
@@ -18,7 +19,7 @@ class ImagesController < ApplicationController
   def create_portrait
     @campaign = Campaign.find(params[:campaign_id])
     @character = Character.find(params[:character_id])
-    @prompt = "(#{@character.class_list}), (#{@character.race}), ((#{@character.eyes} eyes)), (#{@character.hair} hair), (#{@character.skin} skin)"
+    @prompt = "((#{@character.class_list.downcase})), (#{@character.race.downcase}), ((#{@character.eyes.downcase} eyes)), ((#{@character.hair.downcase} hair)), ((#{@character.skin.downcase} skin))"
     @style = "test dnd portrait"
     call_sd_api
     save_image
@@ -64,7 +65,7 @@ class ImagesController < ApplicationController
       ]
     }
 
-    response = HTTParty.post('https://9bb163d3-72bf-420c.gradio.live/sdapi/v1/txt2img', body: body.to_json, headers: { 'Content-Type' => 'application/json' })
+    response = HTTParty.post('http://sddndummy.ddns.net:7860/sdapi/v1/txt2img', body: body.to_json, headers: { 'Content-Type' => 'application/json' })
     response_hash = JSON.parse(response.body)
     @base64_string = response_hash["images"].first
     @end = Time.current
