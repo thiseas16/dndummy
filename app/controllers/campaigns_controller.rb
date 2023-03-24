@@ -2,6 +2,7 @@ class CampaignsController < ApplicationController
   before_action :authenticate_user!
   def index
     @campaigns = Campaign.all
+    @campaigns = Campaign.paginate(page: params[:page], per_page: 6)
   end
 
   def new
