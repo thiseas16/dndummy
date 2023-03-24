@@ -3,27 +3,28 @@
     <h1 class="main-title">Welcome to our Campaigns!</h1>
   </div>
 
-  <%= link_to 'Add a new campaign', new_campaign_path%>
+  <%= link_to 'Add a new campaign', new_campaign_path, class: 'home-button'%>
 
-  <div class="page-container-index">
-    <% @campaigns.each do |c| %>
-      <a href="<%= campaign_path(c) %>">
-        <div class="container-card">
-          <% path = 'https://res.cloudinary.com/dnorlz2hl/image/upload/v1678899102/development/campaign_ultrawide_ofhq14.jpg' %>
-          <% path = cl_image_path c.photo.key  if c.photo.attached? %>
-          <div class="frame5" style="background-image: url('<%= path %>')">
-            <div class="rectangle3">
-              <%= c.title %>
+  <div class="campaign-index-card">
+    <div class="card-campaign-grid">
+      <% @campaigns.each do |c| %>
+        <div class="card-campaign-container">
+          <a href="<%= campaign_path(c) %>">
+            <div class="card-campaing">
+              <% path = 'https://res.cloudinary.com/dnorlz2hl/image/upload/v1678899102/development/campaign_ultrawide_ofhq14.jpg' %>
+              <% path = cl_image_path c.photo.key  if c.photo.attached? %>
+              <div class="card-campaign-title">
+                <h1><%= c.title %></h1>
+              </div>
+              <div class="card-campaign-image" style="background-image: url('<%= path %>')"></div>
+              <div class="card-campaign-description">
+                <%= truncate(c.description, length: 140, omission: '...') %>
+              </div>
             </div>
-            <div class="rectangle4">
-              5 ⭐
-            </div>
-            <div class="rectangle5">
-              <%= c.description %>
-            </div>
-          </div>
+          </a>
         </div>
-      </a>
-    <% end %>
+      <% end %>
+    </div>
+    <%= will_paginate @campaigns , previous_label: ''%>
   </div>
 </div>
