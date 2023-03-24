@@ -18,10 +18,12 @@
             </p></div>
           </div>
           <div class = "button">
-            <%= link_to "READ ABOUT #{cl.name.upcase}", classes_show_path(cl), class: 'btn btn-dark' %>
+            <%= link_to "READ MORE", classes_show_path(cl), class: 'classes-button' %>
+            <%#= link_to "READ ABOUT #{cl.name.upcase}", classes_show_path(cl), class: 'classes-button' %>
           </div>
         </div>
       <% end %>
     </div>
   </div>
+  <%= link_to "Back", handbook_path, class: 'back-button'%>
 </div>

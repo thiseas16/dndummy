@@ -11,6 +11,8 @@ gem "sprockets-rails"
 
 # For easier readability in handbook
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"

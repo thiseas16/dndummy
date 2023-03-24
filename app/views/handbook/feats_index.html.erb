@@ -1,5 +1,11 @@
-<p>
-  <% @feats.each do |f| %>
-    <%= link_to f.name, feats_show_path(f)  %>
-  <% end %>
-</p>
+<div class="trait-home">
+  <div class="catching-phrase">
+    <h1 class="main-title">Welcome to DnDummy</h1>
+  </div>
+  <div class="traits-container">
+    <% @feats.each do |f| %>
+      <%= link_to f.name, feats_show_path(f)  %>
+    <% end %>
+  </div>
+      <%= link_to "Back", handbook_path, class: 'back-button'%>
+</div>
