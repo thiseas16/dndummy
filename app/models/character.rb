@@ -15,7 +15,7 @@ class Character < ApplicationRecord
   has_many :class_lists, through: :character_class_list_joins
   has_many :character_language_joins
   has_many :languages, through: :character_language_joins
-  has_many :attacks
-  has_many :skills
+  has_many :attacks, dependent: :destroy
+  has_many :skills, dependent: :destroy
   has_one_attached :photo
 end
