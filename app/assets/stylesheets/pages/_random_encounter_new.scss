@@ -1,0 +1,91 @@
+.encounter-new-container{
+  flex-grow: 1;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/d9spnlx-ae6275b7-863e-4d5d-8289-2aa14fb53f48.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZDlzcG5seC1hZTYyNzViNy04NjNlLTRkNWQtODI4OS0yYWExNGZiNTNmNDguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CeqSJweFupT6kOSkl5A1mi2lkItTf1wU_XbcdOou9OU');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  .form-container{
+    margin-top: 200px;
+    border: 3px solid $eggplant;
+    border-radius: 10px;
+    width: 60%;
+  }
+
+  .header{
+    text-align: center;
+    background: $eggplant;
+    color: white;
+  }
+
+  form {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    display: flex;
+    flex-direction: column;
+    background: $tan-200;
+    margin: 0;
+
+    textarea {
+      height: 100px;
+      background: $tan-100;
+      text-align: center;
+    }
+
+    .field-label {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .field-area{
+      background: $tan-100;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      text-align: center;
+    }
+
+    label {
+      font-weight: 500;
+      color: $tan-100;
+      background: $eggplant;
+      padding: 5px;
+    }
+
+    .description-label{
+      text-align: center;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .small-fields{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .field{
+      background: $eggplant;
+      border-radius: 5px;
+      padding: 3px;
+    }
+
+    .description-field{
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .submit-div{
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-button{
+    margin-top: 10px;
+    width: 50%;
+  }
+}

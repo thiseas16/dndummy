@@ -2,13 +2,11 @@ require 'openai'
 require 'json'
 
 class RandomCharacterController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_campaign
   def new
-    @campaign = Campaign.find(params[:campaign_id])
   end
 
   def create
-    @campaign = Campaign.find(params[:campaign_id])
     @prompt = params[:prompt]
     character_random_generate
     character = Character.new(
@@ -46,6 +44,12 @@ class RandomCharacterController < ApplicationController
     character.campaign = @campaign
     character.save
     redirect_to campaign_character_path(@campaign, character)
+  end
+
+  private
+
+  def set_campaign
+    @campaign = Campaign.find(params[:campaign_id])
   end
 
   def character_random_generate

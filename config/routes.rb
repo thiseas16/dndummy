@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :campaigns, only: %i[index new create show destroy] do
     get '/dice', to: 'campaigns#dice'
-    resources :encounters, only: %i[new create index]
+    resources :encounters, only: %i[new create index show]
     resources :characters, only: %i[index new create show edit update destroy]
     resources :backgrounds, only: %i[new create]
     get '/images/all', to: 'images#all', as: 'all_images'
