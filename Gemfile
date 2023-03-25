@@ -58,7 +58,7 @@ gem "sassc-rails"
 gem 'httparty'
 
 # gem 'ruby-openai'
-gem 'ruby-openai', path: "./OPENAI_CUSTOM_GEM"
+gem 'ruby-openai', path: "vendor/ruby-openai-1.0.1"
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

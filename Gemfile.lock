@@ -7,7 +7,7 @@ GIT
       activemodel (>= 5.2)
 
 PATH
-  remote: OPENAI_CUSTOM_GEM
+  remote: vendor/ruby-openai-1.0.1
   specs:
     ruby-openai (3.5.0)
       httparty (>= 0.18.1)
