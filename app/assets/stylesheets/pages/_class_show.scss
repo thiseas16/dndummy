@@ -1,16 +1,53 @@
 .class-show-container{
+  padding: 20px;
+  background-position: 135%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: flex-start;
+  background-color: $tan-100;
+
+  .class-show-right {
+    border-radius: 20px;
+    border: 4px solid $eggplant;
+    background-color: $tan-200-difuse;
+    padding: 20px;
+  }
 
   h1 {
+    padding: 20px;
     border-bottom: solid 2px black;
+    backdrop-filter: blur(2px);
+    color: $tan-400;
+    background:  rgba(0, 0, 0, 0.356);
+    -webkit-text-stroke: 1px #000;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: 2px solid $eggplant;
+    border-left: solid 5px black;
   }
 
   h2, h3{
-    border-left: solid 5px black;
+    margin-top: 10px;
+    padding: 5px;
     padding-left: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: solid 2px black;
+    border-left: solid 5px black;
+    border-right: 2px solid $eggplant;
+    backdrop-filter: blur(2px);
+    color: $tan-400;
+    background:  rgba(0, 0, 0, 0.356);
+    -webkit-text-stroke: 1px #000;
   }
 
-  display: flex;
-  justify-content: center;
+  p {
+    border-right: 2px solid $eggplant;
+    border-left: 2px solid $eggplant;
+    padding: 10px;
+  }
+
   .information{
     width: 1024px;
 
