@@ -19,7 +19,6 @@
 !/tmp/pids/.keep
 
 # Ignore uploaded files in development.
-/OPENAI_CUSTOM_GEM
 /storage/*
 !/storage/.keep
 /tmp/storage/*
