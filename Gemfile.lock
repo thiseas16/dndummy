@@ -6,8 +6,9 @@ GIT
       actionpack (>= 5.2)
       activemodel (>= 5.2)
 
-PATH
-  remote: OPENAI_CUSTOM_GEM
+GIT
+  remote: https://github.com/thiseas16/ruby-openai.git
+  revision: e543ea3ec3554e54ae0b6f312157c806505294bb
   specs:
     ruby-openai (3.5.0)
       httparty (>= 0.18.1)
