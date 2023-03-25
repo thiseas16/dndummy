@@ -1,0 +1,6 @@
+<% @encounters.each do |encounter| %>
+  <%= encounter.title %>
+  <%= encounter.description %>
+<% end %>
+
+<%= link_to 'Generate New Encounter', new_campaign_encounter_path %>

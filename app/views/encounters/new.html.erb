@@ -1,0 +1,36 @@
+<div class = "encounter-new-container">
+  <div class = "form-container">
+    <div class = "header">
+      <h1>Encounter Generator</h1>
+    </div>
+    <div class = "form">
+      <%= form_tag campaign_encounters_path do %>
+      <div class = "small-fields">
+        <div class = "field">
+          <%= label_tag :era, 'Era:', class: 'field-label' %>
+          <%= text_field_tag :era, nil, placeholder: "e.g. medieval", class: 'field-area' %>
+        </div class = "field">
+        <div class = "field">
+          <%= label_tag :theme, 'Theme:', class: 'field-label' %>
+          <%= text_field_tag :theme, nil, placeholder: "e.g. undead", class: 'field-area' %>
+          </div>
+        <div class = "field">
+          <%= label_tag :players, 'Number of Players:', class: 'field-label' %>
+          <%= text_field_tag :players, nil, placeholder: "e.g. 5",class: 'field-area' %>
+          </div>
+        <div class = "field">
+          <%= label_tag :lvl, 'Average Level:', class: 'field-label' %>
+          <%= text_field_tag :lvl, nil, placeholder: "e.g. 3",class: 'field-area' %>
+        </div>
+      </div>
+      <div class = "description-field">
+        <%= label_tag :description, 'Encounter Description', class: 'description-label' %>
+        <%= text_area_tag :description, nil, placeholder: "e.g. The players entered a forest which had been known to be cursed for ages. Legends say, that undead crawl around it in the night, and nobody that has entered has ever left." %>
+      </div>
+      <div class = 'submit-div'>
+        <%= submit_tag 'Generate Encounter', class: 'home-button' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_campaign
   require 'httparty'
   require 'json'
   require 'base64'
@@ -9,7 +9,6 @@ class ImagesController < ApplicationController
   end
 
   def new
-    @campaign = Campaign.find(params[:campaign_id])
     @image = Image.new
   end
 
@@ -17,7 +16,6 @@ class ImagesController < ApplicationController
   end
 
   def create_portrait
-    @campaign = Campaign.find(params[:campaign_id])
     @character = Character.find(params[:character_id])
     @prompt = "((#{@character.class_list.downcase})), (#{@character.race.downcase}), ((#{@character.eyes.downcase} eyes)), ((#{@character.hair.downcase} hair)), ((#{@character.skin.downcase} skin))"
     @style = "test dnd portrait"
@@ -34,7 +32,6 @@ class ImagesController < ApplicationController
     @prompt = params[:image][:prompt]
     @style = "test dnd abstract"
     @image.prompt = @prompt
-    @campaign = Campaign.find(params[:campaign_id])
     @image.campaign = @campaign
     call_sd_api
     save_image
@@ -45,15 +42,17 @@ class ImagesController < ApplicationController
   end
 
   def index
-    @campaign = Campaign.find(params[:campaign_id])
   end
 
   def all
     @images = Image.all
-    @campaign = Campaign.find(params[:campaign_id])
   end
 
   private
+
+  def set_campaign
+    @campaign = Campaign.find(params[:campaign_id])
+  end
 
   def call_sd_api
     @start = Time.current
