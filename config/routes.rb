@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   root to: "pages#home"
-  get 'openai', to: 'openai#index'
-  post 'openai/generate'
+  # get 'openai', to: 'openai#index'
+  # post 'openai/generate'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
   resources :campaigns, only: %i[index new create show destroy] do
     get '/dice', to: 'campaigns#dice'
     resources :encounters, only: %i[new create index show]
