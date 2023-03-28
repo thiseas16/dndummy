@@ -1,5 +1,6 @@
 class RandomEncounter < ActiveJob::Base
-  def perform(era, theme, players, lvl, description, campaign)
+  include Rails.application.routes.url_helpers
+  def perform(era, theme, players, lvl, description, campaign, user_id)
     # do something with arg1 and arg2
     @era = era
     @theme = theme
@@ -56,6 +57,11 @@ class RandomEncounter < ActiveJob::Base
         end
       end
     end
+    message = "Encounter has been successfully generated!"
+    redirect = campaign_encounter_path(@encounter)
+    ActionCable.server.broadcast(
+      user_id, {message: message, job: "encounter", redirect: redirect}
+    )
   end
 
   def api_call

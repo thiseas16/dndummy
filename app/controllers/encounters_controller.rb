@@ -18,7 +18,7 @@ class EncountersController < ApplicationController
     @lvl = params[:lvl]
     @description = params[:description]
 
-    RandomEncounter.perform_later(@era, @theme, @players, @lvl, @description, @campaign)
+    RandomEncounter.perform_later(@era, @theme, @players, @lvl, @description, @campaign, current_user.id)
     redirect_to campaign_encounters_path(@campaign)
   end
 

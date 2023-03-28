@@ -1,5 +1,6 @@
 class RandomCharacter < ActiveJob::Base
-  def perform(prompt, campaign)
+  include Rails.application.routes.url_helpers
+  def perform(prompt, campaign, user_id)
     @prompt = prompt
     @campaign = campaign
     api_call
@@ -37,6 +38,11 @@ class RandomCharacter < ActiveJob::Base
     )
     character.campaign = @campaign
     character.save
+    message = "Character has been successfully generated!"
+    redirect = campaign_character_path(@character)
+    ActionCable.server.broadcast(
+      user_id, {message: message, redirect: redirect}
+    )
   end
 
   def api_call

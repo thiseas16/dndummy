@@ -17,27 +17,13 @@ class ImagesController < ApplicationController
 
   def create_portrait
     @character = Character.find(params[:character_id])
-    @prompt = "((#{@character.class_list.downcase})), (#{@character.race.downcase}), ((#{@character.eyes.downcase} eyes)), ((#{@character.hair.downcase} hair)), ((#{@character.skin.downcase} skin))"
-    @style = "test dnd portrait"
-    call_sd_api
-    save_image
-    file = File.open('app/assets/images/image.jpg', 'rb')
-    @character.photo.attach(io: file, filename: 'filename', content_type: 'image/jpeg')
-    @character.save!
+    GenerateImage.perform_later('portrait', @character, @campaign, current_user.id)
     redirect_to campaign_character_path(@campaign, @character)
   end
 
   def create
-    @image = Image.new
     @prompt = params[:image][:prompt]
-    @style = "test dnd abstract"
-    @image.prompt = @prompt
-    @image.campaign = @campaign
-    call_sd_api
-    save_image
-    file = File.open('app/assets/images/image.jpg', 'rb')
-    @image.photo.attach(io: file, filename: 'filename', content_type: 'image/jpeg')
-    @image.save!
+    GenerateImage.perform_later('image', @prompt, @campaign, current_user.id)
     redirect_to campaign_all_images_path(@campaign)
   end
 
@@ -46,6 +32,7 @@ class ImagesController < ApplicationController
 
   def all
     @images = Image.all
+    # Test.perform_later(current_user.id) #testing purposes
   end
 
   private
