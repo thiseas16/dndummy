@@ -1,11 +1,54 @@
-<div class="trait-home">
-  <div class="catching-phrase">
-    <h1 class="main-title">Welcome to DnDummy</h1>
+<div class="language-main-home">
+  <div class="language-phrase">
+    <%# <h1 class="main-title">Learn about the Equipments</h1> %>
+      <%= link_to "Back", handbook_path, class: 'back-button' %>
   </div>
-  <div class="traits-container">
-    <% @languages.each do |l| %>
-      <%= link_to l.name, languages_show_path(l)  %>
-    <% end %>
+
+  <div class="language-home">
+    <div class="languages-left">
+      <div class="languages-container">
+        <% @languages.each do |l| %>
+          <a href="#" class="language-link">
+            <div class="language" id="language-<%= l.id %>"
+              nameAttr="<%= l.name %>">
+              <strong><%= l.name %></strong>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="languages-right">
+      <h1>LANGUAGES</h1>
+      <p>Languages in D&D 5th Edition represent the different tongues that characters can speak, read, and write. Knowing different languages can be important for communicating with non-player characters, deciphering ancient texts, or navigating unfamiliar lands.</p>
+      <p>Characters begin the game knowing one or more languages, depending on their race and background. Each race has a set of languages that they automatically know, and characters can choose additional languages based on their background. For example, a character with a noble background might know Common and Elvish, while a character with a sailor background might know Common and Aquan.</p>
+      <p>There are a wide variety of languages in the game, ranging from the common tongues spoken by most races to obscure languages spoken only by a few creatures or civilizations. Some languages are specific to certain regions or cultures, while others are tied to particular schools of magic or religious traditions.</p>
+      <p>Characters can learn additional languages by spending downtime studying or by interacting with other characters or creatures that speak those languages. Some classes, such as the Bard and the Wizard, have features that allow them to learn additional languages more easily.</p>
+      <p>Knowing different languages can be very useful in the game, allowing characters to communicate with non-player characters who might not speak Common or to decipher ancient texts or inscriptions. In some cases, knowing a particular language might be necessary to complete a quest or mission, making it an important part of character development and progression.</p>
+      <p>Overall, languages are an important aspect of character creation and development in D&D 5th Edition. Whether players choose to focus on mastering multiple languages or specialize in a single tongue, knowing different languages can greatly enhance a character's ability to communicate and navigate the game world.</p>
+    </div>
   </div>
-      <%= link_to "Back", handbook_path, class: 'back-button'%>
+
 </div>
+
+<div>
+<div class="languages-container">
+
+</div>
+
+
+<script>
+const languageButtons = document.querySelectorAll(".language-link");
+languageButtons.forEach(button => {
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+    const nameAttr = this.querySelector(".language").getAttribute("nameAttr");
+    const languagesRight = document.querySelector(".languages-right");
+    languagesRight.innerHTML = "";
+    languagesRight.innerHTML = `
+      <h1>${nameAttr}</h1>
+      <p><strong>Name:</strong> ${nameAttr}</p>
+    `;
+  });
+});
+</script>

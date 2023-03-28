@@ -1,13 +1,67 @@
-<div class="trait-home">
+<div class="trait-main-home">
   <div class="catching-phrase">
-    <h1 class="main-title">Welcome to DnDummy</h1>
+    <%# <h1 class="main-title">Learn about the Traits</h1> %>
+      <%= link_to "Back", handbook_path, class: 'back-button' %>
   </div>
-  <div class="traits-container">
-    <% @traits.each do |t| %>
-      <div class="trait">
-        <%= link_to t.name, traits_show_path(t) %>
+
+  <div class="trait-home">
+    <div class="traits-left">
+      <div class="traits-container">
+        <% @traits.each do |t| %>
+          <a href="#" class="trait-link">
+            <% races = "" %>
+            <% t.races.each_with_index do |r, index| %>
+              <% if index == 0 %>
+                <% races = r.name %>
+              <% else %>
+                <% races = races + ", " + r.name %>
+                <% end %>
+            <% end %>
+            <div class="trait" id="trait-<%= t.id %>"
+              nameAttr="<%= t.name %>"
+              racesAttr="<%= races %>"
+              description="<%= t.description %>">
+              <strong><%= t.name %></strong>
+            </div>
+          </a>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+
+    <div class="traits-right">
+      <%# <h1>TRAITS</h1> %>
+      <p>Traits are aspects of a character's personality, background, or physique that make him better at some activities and worse at others. In many ways, traits resemble feats: A character can have only a limited number of traits, and each trait provides some benefit. Unlike feats, however, traits always carry a corresponding drawback. In addition to their game effects, traits suggest characteristics about the character's personality that might lead to interesting roleplaying opportunities. Together with a character's class and feat selection, traits offer a way for game mechanics to encourage deeper character backgrounds and consistent roleplaying.</p>
+      <p>Traits serve as an interesting starting point for roleplaying, reminding players of their characters' most prominent strengths and weaknesses. However, roleplaying a certain aspect of a character's personality does not require possessing the trait. For example, a paladin can be honest and forthright without the Honest trait. The player should roleplay the character consistently even though the character's honesty has no effect on his skill checks.</p>
+      <p>A character can begin play with up to two traits, chosen by the player at the time of character creation. Alternatively, the game master can require players to roll on Table: Character Traits to determine the traits possessed by their characters.</p>
+      <p>As characters advance in level and ability, they might want to get rid of the traits that they chose at the beginning of play. Although characters cannot rid themselves of a trait directly, specific feats, skill ranks, or magic items can compensate for the penalties imposed by a trait. For example, an abrasive character can work on becoming more personable by spending skill points to gain a rank in Bluff and a rank in Diplomacy, thereby offsetting the drawback from the Abrasive trait.</p>
+      <p>If the game master allows it, players may add traits to their characters after 1st level. The game master might allow a player to assign a trait to her character after she has roleplayed the character in a manner consistent with the trait in question, or after a traumatic or life changing experience (after dying, a character might develop the Cautious trait or the Aggressive trait). If the game master includes this option, a character should gain a new trait no more frequently than once every five levels.</p>
+    </div>
   </div>
-      <%= link_to "Back", handbook_path, class: 'back-button'%>
+
 </div>
+
+<div>
+<div class="traits-container">
+
+</div>
+
+</div>
+
+<script>
+const traitButtons = document.querySelectorAll(".trait-link");
+traitButtons.forEach(button => {
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+    const nameAttr = this.querySelector(".trait").getAttribute("nameAttr");
+    const racesAttr = this.querySelector(".trait").getAttribute("racesAttr");
+    const descriptionAttr = this.querySelector(".trait").getAttribute("description");
+    const traitsRight = document.querySelector(".traits-right");
+    traitsRight.innerHTML = "";
+    traitsRight.innerHTML = `
+      <h1>${nameAttr}</h1>
+      <p><strong>Races:</strong> ${racesAttr}</>
+      <p><strong>Description:</strong> ${descriptionAttr}</p>
+    `;
+  });
+});
+</script>

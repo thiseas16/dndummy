@@ -1,11 +1,57 @@
-<div class="trait-home">
-  <div class="catching-phrase">
-    <h1 class="main-title">Welcome to DnDummy</h1>
+<div class="feat-main-home">
+  <div class="feat-phrase">
+    <%# <h1 class="main-title">Learn about the Equipments</h1> %>
+      <%= link_to "Back", handbook_path, class: 'back-button' %>
   </div>
-  <div class="traits-container">
-    <% @proficiencies.each do |p| %>
-      <%= link_to p.name, proficiencies_show_path(p)  %>
-    <% end %>
+
+  <div class="feat-home">
+    <div class="feats-left">
+      <div class="feats-container">
+        <% @proficiencies.each do |p| %>
+          <a href="#" class="feat-link">
+            <div class="feat" id="feat-<%= p.id %>"
+              nameAttr="<%= p.name %>"
+              profType="<%= p.prof_type %>">
+              <strong><%= p.name %></strong>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="feats-right">
+      <h1>PROFICIENCIES</h1>
+      <p>Proficiencies in D&D 5th Edition represent a character's areas of expertise, skills, and knowledge. A proficiency is a specific skill or tool that a character is trained in, allowing them to perform certain tasks or actions with greater success or efficiency. Proficiencies can be related to combat, magic, or non-combat skills, and they can be acquired through a character's race, class, or background.</p>
+      <p>Characters begin the game with a set of proficiencies based on their race and class. Each race has certain proficiencies that they automatically possess, such as proficiency in certain weapons or armor types. Similarly, each class has a set of proficiencies that are unique to that class, such as proficiency in certain skills, saving throws, or weapons.</p>
+      <p>In addition to race and class proficiencies, characters can also gain proficiencies through their background. Each background provides a set of skills and tools that the character is proficient in, such as proficiency in Athletics or proficiency with a set of artisan's tools.</p>
+      <p>Characters can also gain additional proficiencies through training or practice. During downtime between adventures, a character can spend time training in a particular skill or tool, allowing them to gain proficiency in that area. Additionally, some feats or class features can grant additional proficiencies.</p>
+      <p>Proficiencies are important in the game because they can greatly enhance a character's ability to succeed at certain tasks or actions. For example, a character with proficiency in Stealth is more likely to be successful in sneaking past enemies undetected, while a character with proficiency in Medicine is better able to heal injuries and ailments.</p>
+      <p>Overall, proficiencies are an important aspect of character creation and development in D&D 5th Edition. By choosing the right proficiencies, characters can specialize in certain areas and enhance their ability to succeed in combat, magic, or non-combat tasks.</p>
+    </div>
   </div>
-      <%= link_to "Back", handbook_path, class: 'back-button'%>
+
 </div>
+
+<div>
+<div class="feats-container">
+
+</div>
+    <%= will_paginate @proficiencies , previous_label: ''%>
+</div>
+
+<script>
+const featButtons = document.querySelectorAll(".feat-link");
+featButtons.forEach(button => {
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+    const nameAttr = this.querySelector(".feat").getAttribute("nameAttr");
+    const profType = this.querySelector(".feat").getAttribute("profType");
+    const featsRight = document.querySelector(".feats-right");
+    featsRight.innerHTML = "";
+    featsRight.innerHTML = `
+      <h1>${nameAttr}</h1>
+      <p><strong>Proficiency Type:</strong> ${profType}</p>
+    `;
+  });
+});
+</script>

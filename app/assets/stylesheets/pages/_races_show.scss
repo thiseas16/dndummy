@@ -1,0 +1,71 @@
+.race-show-container{
+  padding: 20px;
+  background-image: url('https://cdnb.artstation.com/p/assets/images/images/007/891/965/large/javier-charro-prueba10-trat.jpg?1509177276');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  // background-position: 135%;
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  display: flex;
+  // justify-content: flex-start;
+  // position: center;
+  background-color: $tan-100;
+ justify-content: center;
+
+  .class-show-left {
+    border-radius: 20px;
+    border: 4px solid $eggplant;
+    background-color: $tan-200-difuse;
+    padding: 20px;
+    position: relative;
+    width: 60%;
+    margin: 20px;
+  }
+
+  .class-show-right {
+    border-radius: 20px;
+    border: 4px solid $eggplant;
+    background-color: $tan-200-difuse;
+    padding: 20px;
+    position: relative;
+    width: 30%;
+    margin: 20px;
+    margin-right: 50px;
+  }
+
+  h1 {
+    padding: 20px;
+    border-bottom: solid 2px black;
+    backdrop-filter: blur(2px);
+    color: $tan-200;
+    background:  rgba(0, 0, 0, 0.6);
+    -webkit-text-stroke: 1px #000;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: 2px solid $eggplant;
+    border-left: solid 5px black;
+  }
+
+  h2, h3{
+    margin-top: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: solid 2px black;
+    border-left: solid 5px black;
+    border-right: 2px solid $eggplant;
+    backdrop-filter: blur(2px);
+    color: $tan-100;
+    background:  rgba(0, 0, 0, 0.6);
+    -webkit-text-stroke: 1px #000;
+  }
+
+  .p-class {
+    border-right: 2px solid $eggplant;
+    border-left: 2px solid $eggplant;
+    padding: 10px;
+    background-color: $tan-100;
+  }
+}
