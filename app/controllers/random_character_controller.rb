@@ -8,7 +8,7 @@ class RandomCharacterController < ApplicationController
 
   def create
     @prompt = params[:prompt]
-    RandomCharacter.perform_later(@prompt, @campaign)
+    RandomCharacter.perform_later(@prompt, @campaign, current_user.id)
     redirect_to campaign_characters_path(@campaign)
   end
 

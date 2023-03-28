@@ -13,7 +13,6 @@ gem "sprockets-rails"
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
-
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -34,8 +33,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'pry'
+
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

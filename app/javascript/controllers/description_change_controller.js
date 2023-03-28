@@ -4,7 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["descriptionlist", "descriptionimage"]
   connect() {
-    console.log('i am bro')
   }
 
   change(event) {
