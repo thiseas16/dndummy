@@ -1,11 +1,59 @@
-<div class="trait-home">
+<div class="equipment-main-home">
   <div class="catching-phrase">
-    <h1 class="main-title">Welcome to DnDummy</h1>
+    <%# <h1 class="main-title">Learn about the Equipments</h1> %>
+      <%= link_to "Back", handbook_path, class: 'back-button' %>
   </div>
-  <div class="traits-container">
-    <% @equipment.each do |e| %>
-      <%= link_to e.name, equipment_show_path(e)  %>
-    <% end %>
+
+  <div class="equipment-home">
+    <div class="equipments-left">
+      <div class="equipments-container">
+        <% @equipment.each do |e| %>
+          <a href="#" class="equipment-link">
+            <div class="equipment" id="equipment-<%= e.id %>"
+              nameAttr="<%= e.name %>"
+              description="<%= e.description %>"
+              weightAttr="<%= e.weight %>">
+              <strong><%= e.name %></strong>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="equipments-right">
+      <h1>EQUIPMENT</h1>
+      <p>Equipment in D&D 5th Edition refers to the items, weapons, armor, and other gear that a character carries with them on their adventures. A character's equipment is an essential part of their abilities and playstyle, as it determines what they can do in combat, how they interact with the world around them, and how they approach various challenges and obstacles.</p>
+      <p>There are several types of equipment in the game, including weapons, armor, adventuring gear, tools, and mounts. Each piece of equipment has its own properties and functions, and characters can carry a certain amount of equipment based on their strength and carrying capacity.</p>
+      <p>Weapons are used to deal damage to enemies and can be either melee or ranged. Armor provides protection against attacks, reducing the damage a character takes in combat. Adventuring gear includes items like rope, torches, and rations, which can be used to aid in exploration and survival. Tools are used to perform specific tasks, such as picking locks or creating potions. Mounts are animals or vehicles that characters can ride to increase their speed and mobility.</p>
+      <p>Characters can obtain equipment through various means, including purchasing it from vendors, looting it from enemies, or receiving it as rewards for completing quests. The type and quality of equipment that a character has can greatly impact their success in combat and their ability to overcome obstacles in the game.</p>
+      <p>Overall, equipment is an essential part of a character's abilities and playstyle in D&D 5th Edition, and choosing the right gear for a given situation can be critical to a character's success. Players should carefully consider their equipment choices when creating and developing their characters, and look for opportunities to upgrade and enhance their gear as they progress through the game.</p>
+    </div>
   </div>
-      <%= link_to "Back", handbook_path, class: 'back-button'%>
+
 </div>
+
+<div>
+<div class="equipments-container">
+
+</div>
+    <%= will_paginate @equipment , previous_label: ''%>
+</div>
+
+<script>
+const equipmentButtons = document.querySelectorAll(".equipment-link");
+equipmentButtons.forEach(button => {
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+    const nameAttr = this.querySelector(".equipment").getAttribute("nameAttr");
+    const descriptionAttr = this.querySelector(".equipment").getAttribute("description");
+    const weightAttr = this.querySelector(".equipment").getAttribute("weightAttr");
+    const equipmentsRight = document.querySelector(".equipments-right");
+    equipmentsRight.innerHTML = "";
+    equipmentsRight.innerHTML = `
+      <h1>${nameAttr}</h1>
+      <p><strong>Description:</strong> ${descriptionAttr}</p>
+      <p><strong>Weight:</strong> ${weightAttr}</p>
+    `;
+  });
+});
+</script>

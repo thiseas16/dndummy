@@ -1,11 +1,11 @@
-.trait-main-home {
+.language-main-home {
   background-image: url('https://cdnb.artstation.com/p/assets/images/images/007/891/965/large/javier-charro-prueba10-trat.jpg?1509177276');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   justify-content: center;
 
-  .trait-home {
+  .language-home {
     position: relative;
     padding: 50px;
     display: flex;
@@ -34,15 +34,15 @@
     padding: 10px;
   }
 
-  .traits-container {
+  .languages-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     margin: 0 auto;
-    max-width: 900px;
+    // max-width: 900px;
   }
 
-  .trait {
+  .language {
     background-color: $tan-200;
     padding: 10px;
     border-radius: 10px;
@@ -54,7 +54,7 @@
     }
   }
 
-  .traits-left {
+  .languages-left {
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
@@ -68,7 +68,7 @@
     width: 50%;
   }
 
-  .traits-right {
+  .languages-right {
     margin-left: 20px;
     margin-right : 50px;
     background-color: $tan-200;

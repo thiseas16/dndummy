@@ -1,11 +1,21 @@
-<div class="trait-home">
-  <div class="catching-phrase">
-    <h1 class="main-title">Welcome to DnDummy</h1>
+<div class = "race-index-container">
+  <div class="classes-container">
+    <div class= "row">
+      <% @races.each do |r| %>
+        <div class = "col-3 races" >
+            <div class = "information">
+              <div class = "name">
+                <h1><%= r.name %></h1>
+              </div>
+              <div class = "description"><p><strong>Alignment:</strong> <%= r.alignment %></p></div>
+              <div class = "hit-die"><p><strong>Hit Die:</strong><%= r.size_description %></p></div>
+            </div>
+            <div class = "button">
+              <%= link_to "READ MORE", races_show_path(r), class: 'races-button' %>
+            </div>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <div class="traits-container">
-    <% @races.each do |r| %>
-      <%= link_to r.name, races_show_path(r)  %>
-    <% end %>
-  </div>
-      <%= link_to "Back", handbook_path, class: 'back-button'%>
+  <%= link_to "Back", handbook_path, class: 'back-button'%>
 </div>

@@ -1,11 +1,59 @@
-<div class="trait-home">
-  <div class="catching-phrase">
-    <h1 class="main-title">Welcome to DnDummy</h1>
+<div class="feat-main-home">
+  <div class="feat-phrase">
+    <%# <h1 class="main-title">Learn about the Equipments</h1> %>
+      <%= link_to "Back", handbook_path, class: 'back-button' %>
   </div>
-  <div class="traits-container">
-    <% @feats.each do |f| %>
-      <%= link_to f.name, feats_show_path(f)  %>
-    <% end %>
+
+  <div class="feat-home">
+    <div class="feats-left">
+      <div class="feats-container">
+        <% @feats.each do |f| %>
+          <a href="#" class="feat-link">
+            <div class="feat" id="feat-<%= f.id %>"
+              nameAttr="<%= f.name %>"
+              description="<%= f.description %>"
+              levelAttr="<%= f.lvl %>">
+              <strong><%= f.name %></strong>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="feats-right">
+      <h1>FEATS</h1>
+      <p>Feats are special abilities that characters can acquire in D&D 5th Edition that grant them new powers, enhance their existing abilities, or provide other unique benefits. Feats are an optional rule in the game, meaning that the game master can choose to include them or not, depending on their preference.</p>
+      <p>Feats are obtained by sacrificing an Ability Score Improvement that characters receive at certain levels. When a character gains an Ability Score Improvement, they can choose to take a feat instead of increasing their ability scores. Feats can only be taken if the character meets certain prerequisites, such as having a certain ability score or proficiency in a particular skill.</p>
+      <p>There are a wide variety of feats in the game, covering a range of different abilities and specialties. Some feats grant characters new combat abilities, such as improved critical hits or the ability to make attacks of opportunity. Other feats provide non-combat benefits, such as enhancing a character's spellcasting ability, allowing them to communicate with animals, or improving their ability to interact with others.</p>
+      <p>Feats can greatly enhance a character's abilities and playstyle, allowing them to excel in certain areas or perform unique feats that other characters cannot. However, taking a feat comes at a cost, as it means sacrificing the opportunity to increase the character's ability scores. Players should carefully consider whether the benefits of a feat outweigh the benefits of increasing their ability scores before making a decision.</p>
+      <p>Overall, feats offer an exciting way for characters to acquire new abilities and enhance their playstyle in D&D 5th Edition. Whether players choose to take feats or not, they provide an additional layer of customization and depth to character creation and development, allowing players to create unique and memorable characters that stand out in the game world.</p>
+    </div>
   </div>
-      <%= link_to "Back", handbook_path, class: 'back-button'%>
+
 </div>
+
+<div>
+<div class="feats-container">
+
+</div>
+    <%= will_paginate @feats , previous_label: ''%>
+</div>
+
+<script>
+const featButtons = document.querySelectorAll(".feat-link");
+featButtons.forEach(button => {
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+    const nameAttr = this.querySelector(".feat").getAttribute("nameAttr");
+    const descriptionAttr = this.querySelector(".feat").getAttribute("description");
+    const levelAttr = this.querySelector(".feat").getAttribute("levelAttr");
+    const featsRight = document.querySelector(".feats-right");
+    featsRight.innerHTML = "";
+    featsRight.innerHTML = `
+      <h1>${nameAttr}</h1>
+      <p><strong>Description:</strong> ${descriptionAttr}</p>
+      <p><strong>Level:</strong> ${levelAttr}</p>
+    `;
+  });
+});
+</script>

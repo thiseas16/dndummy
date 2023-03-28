@@ -1,41 +1,53 @@
-<% @race.attributes.except('id', 'created_at', 'updated_at').each do |hash| %>
-  <% if hash[1] %>
-    <p><%= hash[0]%>: <%= hash[1] %></p>
-    <% end %>
-<% end %>
+<div class="race-show-container">
+  <div class="class-show-left">
+    <h2>GENERAL INFORMATION</h2>
+      <div class= "p-class">
+        <% @race.attributes.except('id', 'created_at', 'updated_at').each do |hash| %>
+        <% if hash[1] %>
+          <p><%= hash[0]%>: <%= hash[1] %>
+          <% end %></p>
+        <% end %>
+      </div>
 
-ABILITY BONUSES
-<p>
-  <% @race.ability_bonuses.each do |ab| %>
-    <%= ab.ability_name %> : <%= ab.bonus %>
-  <% end %>
-</p>
+    <h2>ABILITY BONUSES</h2>
+      <div class= "p-class">
+      <% @race.ability_bonuses.each do |ab| %>
+        <p><%= ab.ability_name %> : <%= ab.bonus %></p>
+      <% end %>
+      </div>
 
-TRAITS
-<p>
-  <% @race.traits.each do |t| %>
-    <p><%= t.name %> : <%= t.description %></p>
-  <% end %>
-</p>
+    <h2>TRAITS</h2>
+      <div class= "p-class">
+      <% @race.traits.each do |t| %>
+        <p><%= t.name %> : <%= t.description %></p>
+      <% end %>
+      </div>
+  </div>
 
-LANGUAGES
-<p>
-  <% @race.languages.each do |l| %>
-    <%= l.name %>
-  <% end %>
-</p>
+  <div class="class-show-right">
+    <h2>LANGUAGES</h2>
+      <div class= "p-class">
+      <% @race.languages.each do |l| %>
+        <p><%= l.name %></p>
+      <% end %>
+      </div>
 
-PROFICIENCIES GRANTED
-<p>
-  <% @race.proficiencies.each do |p| %>
-    <%= p.name %>
-  <% end %>
-</p>
+    <h2>PROFICIENCIES GRANTED</h2>
+      <div class= "p-class">
+      <% @race.proficiencies.each do |p| %>
+        <p><%= p.name %></p>
+      <% end %>
+      </div>
 
-PROFICIENCIES TO CHOOSE
-<p>
-  <% RaceProficiencyChoiceJoin.where(race: @race).each do |r| #THIS NEEDS TO BE FIXED %>
-    <% p = Proficiency.find(r.proficiency_id) %>
-    <%= p.name %>
-  <% end %>
-</p>
+    <h2>PROFICIENCIES TO CHOOSE</h2>
+      <div class= "p-class">
+      <% RaceProficiencyChoiceJoin.where(race: @race).each do |r| #THIS NEEDS TO BE FIXED %>
+        <% p = Proficiency.find(r.proficiency_id) %>
+        <p><%= p.name %></p>
+      <% end %>
+      </div>
+  </div>
+
+</div>
+
+    <%= link_to "Back", handbook_path, class: 'back-button'%>

@@ -36,7 +36,8 @@ class HandbookController < ApplicationController
   end
 
   def equipment_index
-    @equipment = Item.all
+    # @equipment = Item.all
+    @equipment = Item.paginate(page: params[:page], per_page: 40)
   end
 
   def equipment_show
@@ -44,7 +45,8 @@ class HandbookController < ApplicationController
   end
 
   def feats_index
-    @feats = Feat.all
+    # @feats = Feat.all
+    @feats = Feat.paginate(page: params[:page], per_page: 36)
   end
 
   def feats_show
@@ -60,7 +62,8 @@ class HandbookController < ApplicationController
   end
 
   def proficiencies_index
-    @proficiencies = Proficiency.all
+    # @proficiencies = Proficiency.all
+    @proficiencies = Proficiency.paginate(page: params[:page], per_page: 40)
   end
 
   def proficiencies_show
