@@ -1,22 +1,54 @@
 .spell-home {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   position: relative;
   // height: 100vh;
   background-color: $brown-500;
-  padding: 50px;
+  // padding: 50px;
   background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/dal2la5-f70a3ee7-68c1-429d-9a0b-15faaa70acfa.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZGFsMmxhNS1mNzBhM2VlNy02OGMxLTQyOWQtOWEwYi0xNWZhYWE3MGFjZmEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.IxKzpKhJVFv2n-pIYhiGNmt_HU7Lyhcd0owR-E9xZmg');
   background-repeat: no-repeat;
   background-size: cover;
+
+  .spell-main-container {
+    position: relative;
+    padding: 50px;
+    display: flex;
+    width: 100%;
+  }
+
+  .spell-home-left {
+    margin-left: 20px;
+    margin-right : 50px;
+    padding: 10px;
+    border-radius: 10px;
+    // background-color: $tan-200;
+    // border: 2px solid $eggplant;
+    width: 30%;
+  }
+
+  .spell-home-right {
+    margin-left: 20px;
+    margin-right : 50px;
+    padding: 10px;
+    border-radius: 10px;
+    // background-color: $tan-200;
+    // border: 2px solid $eggplant;
+    width: 70%;
+  }
+
 }
 
 .spells-index{
-  width: 65%;
+  // width: 65%;
 }
+
+
+
 .columns-container-spells-index {
   // display: flex;
-  width: 65%;
+  // width: 65%;
   // background-color: $light-blue;
   background-color: antiquewhite;
   padding: 10px;
@@ -25,8 +57,7 @@
   border: 2px solid $eggplant;
 
   .column-titel{
-    width: 100%;
+    // width: 100%;
     color: $space-cadet-var;
   }
-
 }

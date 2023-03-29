@@ -1,57 +1,45 @@
 <div class="spell-home">
-  <div class="columns-container-spells-index">
-    <div class = "columns row">
-      <div class="column col-2">NAME</div>
-      <div class="column col-2">LEVEL</div>
-      <div class="column col-2">CASTING TIME</div>
-      <div class="column col-2">DURATION</div>
-      <div class="column col-2">RANGE</div>
-      <div class="column col-2">DAMAGE TYPE</div>
-    </div>
-    <div class="empty-block">
-      HI!
-    </div>
-  </div>
-  <div class="accordion spells-index" id="accordionExample">
-    <% @spells.each_with_index do |spell, index| %>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading<%=index%>">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=index%>" aria-expanded="true" aria-controls="collapse<%=index%>">
-            <div class="row" style="width: 100%; text-align: center;">
-              <div class="col-2 spell-field">
-                <%= spell.name %>
-              </div>
-              <div class="col-2 spell-field">
-                <%= spell.lvl %>
-              </div>
-              <div class="col-2 spell-field">
-                <%= spell.casting_time %>
-              </div>
-              <div class="col-2 spell-field">
-                <%= spell.duration %>
-              </div>
-              <div class="col-2 spell-field">
-                <%= spell.range %>
-              </div>
-              <div class="col-2 spell-field">
-                <%= spell.dmg_type %>
-              </div>
-            </div>
-          </button>
-        </h2>
-        <div id="collapse<%=index%>" class="accordion-collapse collapse" aria-labelledby="heading<%=index%>" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <p><%= spell.description %></p>
-            <div class="btn btn-info">
-              <%= link_to 'READ MORE', spells_show_path(spell) %>
-            </div>
+  <div class="spell-main-container">
+    <div class="spell-home-left">
+      <div class="search-bar">
+        <%= form_tag spells_path, method: :get, remote: false, id: "search-form" do %>
+          <div class="form-group">
+            <%= label_tag :search, "Search spells" %>
+            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Enter spell name" %>
           </div>
-        </div>
+          <div class="form-group">
+            <%= label_tag :lvl, "Level" %>
+            <%= select_tag :lvl, options_for_select(["1", "2", "3", "4", "5", "6", "7", "8", "9"]), class: "form-control", include_blank: true %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :casting_time, "Casting Time" %>
+            <%= select_tag :casting_time, options_for_select(["1 action", "1 bonus action", "1 reaction", "1 minute", "10 minutes", "1 hour", "8 hours", "12 hours", "24 hours"]), class: "form-control", include_blank: true %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :duration, "Duration" %>
+            <%= select_tag :duration, options_for_select(["Instantaneous", "1 round", "1 minute", "10 minutes", "1 hour", "8 hours", "24 hours", "7 days", "Until dispelled"]), class: "form-control", include_blank: true %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :range, "Range" %>
+            <%= select_tag :range, options_for_select(["Self", "Touch", "5 feet", "10 feet", "15 feet", "20 feet", "30 feet", "60 feet", "90 feet", "120 feet", "150 feet", "300 feet", "500 feet", "1 mile", "5 miles", "Unlimited"]), class: "form-control", include_blank: true %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :dmg_type, "Damage Type" %>
+            <%= select_tag :dmg_type, options_for_select(["Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Thunder", "Healing"]), class: "form-control", include_blank: true %>
+          </div>
+          <%= submit_tag "Search", class: "btn btn-primary", id: "search-button" %>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-  <div class="column-titel">
-    <%= will_paginate @spells , previous_label: ''%>
+    </div>
+
+    <div class="spell-home-right">
+      <div id="search-results">
+        <%= render partial: "handbook/spells_list", locals: { spells: @spells } %>
+      </div>
+      <div class="column-titel">
+        <%= will_paginate @spells , previous_label: '' %>
+      </div>
+    </div>
   </div>
   <%= link_to "Back", handbook_path, class: 'back-button'%>
 </div>

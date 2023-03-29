@@ -3,8 +3,37 @@ class HandbookController < ApplicationController
   end
 
   def spells_index
-    # @spells = Spell.all
-    @spells = Spell.paginate(page: params[:page], per_page: 13)
+    @spells = Spell.paginate(page: params[:page], per_page: 7)
+
+    if params[:search].present?
+      search_term = params[:search].downcase.titleize
+      @spells = @spells.where("name LIKE ?", "%#{search_term}%")
+    end
+
+    if params[:lvl].present?
+      level = params[:lvl].to_i
+      @spells = @spells.where(lvl: level)
+    end
+
+    if params[:casting_time].present?
+      casting_time = params[:casting_time]
+      @spells = @spells.where(casting_time: casting_time)
+    end
+
+    if params[:duration].present?
+      duration = params[:duration]
+      @spells = @spells.where(duration: duration)
+    end
+
+    if params[:range].present?
+      range = params[:range]
+      @spells = @spells.where(range: range)
+    end
+
+    if params[:dmg_type].present?
+      damage_type = params[:dmg_type]
+      @spells = @spells.where(dmg_type: damage_type)
+    end
   end
 
   def spells_show
