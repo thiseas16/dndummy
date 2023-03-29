@@ -22,6 +22,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: $headers-font;
+      font-size: 25px;
     }
   }
 
@@ -40,18 +42,27 @@
     margin-top: 20px;
     margin-bottom: 20px;
     // background-color: $light-blue;
-    background-color: antiquewhite;
+    background-color: $tan-100;
+
 
     .accordion-header{
+      font-family: sans-serif;
+      font-size: 5px;
+
       .accordion-button{
         color: $space-cadet-var;
         // background-color: $light-blue;
-        background-color: antiquewhite;
+        background-color: $tan-100-difuse;
+        margin: 0;
+        padding: 15px;
+
         .row{
           .spell-field{
             display: flex;
             justify-content: center;
             align-items: center;
+            // font-size: 20px;
+
 
           }
         }

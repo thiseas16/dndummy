@@ -32,7 +32,7 @@ class ImagesController < ApplicationController
 
   def all
     @images = Image.all
-    # Test.perform_later(current_user.id) #testing purposes
+    Test.perform_later(current_user.id) #testing purposes
   end
 
   private

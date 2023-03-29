@@ -39,7 +39,7 @@ class RandomCharacter < ActiveJob::Base
     character.campaign = @campaign
     character.save
     message = "Character has been successfully generated!"
-    redirect = campaign_character_path(@character)
+    redirect = campaign_character_path(@campaign, character)
     ActionCable.server.broadcast(
       user_id, {message: message, redirect: redirect}
     )

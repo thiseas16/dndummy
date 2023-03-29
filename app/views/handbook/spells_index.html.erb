@@ -27,7 +27,7 @@
             <%= label_tag :dmg_type, "Damage Type" %>
             <%= select_tag :dmg_type, options_for_select(["Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Thunder", "Healing"]), class: "form-control", include_blank: true %>
           </div>
-          <%= submit_tag "Search", class: "btn btn-primary", id: "search-button" %>
+          <%= submit_tag "Search", class: 'spell-search-button' , id: "search-button" %>
         <% end %>
       </div>
     </div>
