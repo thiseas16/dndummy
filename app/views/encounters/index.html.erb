@@ -20,8 +20,10 @@
           </div>
         <% end %>
       </div>
+      <div class = "buttons">
+        <%= link_to 'Generate New Encounter', new_campaign_encounter_path, class: 'home-button generate-button'%>
+        <%= link_to 'Back', campaign_path(@campaign), class: 'home-button back'%>
+      </div>
     </div>
   </div>
 </div>
-
-<%= link_to 'Generate New Encounter', new_campaign_encounter_path %>

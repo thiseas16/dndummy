@@ -1,1 +1,33 @@
-<%= @encounter.description %>
+<div class = "encounter-show-container">
+  <div class = "main-information">
+    <div class="title">
+      <h1><%= @encounter.title %></h1>
+    </div>
+    <div class="row">
+      <div class="left col-6">
+      <div class="description">
+        <h2>Description</h2>
+        <p><%= @encounter.description %></p>
+      </div>
+      <div class="tactics">
+        <h2>Tactics</h2>
+        <p><%= @encounter.tactics %></p>
+      </div>
+      </div>
+      <div class = "right col-6">
+        <%# <div class="dice-roller"></div> %>
+        <div class="character-list">
+          <h2>Enemies</h2>
+          <ul>
+            <% @encounter.characters.each do |character| %>
+              <li><%= character.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "secondary-information">
+    <div class="character-show"></div>
+  </div>
+</div>

@@ -9,7 +9,7 @@ class GenerateImage < ActiveJob::Base
       save_image
       character_photo_attach
       message = "The character portrait has been successfully generated!"
-      redirect = campaign_character_path(@character)
+      redirect = campaign_character_path(campaign, @character)
     else
       @prompt = argument
       @image = Image.new
@@ -20,7 +20,7 @@ class GenerateImage < ActiveJob::Base
       save_image
       image_photo_attach
       message = "The requested image has been successfully generated!"
-      redirect = campaigns_path(campaign)
+      redirect = campaign_all_images_path(campaign)
     end
     ActionCable.server.broadcast(
       user_id, { message: message, redirect: redirect }
