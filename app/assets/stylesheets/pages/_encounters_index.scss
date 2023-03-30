@@ -1,0 +1,73 @@
+.encounter-index-wrapper{
+  flex-grow: 1;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/d9spnlx-ae6275b7-863e-4d5d-8289-2aa14fb53f48.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZDlzcG5seC1hZTYyNzViNy04NjNlLTRkNWQtODI4OS0yYWExNGZiNTNmNDguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CeqSJweFupT6kOSkl5A1mi2lkItTf1wU_XbcdOou9OU');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .encounters{
+    width: 65%;
+  }
+
+  a {
+    text-decoration: none; /* removes underline */
+    color: inherit; /* inherits color from parent */
+    border: none; /* removes any default border */
+    outline: none; /* removes focus outline */
+  }
+
+  .margin-div:hover{
+    transform: scale(1.15);
+  }
+
+  .header{
+    background: $eggplant;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    color: white;
+
+    h1{
+      text-align: center;
+      padding: 10px;
+      margin: 0;
+    }
+  }
+
+  .information{
+    padding: 40px;
+    background: $tan-500-difuse;
+  }
+
+  .row{
+  }
+
+  h3{
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+  }
+
+  .margin-div{
+    margin: 25px;
+    box-shadow: 0px 0px 10px;
+    border-radius: 10px;
+  }
+
+  .title{
+    // color: white;
+    background: $accent-color-gold;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5px;
+  }
+
+  .description{
+    background: $tan-300;
+    padding: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    // color: white;
+  }
+}

@@ -73,3 +73,8 @@
   opacity: 0;
   transition: visibility 0s 2s, opacity 1s linear;
 }
+
+.invisible_set {
+  visibility: hidden;
+  opacity: 0;
+}
