@@ -1,5 +1,6 @@
 class CampaignsController < ApplicationController
   before_action :authenticate_user!
+
   def index
     @campaigns = Campaign.all
     @campaigns = Campaign.paginate(page: params[:page], per_page: 6)
@@ -21,6 +22,7 @@ class CampaignsController < ApplicationController
   end
 
   def dice
+    @campaign = Campaign.find(params[:campaign_id])
   end
 
   private
@@ -28,4 +30,6 @@ class CampaignsController < ApplicationController
   def campaign_params
     params.require(:campaign).permit(:title, :description, :photo)
   end
+
+
 end
