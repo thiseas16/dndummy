@@ -31,6 +31,7 @@ export default class extends Controller {
 
   notification_on(data){
     this.notificationTarget.classList.remove("invisible")
+    this.notificationTarget.classList.remove("invisible_set")
     this.notificationTarget.classList.add("visible")
     this.messageTarget.innerText = data["message"]
     this.redirectTarget.href = data["redirect"]

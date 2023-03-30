@@ -17,7 +17,11 @@ body{
   display: flex;
   flex-direction: column;
   position: relative;
+  cursor: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1680198783/development/cursor-small_utvh6j.png'), auto;
 
+  a:hover{
+    cursor: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1680198783/development/pointer-medieval-small_wyr0h3.png'), auto;
+  }
   .main{
     flex-grow: 2;
     display: flex;
