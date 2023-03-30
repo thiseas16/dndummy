@@ -1,51 +1,91 @@
 // DICE ROLLER
-
-.dice-page-container{
-  display: flex;
-  justify-content: center;
-  background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679095238/home-gif_g2eugg.gif');
+.dice-page-container {
+  background-image: url('https://cutewallpaper.org/28x/xrj2pe35l/177781445.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   flex-grow: 1;
-  align-items: stretch;
+  align-items: center;
+
+  .back-button-container {
+    // position: relative;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: 100px;
+
+    .home-button {
+      width: 30%;
+      text-align: center;
+    }
+  }
 }
+
+.dice-container{
+  display: flex;
+  justify-content: center;
+  // background-image: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1679095238/home-gif_g2eugg.gif');
+}
+
 .dice-roller {
   display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  box-sizing: border-box;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 30px;
+  // margin-bottom: 30px;
+  // padding-left: 100px;
+  // padding-right: 100px;
+  height: 70%;
 }
 
 .dice-block {
-  flex-grow: 1;
-  width: 45%;
-  border: 3px solid $byzantium;
+  // flex-grow: 1;
+  width: 30%;
+  border: 3px solid $space-cadet;
   border-radius: 4px;
   padding: 10px;
   margin: 5px;
-  background-color: $space-cadet-var;
+  background-color: $light-blue-difuse;
   color: $light-blue;
+  margin-left: 137px;
+
+  .form-column {
+    display: flex;
+  }
+
+  .form-row {
+    // display: flex;
+  }
 
   .form-label {
-    background-color: $raisin-black;
+    background-color: $light-blue-nodifuse;
     padding: 5px;
-    border: 1px solid $byzantium;
+    border: 3px solid $space-cadet;
+    border-left: 10px solid $tan-100-difuse;
+    border-radius: 5px;
+    padding-left: 15px;
+    margin: 20px;
+    width: 100%;
+    color: $light-blue;
   }
 
   input {
-    width: 60px;
+    justify-content: flex-end;
+    width: 100px;
     height: 40px;
     margin-bottom: 10px;
-    display: inline-block;
+    text-align: center;
     vertical-align: middle;
+    margin: 20px;
+    margin-top: 25px;
+    margin-left: auto;
+    font-size: large;
+    font-weight: bold;
+    background-color: $tan-200;
+    border-radius: 5px;
   }
 
   .dice-button {
     position: relative;
-    display: inline-block;
+    // display: inline-block;
     outline: none;
     border: 0;
     vertical-align: middle;
@@ -64,7 +104,8 @@
     transform-style: preserve-3d;
     -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
-   }
+    cursor: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1680198783/development/cursor-small_utvh6j.png'), auto;
+  }
 
    .dice-button::before {
     position: absolute;
@@ -75,11 +116,12 @@
     left: 0;
     right: 0;
     bottom: 0;
+
+    cursor: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1680198783/development/pointer-medieval-small_wyr0h3.png'), auto;
     }
 
    .dice-button:hover {
     background: $tan-100;
-    // cursor:url(https://www.picgifs.com/graphics/h/hands/graphics-hands-322342.gif), auto;
     -webkit-transform: translate(0, 0.25em);
     transform: translate(0, 0.25em);
    }
@@ -91,33 +133,28 @@
 }
 
 .log-block {
-  flex-grow: 1;
-  width: 40%;
-  height: 80%;
+  // flex-grow: 1;
   padding: 10px;
   margin: 5px;
-  border: 3px solid $byzantium;
+  border: 3px solid black;
   border-radius: 4px;
-  overflow: auto;
-  background-color: $space-cadet-var;
-  color: $light-blue;
+  // overflow: auto;
+  background-color: $light-blue-difuse;
+  color: $tan-100;
   font-size:x-large;
+  margin-right: 100px;
 
   #log {
-    height: 100vh;
+    // height: 100vh;
   }
-}
-
-.form-row {
-
 }
 
 @media only screen and (max-width: 768px) {
   .dice-roller {
-    flex-direction: column;
+    // flex-direction: column;
   }
 
-  .dice-block {
-    width: 100%;
-  }
+  // .dice-block {
+  //   width: 100%;
+  // }
 }
