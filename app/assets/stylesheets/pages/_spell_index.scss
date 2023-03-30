@@ -1,33 +1,161 @@
 .spell-home {
   flex-grow: 1;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   position: relative;
   // height: 100vh;
   background-color: $brown-500;
-  padding: 50px;
+  // padding: 50px;
   background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/dal2la5-f70a3ee7-68c1-429d-9a0b-15faaa70acfa.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZGFsMmxhNS1mNzBhM2VlNy02OGMxLTQyOWQtOWEwYi0xNWZhYWE3MGFjZmEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.IxKzpKhJVFv2n-pIYhiGNmt_HU7Lyhcd0owR-E9xZmg');
   background-repeat: no-repeat;
   background-size: cover;
+
+  .spell-main-container {
+    position: relative;
+    padding: 50px;
+    display: flex;
+    width: 100%;
+  }
+
+  .spell-home-left {
+    margin-left: 20px;
+    margin-right : 20px;
+    padding: 10px;
+    border-radius: 10px;
+    // background-color: $tan-200;
+    // border: 2px solid $eggplant;
+    width: 30%;
+  }
+
+  .spell-home-right {
+    margin-left: 20px;
+    margin-right : 50px;
+    padding: 10px;
+    border-radius: 10px;
+    // background-color: $tan-200;
+    // border: 2px solid $eggplant;
+    width: 70%;
+
+  }
+
+  form {
+    backdrop-filter: blur(2px);
+    background-color: $tan-100-difuse;
+    border: 2px solid $eggplant;
+    border: 2px solid $eggplant;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-weight: bold;
+  }
+
+  .form-control {
+      backdrop-filter: blur(2px);
+      padding: 5px;
+      background-color: $tan-100;
+      margin: 0px;
+      margin-bottom: 20px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+  label {
+    border-bottom: 2px solid black;
+    width: 100%;
+    font-family: $headers-font;
+    font-size: 22px;
+    margin-bottom: 0;
+    // background-color: black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    // text-align: center;
+    color: black;
+  }
+
+  input {
+    margin: 0;
+    // padding: 10;
+  }
+
+  .pagination {
+    background-color: $tan-100;
+  }
+
 }
 
 .spells-index{
-  width: 65%;
+  // width: 65%;
 }
+
 .columns-container-spells-index {
   // display: flex;
-  width: 65%;
+  // width: 65%;
   // background-color: $light-blue;
-  background-color: antiquewhite;
+  background-color: $tan-100;
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
   border: 2px solid $eggplant;
 
   .column-titel{
-    width: 100%;
+    // width: 100%;
     color: $space-cadet-var;
   }
-
 }
+
+// HOME BUTTONs
+.spell-search-button {
+  // padding: 10px;
+  position: center;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: $tan-100;
+  border: 2px solid $tan-500;
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+ }
+
+ .spell-search-button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $tan-300;
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+ }
+
+ .spell-search-button:hover {
+  background: $tan-100;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+ }
+
+ .spell-search-button:active::before {
+  // -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  // box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+ }

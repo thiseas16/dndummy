@@ -7,6 +7,13 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  a {
+    text-decoration: none; /* removes underline */
+    color: inherit; /* inherits color from parent */
+    border: none; /* removes any default border */
+    outline: none; /* removes focus outline */
+  }
+
   .home-button {
     margin-bottom: 20px;
   }

@@ -58,7 +58,7 @@ class RandomEncounter < ActiveJob::Base
       end
     end
     message = "Encounter has been successfully generated!"
-    redirect = campaign_encounter_path(@encounter)
+    redirect = campaign_encounter_path(campaign, @encounter)
     ActionCable.server.broadcast(
       user_id, {message: message, job: "encounter", redirect: redirect}
     )
