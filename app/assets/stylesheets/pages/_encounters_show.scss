@@ -1,6 +1,7 @@
 .encounter-show-container{
   flex-grow: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/d9spnlx-ae6275b7-863e-4d5d-8289-2aa14fb53f48.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZDlzcG5seC1hZTYyNzViNy04NjNlLTRkNWQtODI4OS0yYWExNGZiNTNmNDguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CeqSJweFupT6kOSkl5A1mi2lkItTf1wU_XbcdOou9OU');
@@ -22,7 +23,7 @@
   }
 
   .main-information{
-    width: 65%;
+    width: 80%;
     background: $tan-500-difuse;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -44,6 +45,10 @@
     box-shadow: 0px 0px 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+
+    p{
+      padding: 20px;
+    }
   }
 
   .tactics{
@@ -51,6 +56,10 @@
     box-shadow: 0px 0px 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+
+    p{
+      padding: 20px;
+    }
   }
 
   .character-list{
@@ -71,7 +80,123 @@
   }
 
   p{
-    padding: 20px;
+    // padding: 20px;
     background: $tan-100;
+  }
+  // FROM HERE BELOW ONLY RELATED TO THE CHARACTER PARTIAL
+  .secondary-information{
+
+  }
+
+  .character-show{
+    // background-color: $brown-500;
+    position: relative;
+    // padding: 50px;
+  }
+
+  .character-main-title {
+    font-size: 48px;
+    margin: 10px;
+    margin-bottom: 0;
+    background: $accent-color-gold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-left: 8px solid black;
+    // text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .character-main-container {
+    display: flex;
+    flex-wrap: wrap;
+    backdrop-filter: blur(3px);
+    border: 2px solid $eggplant;
+    margin: 10px;
+    margin-top: 0px;
+    background-color: $tan-300-difuse;
+  }
+
+  .first-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .character-image {
+      padding: 20px;
+
+      img {
+        border-radius: 20px;
+        border: 10px solid $eggplant;
+        height: 350px;
+        width: 350px;
+        // box-shadow: 0 0px 40px 15px black;
+      }
+    }
+  }
+
+  .info-header {
+    background-color: $eggplant;
+    color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .card-body {
+    background-color: $tan-100;
+    padding: 20px;
+  }
+
+  .basic-info {
+    width: 50%;
+    padding: 5px;
+  }
+
+  .info-body {
+    display: flex;
+  }
+
+  .stats-info {
+    padding: 5px;
+    width: 50%;
+  }
+
+  .other-info {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .paginate-buttons{
+    display: flex;
+  }
+
+  .arrow{
+    width: 15%;
+    height: 80%;
+
+
+    a{
+      background: black;
+      color: $accent-color-gold;
+      // font-size: 24px;
+      text-decoration: none; /* removes underline */
+      border: none; /* removes any default border */
+      outline: none; /* removes focus outline */
+    }
+
+  }
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+
+  .home-button {
+    width: 33%;
+    text-align: center;
+    margin: 10px;
   }
 }
