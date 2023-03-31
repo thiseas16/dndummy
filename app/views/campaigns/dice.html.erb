@@ -47,16 +47,17 @@
         </div>
       </div>
 
-      <div class="dice-block log-block">
-        <div id="log" data-dice-roller-target="log"></div>
-
+      <div class="dice-block-right">
+        <div class="dice-block log-block">
+          <div id="log" data-dice-roller-target="log"></div>
+        </div>
+         <div class="back-button-container">
+          <%= link_to "Back", campaign_path(@campaign), class: 'home-button' %>
+        </div>
       </div>
-
     </div>
 
   </div>
 
-  <div class="back-button-container">
-    <%= link_to "Back", campaign_path(@campaign), class: 'home-button' %>
-  </div>
+
 </div>

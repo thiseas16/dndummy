@@ -8,12 +8,10 @@
 
   .back-button-container {
     // position: relative;
-    margin: 10px;
-    margin-left: auto;
-    margin-right: 100px;
+    // margin: 10px;
 
     .home-button {
-      width: 30%;
+      width: 100%;
       text-align: center;
     }
   }
@@ -36,7 +34,7 @@
   height: 70%;
 }
 
-.dice-block {
+.form-block {
   // flex-grow: 1;
   width: 30%;
   border: 3px solid $space-cadet;
@@ -132,6 +130,11 @@
    }
 }
 
+.dice-block-right {
+  margin-right: 105px;
+  width: 30%;
+}
+
 .log-block {
   // flex-grow: 1;
   padding: 10px;
@@ -143,6 +146,14 @@
   color: $tan-100;
   font-size:x-large;
   margin-right: 100px;
+  width: 100%;
+  border: 3px solid $space-cadet;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: $light-blue-difuse;
+  color: $light-blue;
+  height: 600px;
+  overflow-y: scroll;
 
   #log {
     // height: 100vh;
