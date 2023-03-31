@@ -1,8 +1,3 @@
-// $input-color: $tan-200;
-// $h4-color: $tan-200;
-// $border-color: $eggplant;
-// $back-color: $light-blue-nodifuse;
-
 $input-color: $tan-200;
 $h4-color: black;
 $border-color: $eggplant;
@@ -62,7 +57,17 @@ $back-color: $tan-100;
         .label-attribute {
           display: inline-block;
           width: 120px;
-          margin-right: 10px;
+          margin-right: 5px;
+        }
+
+        .label-name-attribute {
+          width: 60px;
+          display: inline-block;
+        }
+
+        .input-name-attribute {
+          width: 130px;
+          display: inline-block;
         }
       }
 
@@ -156,7 +161,7 @@ $back-color: $tan-100;
       }
 
       textarea {
-        height: 30px;
+        height: 60px;
         background-color: $input-color;
         padding: 5px;
       }

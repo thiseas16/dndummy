@@ -5,7 +5,7 @@
         <div class="form-group-left">
           <h4>Character Information</h4>
             <div class="form-group">
-              <%= f.input :name, label: "Name" , input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+              <%= f.input :name, label: "Name" , input_html: { class: "input-name-attribute" }, label_html: { class: "label-name-attribute" } %>
 
               <div class="form-group-flex">
                 <%= f.input :class_list, label: "Class", include_blank: false do %>
@@ -57,15 +57,16 @@
       <div class="form-bottom">
         <h4>Personality and Background</h4>
         <div class="form-group">
-          <%= f.input :personality_traits, label: "Personality Traits" %>
-          <%= f.input :ideals, label: "Ideals" %>
-          <%= f.input :bonds, label: "Bonds" %>
-          <%= f.input :flaws, label: "Flaws" %>
-          <%= f.input :backstory, label: "Backstory" %>
-          <%= f.input :appearance, label: "Appearance" %>
-          <%= f.input :alignment, label: "Alignment" %>
+          <%= f.input :personality_traits, label: "Personality Traits", placeholder: "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me." %>
+          <%= f.input :ideals, label: "Ideals", placeholder: "Respect. People deserve to be treated with dignity and respect." %>
+          <%= f.input :bonds, label: "Bonds", placeholder: "I owe everything to my family, especially my mother." %>
+          <%= f.input :flaws, label: "Flaws", placeholder: "I have a weakness for the vices of the city, especially hard drink." %>
+          <%= f.input :backstory, label: "Backstory", placeholder: "I was raised in a small village in the mountains, where I learned to hunt and fish." %>
+          <%= f.input :appearance, label: "Appearance", placeholder: "Tall and muscular, with short black hair and a thick beard." %>
+          <%= f.input :alignment, label: "Alignment", placeholder: "Chaotic good. I believe in doing what is right, even if it means breaking the law." %>
         </div>
       </div>
+
       <div class="form-group form-buttons">
         <%= f.submit "Save", class: "btn" %>
         <%= link_to 'Back',  campaign_characters_path(@campaign), class: "btn" %>
