@@ -318,7 +318,7 @@ DEPENDENCIES
   pry
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
-  redis (~> 4.0)
+  redis
   ruby-openai!
   sassc-rails
   selenium-webdriver
