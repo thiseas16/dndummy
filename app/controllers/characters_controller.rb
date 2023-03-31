@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
   def index
     @characters = Character.all
     @campaign = Campaign.find(params[:campaign_id])
-    @characters = Character.paginate(page: params[:page], per_page: 7)
+    @characters = Character.where(encounter_id: nil).paginate(page: params[:page], per_page: 7)
   end
 
   def new
