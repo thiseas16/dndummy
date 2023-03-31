@@ -1,9 +1,12 @@
-
   <div>
     <h1 class="character-main-title">
-    <div class="arrow arrow-left"><%= will_paginate @characters, id: "arrow", page_links: false, next_label: "", previous_label: "<<" %></div>
-    <%= @character.name %>
-    <div class="arrow arrow-right"><%= will_paginate @characters, id: "arrow", page_links: false, previous_label: "", next_label: ">>"  %></div>
+      <% if @character.encounter %>
+        <div class="arrow arrow-left"><%= will_paginate @characters, id: "arrow", page_links: false, next_label: "", previous_label: "<<" %></div>
+      <% end %>
+      <%= @character.name %>
+      <% if @character.encounter %>
+        <div class="arrow arrow-right"><%= will_paginate @characters, id: "arrow", page_links: false, previous_label: "", next_label: ">>"  %></div>
+      <% end %>1
     </h1>
   </div>
   <div class="character-main-container">

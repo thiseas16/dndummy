@@ -25,7 +25,7 @@
       <div class = "right col-6">
         <div class="character-show">
           <% @character = @characters.first %>
-          <%= render "shared/character" %>
+          <%= render "shared/character", locals: {characters: @characters} %>
         </div>
       </div>
     </div>
