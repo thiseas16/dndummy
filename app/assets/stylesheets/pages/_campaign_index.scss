@@ -7,6 +7,19 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  .campaign-btn-div {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+  }
+
+  .campaign-new-btn {
+    width: 40%;
+    text-align: center;
+  }
+
   a {
     text-decoration: none; /* removes underline */
     color: inherit; /* inherits color from parent */
@@ -24,6 +37,7 @@
     padding: 30px;
     border-radius: 50px;
     border: 2px solid $eggplant;
+    margin-bottom: 20px;
   }
 
   .card-campaign-grid {

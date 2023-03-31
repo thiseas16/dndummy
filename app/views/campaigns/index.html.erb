@@ -1,10 +1,7 @@
 <div class="campaign-home">
-  <div class="catching-phrase">
-    <%# <h1 class="main-title">Welcome to our Campaigns!</h1> %>
+  <div class="campaign-btn-div">
+    <%= link_to 'Add a new campaign', new_campaign_path, class: 'home-button campaign-new-btn'%>
   </div>
-
-  <%= link_to 'Add a new campaign', new_campaign_path, class: 'home-button'%>
-
   <div class="campaign-index-card">
     <div class="card-campaign-grid">
       <% @campaigns.each do |c| %>
@@ -26,5 +23,9 @@
       <% end %>
     </div>
     <%= will_paginate @campaigns , previous_label: ''%>
+  </div>
+
+    <div class="campaign-btn-div">
+    <%= link_to 'Add a new campaign', new_campaign_path, class: 'home-button campaign-new-btn'%>
   </div>
 </div>
