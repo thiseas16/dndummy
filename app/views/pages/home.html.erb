@@ -12,22 +12,30 @@
    <div class="home-block-left">
      <h2>Create your Character</h2>
      <div class="home-block-text-container">
-       <p>No matter if you know what you want, use this tool to fill your wildest dreams</p>
-       <button class="home-button">Create</button>
+       <p>Choose between the old fashioned way or our AI tool, to create your character in detail.</p>
+       <% if Campaign.last %>
+          <%= link_to 'Create', campaign_characters_path(Campaign.last), class: 'home-button' %>
+       <% else %>
+          <%= link_to 'Create', new_campaign_path, class: 'home-button' %>
+       <% end %>
      </div>
    </div>
    <div class="home-block-midle">
      <h2>Use our Handbook</h2>
      <div class="home-block-text-container">
-       <p>Are you new or a veteran here you can read a little bit more before playing</p>
+       <p>Either as a new player or as a retired veteran, here you can read all about DnD.</p>
        <%= link_to 'Read', handbook_path, class: 'home-button' %>
      </div>
    </div>
       <div class="home-block-right">
      <h2>Style your Journey</h2>
      <div class="home-block-text-container">
-       <p>Do you like to see, because you are more visual, try this amazing tool</p>
-       <button class="home-button">Style</button>
+       <p>Bring your game to the next level, with our image generation tools.</p>
+       <% if Campaign.last %>
+          <%= link_to 'Create', campaign_images_path(Campaign.last), class: 'home-button' %>
+       <% else %>
+          <%= link_to 'Create', new_campaign_path, class: 'home-button' %>
+       <% end %>
      </div>
    </div>
   </div>

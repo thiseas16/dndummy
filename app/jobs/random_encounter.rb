@@ -1,6 +1,7 @@
 class RandomEncounter < ActiveJob::Base
   include Rails.application.routes.url_helpers
   def perform(era, theme, players, lvl, description, campaign, user_id)
+    sleep 1
     message = "Encounter is now being generated..."
     ActionCable.server.broadcast(
       user_id, { message: message, redirect: "#" }
