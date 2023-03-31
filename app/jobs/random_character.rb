@@ -86,7 +86,6 @@ class RandomCharacter < ActiveJob::Base
               "ability score bonus": 4,
               "bonus other": 0
             }
-            Fill the rest of the skills in the same format as it is in Acrobatics
           },
           "Saving Throws": {
             "Dexterity": "+6",
@@ -106,9 +105,7 @@ class RandomCharacter < ActiveJob::Base
             "Tools": "Thieves' tools",
             "Languages": ["Common", "Elvish"]
           },
-          "Spells": [
-              Fill with the names of the spells inside this array if your character knows or has access to, if applicable.
-            ],
+          "Spells": [],
           "Background Information": {
             "Backstory": "Erevan was born into a family of thieves and grew up learning how to survive on the streets. He quickly developed a talent for stealing and became a skilled pickpocket and burglar. Erevan eventually joined a gang of thieves and worked his way up the ranks, earning the respect and trust of his fellow criminals. However, he eventually grew restless and decided to strike out on his own, using his skills to make a name for himself as a freelance thief and adventurer.",
             "Personality Traits": "I always have a plan for what to do when things go wrong. I am always calm, no matter what the situation. ",
@@ -138,7 +135,7 @@ class RandomCharacter < ActiveJob::Base
               "Thieves' Tools": 1,
               "Crowbar": 1,
               "Rope, hempen (50 feet)": 1,
-              "Backpack with 10 days of Rations",
+              "Backpack": "10 days of Rations",
               "Bedroll": 1,
               "Water Skin": 1,
               "Gold Pieces": 10

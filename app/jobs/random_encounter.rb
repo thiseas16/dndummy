@@ -75,7 +75,7 @@ class RandomEncounter < ActiveJob::Base
 
     client = OpenAI::Client.new
 
-    message = %Q[Generate a dnd 5e encounter for me. Some information about the encounter: Era is #{@era}, theme is #{@theme}, Number of players to fight the encounter #{@players}, average level of players #{@lvl}. A small description that led to the encounter follows (if empty, assume there is none and generate a random encoutner).#{@description}. Provide me with some general information for the tactics that the enemies will use. Provide me with the type and amount of enemies in the encounter. No extra text or content. Total HP represents the INDIVIDUAL MAX HP of each enemy. For the spells, fill them in an array of string formats, IF APPLICABLE. The prompt field, should be filled with a good prompt to be used in stable diffusion, that describes the speficic enemy. Your response format should look exactly like the hash that follows (treat the values as example).
+    message = %Q[Generate a dnd 5e encounter for me. Some information about the encounter: Era is #{@era}, theme is #{@theme}, Number of players to fight the encounter #{@players}, average level of players #{@lvl}. A small description that led to the encounter follows (if empty, assume there is none and generate a random encoutner).#{@description}. Provide me with some general information for the tactics that the enemies will use. Provide me with the type and amount of enemies in the encounter. No extra text or content. Total HP represents the INDIVIDUAL MAX HP of each enemy. For the spells, fill them in an array of string formats, IF APPLICABLE. You should populate with ALL the skills, with the same format as acrobatics in the sample below.The prompt field, should be filled with a good prompt to be used in stable diffusion, that describes the speficic enemy. Your response format should look exactly like the hash that follows (treat the values as example).
 
       {
         "Name": "Rescue mission in Suzail's Prisons",
@@ -136,7 +136,6 @@ class RandomEncounter < ActiveJob::Base
                   "ability score bonus": 4,
                   "bonus other": 0
                 }
-              Fill the rest of the skills in the same format as it is in Acrobatics
               },
               "Saving Throws": {
                 "Dexterity": "+6",
