@@ -1,0 +1,246 @@
+.encounter-show-container{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/d9spnlx-ae6275b7-863e-4d5d-8289-2aa14fb53f48.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZDlzcG5seC1hZTYyNzViNy04NjNlLTRkNWQtODI4OS0yYWExNGZiNTNmNDguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CeqSJweFupT6kOSkl5A1mi2lkItTf1wU_XbcdOou9OU');
+  background-size: cover;
+  background-position: center;
+
+
+  .buttons{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-button{
+    width: 50%;
+    text-align: center;
+  }
+
+  .row{
+    padding: 50px;
+    padding-bottom: 25px;
+  }
+
+  .left, .right{
+    padding: 20px;
+  }
+
+  .main-information{
+    width: 65%;
+    background: $tan-500-difuse;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 4px solid $eggplant;
+    // padding: 20px;
+  }
+
+  .title{
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background: $eggplant;
+    // border-top-left-radius: 10px;
+    // border-top-right-radius: 10px;
+    color: white;
+  }
+
+  .description{
+    // padding: 10px;
+    box-shadow: 0px 0px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    p{
+      padding: 20px;
+    }
+  }
+
+  .tactics{
+    // padding: 10px;
+    box-shadow: 0px 0px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    p{
+      padding: 20px;
+    }
+  }
+
+  .character-list{
+    // padding: 10px;
+    box-shadow: 0px 0px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+ .tactics h2, .description h2, .character-list h2{
+    margin: 0;
+    padding: 5px;
+    padding-left: 10px;
+    border-left: 8px solid black;
+    background: $accent-color-gold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  ul{
+    padding: 10px;
+    list-style-type: none;
+    background: $tan-100;
+  }
+
+  li{
+    text-align: center;
+  }
+
+  p{
+    // padding: 20px;
+    background: $tan-100;
+  }
+  // FROM HERE BELOW ONLY RELATED TO THE CHARACTER PARTIAL
+  .secondary-information{
+
+  }
+
+  .character-show{
+    // background-color: $brown-500;
+    position: relative;
+    // padding: 50px;
+  }
+
+  .character-main-title {
+    font-size: 48px;
+    background: $accent-color-gold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-left: 8px solid black;
+    // text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+  }
+
+  .character-main-container {
+    display: flex;
+    flex-wrap: wrap;
+    backdrop-filter: blur(3px);
+    border: 2px solid black;
+    border-top: none;
+    // background-color: $tan-300-difuse;
+    // padding-left: 10px;
+    // padding-right: 10px;
+  }
+
+  .first-info {
+    // display: flex;
+    // justify-content: space-around;
+    // flex-wrap: wrap;
+    border: none;
+    width: 100%;
+
+    .character-image {
+      padding: 20px;
+
+      img {
+        border-radius: 20px;
+        border: 10px solid $eggplant;
+        height: 350px;
+        width: 350px;
+        // box-shadow: 0 0px 40px 15px black;
+      }
+    }
+  }
+
+  .info-header {
+    background-color: $tan-100;
+    // color: #fff;
+    padding: 10px 20px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    // border-top-left-radius: 20px;
+    // border-top-right-radius: 20px;
+  }
+
+  .stats{
+    display: flex;
+  }
+
+  .card-body {
+    width: 50%;
+    background-color: $tan-100;
+    padding: 15px;
+  }
+
+  .card-body-left {
+    width: 25%;
+    background-color: $tan-100;
+    padding: 20px;
+    padding-right: 10px;
+  }
+
+  .card-body-middle{
+    width: 25%;
+    background-color: $tan-100;
+    padding: 20px;
+    padding-right: 10px;
+  }
+
+  .card-body-right {
+    width: 25%;
+    background-color: $tan-100;
+    padding: 20px;
+    padding-left: 10px;
+  }
+
+  .basic-info {
+    width: 100%;
+    // padding: 5px;
+  }
+
+  .info-body {
+    display: flex;
+  }
+
+  .stats-info {
+    width: 100%;
+  }
+
+  .other-info {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .paginate-buttons{
+    display: flex;
+  }
+
+
+
+  .arrow{
+    width: 15%;
+    height: 80%;
+
+
+    a{
+      color: inherit;
+      text-decoration: none; /* removes underline */
+      border: none; /* removes any default border */
+      outline: none; /* removes focus outline */
+    }
+
+  }
+
+  #arrow{
+    background: none;
+    color: black;
+    border: none;
+  }
+
+}

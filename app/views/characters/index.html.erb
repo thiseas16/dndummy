@@ -4,11 +4,11 @@
   <div class="character-container">
     <div class="home-button-container">
     <% @characters.each do |c| %>
-    <%= link_to "#{c.name}", campaign_character_path(@campaign, c), style: "text-decoration: none", class: 'home-handbook-button',
-     'data-action': "mouseover->description-change#change mouseout->description-change#unchange",
-     'data-information': "<h1>#{c.name}</h1><hr><p><strong>Race:</strong> #{c.race}</p><p><strong>Class:</strong> #{c.class_list}</p><p> <strong>Level:</strong> #{c.level}</p><p><strong>Backstory:</strong> #{c.backstory}</p>",
-     'data-image': "#{c.photo.attached? ? cl_image_path(c.photo.key, fetch_format: :auto, crop: :fill) : 'https://cdnb.artstation.com/p/assets/images/images/029/045/695/original/tori-schade-ella-concern.gif?1596290588'}" %>
-  <% end %>
+        <%= link_to "#{c.name}", campaign_character_path(@campaign, c), style: "text-decoration: none", class: 'home-handbook-button',
+        'data-action': "mouseover->description-change#change mouseout->description-change#unchange",
+        'data-information': "<h1>#{c.name}</h1><hr><p><strong>Race:</strong> #{c.race}</p><p><strong>Class:</strong> #{c.class_list}</p><p> <strong>Level:</strong> #{c.level}</p><p><strong>Backstory:</strong> #{c.backstory}</p>",
+        'data-image': "#{c.photo.attached? ? cl_image_path(c.photo.key, fetch_format: :auto, crop: :fill) : 'https://cdnb.artstation.com/p/assets/images/images/029/045/695/original/tori-schade-ella-concern.gif?1596290588'}" %>
+    <% end %>
   </div>
   <div class="character-description-container">
       <h2>Information Description</h2>

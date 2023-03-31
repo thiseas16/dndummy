@@ -2,6 +2,10 @@ class GenerateImage < ActiveJob::Base
   include Rails.application.routes.url_helpers
   def perform(task, argument, campaign, user_id)
     if task == 'portrait'
+      message = "Portrait generation has started..."
+      ActionCable.server.broadcast(
+        user_id, { message: message, redirect: "#" }
+      )
       @character = argument
       @prompt = "((#{@character.class_list.downcase})), (#{@character.race.downcase}), ((#{@character.eyes.downcase} eyes)), ((#{@character.hair.downcase} hair)), ((#{@character.skin.downcase} skin))"
       @style = "test dnd portrait"
@@ -9,8 +13,12 @@ class GenerateImage < ActiveJob::Base
       save_image
       character_photo_attach
       message = "The character portrait has been successfully generated!"
-      redirect = campaign_character_path(@character)
+      redirect = campaign_character_path(campaign, @character)
     else
+      message = "Image is generating..."
+      ActionCable.server.broadcast(
+        user_id, { message: message, redirect: "#" }
+      )
       @prompt = argument
       @image = Image.new
       @style = "test dnd abstract"
@@ -20,7 +28,7 @@ class GenerateImage < ActiveJob::Base
       save_image
       image_photo_attach
       message = "The requested image has been successfully generated!"
-      redirect = campaigns_path(campaign)
+      redirect = campaign_all_images_path(campaign)
     end
     ActionCable.server.broadcast(
       user_id, { message: message, redirect: redirect }
