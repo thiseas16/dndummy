@@ -57,7 +57,7 @@ class RandomEncounter < ActiveJob::Base
         #   )
         #   @attack.character = @character
         #   @attack.save
-        end
+        # end
       end
     end
     message = "Encounter has been successfully generated!"
