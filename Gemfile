@@ -61,7 +61,7 @@ gem 'httparty'
 # gem 'ruby-openai'
 gem 'ruby-openai', github: "thiseas16/ruby-openai"
 
-gem "sidekiq"
+gem "sidekiq", "~> 6.5.8"
 gem "sidekiq-failures", "~> 1.0"
 
 
