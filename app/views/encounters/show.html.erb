@@ -5,17 +5,14 @@
     </div>
     <div class="row">
       <div class="left col-6">
-      <div class="description">
-        <h2>Description</h2>
-        <p><%= @encounter.description %></p>
-      </div>
-      <div class="tactics">
-        <h2>Tactics</h2>
-        <p><%= @encounter.tactics %></p>
-      </div>
-      </div>
-      <div class = "right col-6">
-        <%# <div class="dice-roller"></div> %>
+        <div class="description">
+          <h2>Description</h2>
+          <p><%= @encounter.description %></p>
+        </div>
+        <div class="tactics">
+          <h2>Tactics</h2>
+          <p><%= @encounter.tactics %></p>
+        </div>
         <div class="character-list">
           <h2>Enemies</h2>
           <ul>
@@ -25,9 +22,73 @@
           </ul>
         </div>
       </div>
+      <div class = "right col-6">
+        <div class="character-show">
+          <% @character = @characters.first %>
+          <div>
+            <h1 class="character-main-title">
+                <div class="arrow arrow-left"><%= will_paginate @characters, id: "arrow", page_links: false, next_label: "", previous_label: "<<" %></div>
+              <%= @character.name %>
+                <div class="arrow arrow-right"><%= will_paginate @characters, id: "arrow", page_links: false, previous_label: "", next_label: ">>"  %></div>
+            </h1>
+          </div>
+          <div class="character-main-container">
+            <div class="first-info">
+              <div class="basic-info">
+                <div class="box-shadow">
+                  <div class="info-header">
+                    <h2 class="text-center">Basic Information</h2>
+                  </div>
+                  <div class="info-body">
+                    <div class="card-body-left">
+                      <p><strong>Name:</strong> <%= @character.name %></p>
+                      <p><strong>Class:</strong> <%= @character.class_list %></p>
+                      <p><strong>Race:</strong> <%= @character.race %></p>
+                    </div>
+                    <div class="card-body-middle">
+                      <p><strong>Alignment:</strong> <%= @character.alignment %></p>
+                      <p><strong>Level:</strong> <%= @character.level %></p>
+                      <p><strong>Experience:</strong> <%= @character.exp %></p>
+                    </div>
+                    <div class="card-body-middle">
+                      <p><strong>Initiative:</strong> <%= @character.inititiave %></p>
+                      <p><strong>Armor Class:</strong> <%= @character.armor_class %></p>
+                      <p><strong>Speed:</strong> <%= @character.speed %></p>
+                    </div>
+                    <div class="card-body-right">
+                      <p><strong>Total HP:</strong> <%= @character.total_hp %></p>
+                      <p><strong>Current HP:</strong> <%= @character.current_hp %></p>
+                      <p><strong>Temp HP:</strong> <%= @character.temp_hp %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="stats-info">
+                <div class="box-shadow">
+                  <div class="info-header">
+                    <h2 class="text-center">Stats</h2>
+                  </div>
+                  <div class = "stats">
+                    <div class="card-body">
+                      <p><strong>Strength:</strong> <%= @character.str %></p>
+                      <p><strong>Dexterity:</strong> <%= @character.dex %></p>
+                      <p><strong>Constitution:</strong> <%= @character.const %></p>
+                    </div>
+                    <div class="card-body">
+                      <p><strong>Intelligence:</strong> <%= @character.int %></p>
+                      <p><strong>Wisdom:</strong> <%= @character.wis %></p>
+                      <p><strong>Charisma:</strong> <%= @character.cha %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class = "secondary-information">
-    <div class="character-show"></div>
+    <div class = "buttons">
+      <%= link_to "Back", campaign_encounters_path(@campaign), class: "home-button" %>
+    </div>
   </div>
 </div>

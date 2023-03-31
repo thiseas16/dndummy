@@ -83,8 +83,7 @@
 
   </div>
   <div class="btns-container">
-  <%= link_to 'All Characters',  campaign_characters_path(@campaign), class: "home-button" %>
-  <%= link_to '(Re) Generate Character Portrait', campaign_new_portrait_image_path, class: "home-button" %>
-  <%= link_to 'Random Character',  new_campaign_random_character_path, class: "home-button" %>
+    <%= button_to '(Re) Generate Character Portrait', campaign_create_portrait_image_path(character_id: @character.id.to_s), class: "home-button x" %>
+    <%= link_to 'Back',  campaign_characters_path(@campaign), class: "home-button" %>
   </div>
 </div>

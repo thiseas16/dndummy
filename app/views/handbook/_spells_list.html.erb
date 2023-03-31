@@ -41,6 +41,7 @@
       <div id="collapse<%=index%>" class="accordion-collapse collapse" aria-labelledby="heading<%=index%>" data-bs-parent="#accordionExample">
         <div class="accordion-body">
           <p><%= spell.description %></p>
+          <%= link_to 'READ MORE', spells_show_path(spell), class: 'btn btn-info' %>
         </div>
       </div>
     </div>
