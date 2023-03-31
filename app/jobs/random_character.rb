@@ -1,6 +1,9 @@
 class RandomCharacter < ActiveJob::Base
   include Rails.application.routes.url_helpers
   def perform(prompt, campaign, user_id)
+    ActionCable.server.broadcast(
+      user_id, { message: "Character is now being generated...", redirect: "#" }
+    )
     @prompt = prompt
     @campaign = campaign
     api_call
@@ -78,79 +81,78 @@ class RandomCharacter < ActiveJob::Base
           "WIS": 10,
           "CHA": 14
         },
-        "Proficiencies and Skills": {
-          "Proficiency Bonus": "+2",
-          "Skills": {
-            "Acrobatics": {
-              "proficient": true,
-              "ability score bonus": 4,
-              "bonus other": 0
-            }
-          },
-          "Saving Throws": {
-            "Dexterity": "+6",
-            "Intelligence": "+1"
-          }
+        "Background Information": {
+          "Backstory": "Erevan was born into a family of thieves and grew up learning how to survive on the streets. He quickly developed a talent for stealing and became a skilled pickpocket and burglar. Erevan eventually joined a gang of thieves and worked his way up the ranks, earning the respect and trust of his fellow criminals. However, he eventually grew restless and decided to strike out on his own, using his skills to make a name for himself as a freelance thief and adventurer.",
+          "Personality Traits": "I always have a plan for what to do when things go wrong. I am always calm, no matter what the situation. ",
+          "Ideals": "Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)",
+          "Bonds": "I owe everything to my mentor—a horrible person who’s probably rotting in jail somewhere.",
+          "Flaws": "When I see something valuable, I can’t think about anything but how to steal it."
         },
-        "Features and Traits": {
-          "Darkvision": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.",
-          "Fey Ancestry": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
-          "Criminal Contact": "You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals.",
-          "Sneak Attack": "Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.",
-          "Thieves' Cant": "You know the secret language of thieves."
-          },
-          "Proficiencies and Languages": {
-            "Armor": "Light armor",
-            "Weapons": "Simple weapons, hand crossbows, longswords, rapiers, shortswords",
-            "Tools": "Thieves' tools",
-            "Languages": ["Common", "Elvish"]
-          },
-          "Spells": [],
-          "Background Information": {
-            "Backstory": "Erevan was born into a family of thieves and grew up learning how to survive on the streets. He quickly developed a talent for stealing and became a skilled pickpocket and burglar. Erevan eventually joined a gang of thieves and worked his way up the ranks, earning the respect and trust of his fellow criminals. However, he eventually grew restless and decided to strike out on his own, using his skills to make a name for himself as a freelance thief and adventurer.",
-            "Personality Traits": "I always have a plan for what to do when things go wrong. I am always calm, no matter what the situation. ",
-            "Ideals": "Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)",
-            "Bonds": "I owe everything to my mentor—a horrible person who’s probably rotting in jail somewhere.",
-            "Flaws": "When I see something valuable, I can’t think about anything but how to steal it."
-          },
-          "Total HP": 32,
-          "Armor Class": 15,
-          "Attacks and Spellcasting": {
-              "Rapier": {
-                "attack_modifier": "+6",
-                "damage": "1d8+4",
-                "damage_type": "piercing damage"
-              },
-              "Shortbow": {
-                "attack_modifier": "+6",
-                "damage": "1d6+4",
-                "damage_type": "piercing damage"
-              }
-          },
-          "Equipment": {
-              "Rapier": 1,
-              "Shortbow": 1,
-              "Arrow": 20,
-              "Leather Armor": 1,
-              "Thieves' Tools": 1,
-              "Crowbar": 1,
-              "Rope, hempen (50 feet)": 1,
-              "Backpack": "10 days of Rations",
-              "Bedroll": 1,
-              "Water Skin": 1,
-              "Gold Pieces": 10
-          },
-          "Appearance": {
-            "Age": 23,
-            "Height": "186cm",
-            "Weight": "90kg",
-            "Eyes": "Piercing Green",
-            "Skin": "Smooth and pale ivory",
-            "Hair": "Long, flowing silver",
-            "Description": "Erevan Moonshadow is a lean elf with silver hair, green eyes, and a roguish demeanor. He wears dark, form-fitting leather armor, carries sleek weapons, and moves with a graceful fluidity. He exudes confidence and control."
-          }
+        "Total HP": 32,
+        "Armor Class": 15,
+        "Appearance": {
+          "Age": 23,
+          "Height": "186cm",
+          "Weight": "90kg",
+          "Eyes": "Piercing Green",
+          "Skin": "Smooth and pale ivory",
+          "Hair": "Long, flowing silver",
+          "Description": "Erevan Moonshadow is a lean elf with silver hair, green eyes, and a roguish demeanor. He wears dark, form-fitting leather armor, carries sleek weapons, and moves with a graceful fluidity. He exudes confidence and control."
+        }
       }]
-
+      # "Attacks and Spellcasting": {
+      #   "Rapier": {
+      #     "attack_modifier": "+6",
+      #     "damage": "1d8+4",
+      #     "damage_type": "piercing damage"
+      #   },
+      #   "Shortbow": {
+      #     "attack_modifier": "+6",
+      #     "damage": "1d6+4",
+      #     "damage_type": "piercing damage"
+      #   }
+      # },
+      # "Proficiencies and Skills": {
+      #   "Proficiency Bonus": "+2",
+      #   "Skills": {
+      #     "Acrobatics": {
+      #       "proficient": true,
+      #       "ability score bonus": 4,
+      #       "bonus other": 0
+      #     }
+      #   },
+      #   "Saving Throws": {
+      #     "Dexterity": "+6",
+      #     "Intelligence": "+1"
+      #   }
+      # },
+      # "Features and Traits": {
+      #   "Darkvision": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.",
+      #   "Fey Ancestry": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
+      #   "Criminal Contact": "You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals.",
+      #   "Sneak Attack": "Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.",
+      #   "Thieves' Cant": "You know the secret language of thieves."
+      #   },
+      #   "Proficiencies and Languages": {
+      #     "Armor": "Light armor",
+      #     "Weapons": "Simple weapons, hand crossbows, longswords, rapiers, shortswords",
+      #     "Tools": "Thieves' tools",
+      #     "Languages": ["Common", "Elvish"]
+      #   },
+      #   "Spells": [],
+    #   "Equipment": {
+    #     "Rapier": 1,
+    #     "Shortbow": 1,
+    #     "Arrow": 20,
+    #     "Leather Armor": 1,
+    #     "Thieves' Tools": 1,
+    #     "Crowbar": 1,
+    #     "Rope, hempen (50 feet)": 1,
+    #     "Backpack": "10 days of Rations",
+    #     "Bedroll": 1,
+    #     "Water Skin": 1,
+    #     "Gold Pieces": 10
+    # },
     question = { role: "user", content: message1 }
 
     messages << question
