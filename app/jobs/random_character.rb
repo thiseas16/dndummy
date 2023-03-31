@@ -1,8 +1,10 @@
 class RandomCharacter < ActiveJob::Base
   include Rails.application.routes.url_helpers
   def perform(prompt, campaign, user_id)
+    sleep 2
+    message = "Character is now being generated..."
     ActionCable.server.broadcast(
-      user_id, { message: "Character is now being generated...", redirect: "#" }
+      user_id, { message: message, redirect: "#" }
     )
     @prompt = prompt
     @campaign = campaign

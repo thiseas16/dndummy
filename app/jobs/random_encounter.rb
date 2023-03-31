@@ -1,8 +1,10 @@
 class RandomEncounter < ActiveJob::Base
   include Rails.application.routes.url_helpers
   def perform(era, theme, players, lvl, description, campaign, user_id)
+    sleep 1
+    message = "Encounter is now being generated..."
     ActionCable.server.broadcast(
-      user_id, { message: "Encounter is now being generated...", redirect: "#" }
+      user_id, { message: message, redirect: "#" }
     )
     @era = era
     @theme = theme
@@ -46,17 +48,17 @@ class RandomEncounter < ActiveJob::Base
         @character.campaign = @campaign
         @character.encounter = @encounter
         @character.save
-        enemy[1]["Attacks and Spellcasting"].each do |attack|
-          @attack = Attack.new(
-            weapon: attack[0],
-            attack_modifier: attack[1]["attack_modifier"],
-            dmg: attack[1]["damage"],
-            dmg_type: attack[1]["damage_type"],
-            range: attack[1]["range"]
-          )
-          @attack.character = @character
-          @attack.save
-        end
+        # enemy[1]["Attacks and Spellcasting"].each do |attack|
+        #   @attack = Attack.new(
+        #     weapon: attack[0],
+        #     attack_modifier: attack[1]["attack_modifier"],
+        #     dmg: attack[1]["damage"],
+        #     dmg_type: attack[1]["damage_type"],
+        #     range: attack[1]["range"]
+        #   )
+        #   @attack.character = @character
+        #   @attack.save
+        # end
       end
     end
     message = "Encounter has been successfully generated!"

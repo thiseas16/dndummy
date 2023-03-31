@@ -2,6 +2,7 @@ class GenerateImage < ActiveJob::Base
   include Rails.application.routes.url_helpers
   def perform(task, argument, campaign, user_id)
     if task == 'portrait'
+      sleep 1
       message = "Portrait generation has started..."
       ActionCable.server.broadcast(
         user_id, { message: message, redirect: "#" }
@@ -15,6 +16,7 @@ class GenerateImage < ActiveJob::Base
       message = "The character portrait has been successfully generated!"
       redirect = campaign_character_path(campaign, @character)
     else
+      sleep 1
       message = "Image is generating..."
       ActionCable.server.broadcast(
         user_id, { message: message, redirect: "#" }
