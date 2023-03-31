@@ -1,10 +1,6 @@
 <div class="trait-main-home">
-  <div class="catching-phrase">
-    <%# <h1 class="main-title">Learn about the Traits</h1> %>
-      <%= link_to "Back", handbook_path, class: 'back-button' %>
-  </div>
-
   <div class="trait-home">
+  <%= link_to "Back", handbook_path, class: 'back-button' %>
     <div class="traits-left">
       <div class="traits-container">
         <% @traits.each do |t| %>
