@@ -1,10 +1,6 @@
 <div class="feat-main-home">
-  <div class="feat-phrase">
-    <%# <h1 class="main-title">Learn about the Equipments</h1> %>
-      <%= link_to "Back", handbook_path, class: 'back-button' %>
-  </div>
-
   <div class="feat-home">
+    <%= link_to "Back", handbook_path, class: 'back-button' %>
     <div class="feats-left">
       <div class="feats-container">
         <% @feats.each do |f| %>

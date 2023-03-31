@@ -8,6 +8,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   justify-content: center;
+
+  .handbook-button {
+    display: flex;
+    text-align: center;
+  }
 }
 
 .main-handbook-container {

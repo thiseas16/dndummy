@@ -1,15 +1,11 @@
-<div class="feat-main-home">
-  <div class="feat-phrase">
-    <%# <h1 class="main-title">Learn about the Equipments</h1> %>
-      <%= link_to "Back", handbook_path, class: 'back-button' %>
-  </div>
-
-  <div class="feat-home">
-    <div class="feats-left">
-      <div class="feats-container">
+<div class="proficiency-main-home">
+  <div class="proficiency-home">
+    <%= link_to "Back", handbook_path, class: 'back-button' %>
+    <div class="proficiencies-left">
+      <div class="proficiencies-container">
         <% @proficiencies.each do |p| %>
-          <a href="#" class="feat-link">
-            <div class="feat" id="feat-<%= p.id %>"
+          <a href="#" class="proficiency-link">
+            <div class="proficiency" id="proficiency-<%= p.id %>"
               nameAttr="<%= p.name %>"
               profType="<%= p.prof_type %>">
               <strong><%= p.name %></strong>
@@ -19,7 +15,7 @@
       </div>
     </div>
 
-    <div class="feats-right">
+    <div class="proficiencies-right">
       <h1>PROFICIENCIES</h1>
       <p>Proficiencies in D&D 5th Edition represent a character's areas of expertise, skills, and knowledge. A proficiency is a specific skill or tool that a character is trained in, allowing them to perform certain tasks or actions with greater success or efficiency. Proficiencies can be related to combat, magic, or non-combat skills, and they can be acquired through a character's race, class, or background.</p>
       <p>Characters begin the game with a set of proficiencies based on their race and class. Each race has certain proficiencies that they automatically possess, such as proficiency in certain weapons or armor types. Similarly, each class has a set of proficiencies that are unique to that class, such as proficiency in certain skills, saving throws, or weapons.</p>
@@ -33,22 +29,22 @@
 </div>
 
 <div>
-<div class="feats-container">
+<div class="proficiencies-container">
 
 </div>
     <%= will_paginate @proficiencies , previous_label: ''%>
 </div>
 
 <script>
-const featButtons = document.querySelectorAll(".feat-link");
-featButtons.forEach(button => {
+const proficiencyButtons = document.querySelectorAll(".proficiency-link");
+proficiencyButtons.forEach(button => {
   button.addEventListener("click", function(event) {
     event.preventDefault();
-    const nameAttr = this.querySelector(".feat").getAttribute("nameAttr");
-    const profType = this.querySelector(".feat").getAttribute("profType");
-    const featsRight = document.querySelector(".feats-right");
-    featsRight.innerHTML = "";
-    featsRight.innerHTML = `
+    const nameAttr = this.querySelector(".proficiency").getAttribute("nameAttr");
+    const profType = this.querySelector(".proficiency").getAttribute("profType");
+    const proficienciesRight = document.querySelector(".proficiencies-right");
+    proficienciesRight.innerHTML = "";
+    proficienciesRight.innerHTML = `
       <h1>${nameAttr}</h1>
       <p><strong>Proficiency Type:</strong> ${profType}</p>
     `;

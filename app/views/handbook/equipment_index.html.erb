@@ -1,10 +1,6 @@
 <div class="equipment-main-home">
-  <div class="catching-phrase">
-    <%# <h1 class="main-title">Learn about the Equipments</h1> %>
-      <%= link_to "Back", handbook_path, class: 'back-button' %>
-  </div>
-
   <div class="equipment-home">
+    <%= link_to "Back", handbook_path, class: 'back-button' %>
     <div class="equipments-left">
       <div class="equipments-container">
         <% @equipment.each do |e| %>

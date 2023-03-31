@@ -1,6 +1,10 @@
-<%= simple_form_for [@campaign] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :photo %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-div">
+  <div class="new-somtehing-form">
+    <%= simple_form_for [@campaign] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :photo %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

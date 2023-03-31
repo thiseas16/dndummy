@@ -1,7 +1,5 @@
-
-
 <div class="index-characters" data-controller="description-change">
-  <h1 class="main-title">Select your character</h1>
+  <%# <h1 class="main-title">Select your character</h1> %>
 
   <div class="character-container">
     <div class="home-button-container">
@@ -28,8 +26,9 @@
 
       </div>
       <div class="charaters-buttons">
-        <%= link_to 'Create a new character', new_campaign_character_path(@campaign), class: "home-button" %>
-        <%= link_to 'Random Character',  new_campaign_random_character_path, class: "home-button" %>
+        <%= link_to 'Create a new character', new_campaign_character_path(@campaign), class: "home-button character-btn" %>
+        <%= link_to 'Random Character',  new_campaign_random_character_path, class: "home-button character-btn" %>
+        <%= link_to "Back", campaign_path(@campaign), class: "home-button character-btn" %>
       </div>
     </div>
   </div>

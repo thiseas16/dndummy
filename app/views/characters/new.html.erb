@@ -1,60 +1,77 @@
-<%= simple_form_for [@campaign, @character], html: {class: 'character-details'} do |f| %>
-  <div class = "character-form-wrapper">
-    <div class="row">
-      <div class="col-md-6">
-        <h4>Character Information</h4>
-        <div class="form-group">
-          <%= f.input :name, label: "Name" %>
+<div class="form-character-div">
+  <div class="form-wrapper">
+    <%= simple_form_for [@campaign, @character], html: {class: 'character-details'} do |f| %>
+      <div class="form-top">
+        <div class="form-group-left">
+          <h4>Character Information</h4>
+            <div class="form-group">
+              <%= f.input :name, label: "Name" , input_html: { class: "input-name-attribute" }, label_html: { class: "label-name-attribute" } %>
 
-          <%= f.input :class_list, label: "Class", include_blank: false do %>
-          <%= f.select :class_list, ClassList.all.map { |cl| [cl.name, cl.name] } %>
-          <% end %>
+              <div class="form-group-flex">
+                <%= f.input :class_list, label: "Class", include_blank: false do %>
+                  <%= f.select :class_list, ClassList.all.map { |cl| [cl.name, cl.name] } %>
+                <% end %>
+              </div>
 
-          <%= f.input :race, label: "Race", include_blank: false do %>
-          <%= f.select :race, Race.all.map { |r| [r.name, r.name] } %>
-          <% end %>
+              <div class="form-group-flex">
+                <%= f.input :race, label: "Race", include_blank: false do %>
+                  <%= f.select :race, Race.all.map { |r| [r.name, r.name] } %>
+                <% end %>
+              </div>
 
-          <%= f.input :age, label: "Age" %>
-          <%= f.input :height, label: "Height" %>
-          <%= f.input :weight, label: "Weight" %>
-          <%= f.input :eyes, label: "Eyes" %>
-          <%= f.input :skin, label: "Skin" %>
-          <%= f.input :hair, label: "Hair" %>
+              <%= f.input :age, label: "Age", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+              <%= f.input :height, label: "Height", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+              <%= f.input :weight, label: "Weight", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+              <%= f.input :eyes, label: "Eyes", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+              <%= f.input :skin, label: "Skin", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+              <%= f.input :hair, label: "Hair", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+            </div>
         </div>
-        <h4>Attributes</h4>
-        <div class="form-group">
-          <%= f.input :str, label: "Strength" %>
-          <%= f.input :dex, label: "Dexterity" %>
-          <%= f.input :const, label: "Constitution" %>
-          <%= f.input :int, label: "Intelligence" %>
-          <%= f.input :wis, label: "Wisdom" %>
-          <%= f.input :cha, label: "Charisma" %>
+
+        <div class="form-group-middle">
+          <h4>Attributes</h4>
+          <div class="form-group">
+            <%= f.input :str, label: "Strength", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+            <%= f.input :dex, label: "Dexterity", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+            <%= f.input :const, label: "Constitution", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+            <%= f.input :int, label: "Intelligence", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+            <%= f.input :wis, label: "Wisdom", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+            <%= f.input :cha, label: "Charisma", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" } %>
+          </div>
+        </div>
+
+
+        <div class="form-group-right">
+            <h4>Combat Information</h4>
+            <div class="form-group">
+              <%= f.input :level, label: "Level", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" }  %>
+              <%= f.input :exp, label: "Experience Points", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" }  %>
+              <%= f.input :total_hp, label: "Total Hit Points", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" }  %>
+              <%= f.input :armor_class, label: "Armor Class", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" }  %>
+              <%= f.input :speed, label: "Speed", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" }  %>
+              <%= f.input :inititiave, label: "Initiative", input_html: { class: "input-attribute" }, label_html: { class: "label-attribute" }  %>
+            </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <h4>Combat Information</h4>
-        <div class="form-group">
-          <%= f.input :level, label: "Level" %>
-          <%= f.input :exp, label: "Experience Points" %>
-          <%= f.input :total_hp, label: "Total Hit Points" %>
-          <%= f.input :armor_class, label: "Armor Class" %>
-          <%= f.input :speed, label: "Speed" %>
-          <%= f.input :inititiave, label: "Initiative" %>
-        </div>
+
+      <div class="form-bottom">
         <h4>Personality and Background</h4>
         <div class="form-group">
-          <%= f.input :personality_traits, label: "Personality Traits" %>
-          <%= f.input :ideals, label: "Ideals" %>
-          <%= f.input :bonds, label: "Bonds" %>
-          <%= f.input :flaws, label: "Flaws" %>
-          <%= f.input :backstory, label: "Backstory" %>
-          <%= f.input :appearance, label: "Appearance" %>
-          <%= f.input :alignment, label: "Alignment" %>
+          <%= f.input :personality_traits, label: "Personality Traits", placeholder: "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me." %>
+          <%= f.input :ideals, label: "Ideals", placeholder: "Respect. People deserve to be treated with dignity and respect." %>
+          <%= f.input :bonds, label: "Bonds", placeholder: "I owe everything to my family, especially my mother." %>
+          <%= f.input :flaws, label: "Flaws", placeholder: "I have a weakness for the vices of the city, especially hard drink." %>
+          <%= f.input :backstory, label: "Backstory", placeholder: "I was raised in a small village in the mountains, where I learned to hunt and fish." %>
+          <%= f.input :appearance, label: "Appearance", placeholder: "Tall and muscular, with short black hair and a thick beard." %>
+          <%= f.input :alignment, label: "Alignment", placeholder: "Chaotic good. I believe in doing what is right, even if it means breaking the law." %>
         </div>
       </div>
-    </div>
-    <div class="form-group">
-      <%= f.submit "Save", class: "btn btn-primary" %>
-    </div>
+
+      <div class="form-group form-buttons">
+        <%= f.submit "Save", class: "btn" %>
+        <%= link_to 'Back',  campaign_characters_path(@campaign), class: "btn" %>
+      </div>
+    <% end %>
+
   </div>
-<% end %>
+</div>
