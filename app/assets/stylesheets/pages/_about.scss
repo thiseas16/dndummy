@@ -26,12 +26,12 @@
 
 .about-section {
   padding: 50px;
+  padding-top: 25px;
   text-align: center;
   color: white;
   position: relative;
   height: 100vh;
   background-color: $brown-500;
-  padding: 50px;
   background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('https://64.media.tumblr.com/aa2de240c7d3ad098645f29e1f8fe17c/tumblr_obylzfWQ4F1qbw2q1o1_1280.gifv');
   background-size: cover;
   background-repeat: no-repeat;
@@ -81,11 +81,11 @@ html {
 }
 
 .about-team {
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .about-title {
-  margin-top: 50px;
+  // margin-top: 20px;
 }
 
 .gabe,
