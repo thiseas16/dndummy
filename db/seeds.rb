@@ -5,6 +5,7 @@ require 'json'
 
 base_url = "https://www.dnd5eapi.co"
 
+Attack.delete_all
 Character.all.each do |c|
   unless c.encounter == nil
     c.delete
