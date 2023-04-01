@@ -1,11 +1,12 @@
 .class-show-container{
   padding: 20px;
-  background-position: 135%;
+  background-position: 85%;
   background-repeat: no-repeat;
   background-size: contain;
+  background-attachment: fixed;
   display: flex;
   justify-content: flex-start;
-  background-color: $tan-100;
+  background-color: $tan-300;
 
   .class-show-right {
     border-radius: 20px;
