@@ -1,0 +1,67 @@
+.form-div-portrait {
+  display: flex;
+  flex-grow: 1;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/davv7gx-93b2ca3c-709b-40ee-9578-33eb6b2d2847.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZGF2djdneC05M2IyY2EzYy03MDliLTQwZWUtOTU3OC0zM2ViNmIyZDI4NDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CW30npr2fpQ8NaVjm544amIGAPEtrH7ocuV6VUbh2XY');
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  #character_id {
+    color: black;
+    // font-family: $headers-font;
+    font-size: x-large;
+    border-radius: 5px;
+    padding: 5px;
+    // border-bottom: 2px solid $eggplant;
+    width: 60%;
+  }
+
+  .new-somtehing-form {
+    width: 40%;
+    margin: auto auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    margin-left: 30px;
+    position: relative;
+    display: inline-block;
+    // outline: none;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #382b22;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: $tan-100;
+    border: 2px solid $tan-500;
+    border-radius: 0.75em;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  }
+
+  .button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .button:hover {
+    background: $tan-100;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+    cursor: url('https://res.cloudinary.com/dnorlz2hl/image/upload/v1680198783/development/pointer-medieval-small_wyr0h3.png'), auto;
+  }
+
+  .button:active::before {
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+  }
+}
