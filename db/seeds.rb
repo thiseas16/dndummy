@@ -5,6 +5,12 @@ require 'json'
 
 base_url = "https://www.dnd5eapi.co"
 
+Character.all.each do |c|
+  unless c.encounter == nil
+    c.delete
+  end
+end
+Encounter.delete_all
 ClassListItemGrantedJoin.delete_all
 ClassListProficiencyGrantedJoin.delete_all
 ItemChoiceJoin.delete_all
