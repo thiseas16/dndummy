@@ -1,5 +1,9 @@
-<%= form_tag campaign_create_portrait_image_path, method: :post do %>
-  <%= label_tag :character_id, "Select a character:" %>
-  <%= select_tag :character_id, options_from_collection_for_select(Character.all, "id", "name"), prompt: "Choose a character" %>
-  <%= submit_tag "Submit" %>
-<% end %>
+<div class="form-div-portrait">
+  <div class="new-somtehing-form">
+  <%= form_tag campaign_create_portrait_image_path, method: :post do %>
+    <%= label_tag :character_id, "Select a character:", class: "label" %>
+    <%= select_tag :character_id, options_from_collection_for_select(Character.all, "id", "name"), prompt: "Choose a character" %>
+    <%= submit_tag "Generate", class:"button" %>
+  <% end %>
+  </div>
+</div>
